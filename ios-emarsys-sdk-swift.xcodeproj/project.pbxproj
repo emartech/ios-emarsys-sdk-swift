@@ -12,6 +12,7 @@
 		5D2945F327215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2945F227215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift */; };
 		5D2945F427215C45007FC73F /* ios_emarsys_sdk_swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D2945E627215C45007FC73F /* ios_emarsys_sdk_swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D2945FE27215D2B007FC73F /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2945FD27215D2B007FC73F /* Core.swift */; };
+		5D29460027216019007FC73F /* EmarsysSDKSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 5D2945FF27216019007FC73F /* EmarsysSDKSwift.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		5D2945ED27215C45007FC73F /* ios-emarsys-sdk-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-emarsys-sdk-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2945F227215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_emarsys_sdk_swiftTests.swift; sourceTree = "<group>"; };
 		5D2945FD27215D2B007FC73F /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		5D2945FF27216019007FC73F /* EmarsysSDKSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmarsysSDKSwift.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		5D2945D927215C45007FC73F = {
 			isa = PBXGroup;
 			children = (
+				5D2945FF27216019007FC73F /* EmarsysSDKSwift.podspec */,
 				5D2945E527215C45007FC73F /* ios-emarsys-sdk-swift */,
 				5D2945F127215C45007FC73F /* ios-emarsys-sdk-swiftTests */,
 				5D2945E427215C45007FC73F /* Products */,
@@ -180,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D29460027216019007FC73F /* EmarsysSDKSwift.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
