@@ -4,9 +4,9 @@
 
 import Foundation
 
-@objc class Core: NSObject {
+@objc public class Core: NSObject {
     
-    @objc func submit() {
+    @objc public func submit() {
         print("submitted")
     }
     
