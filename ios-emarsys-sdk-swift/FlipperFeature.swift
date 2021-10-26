@@ -5,5 +5,5 @@
 import Foundation
 
 @objc public protocol FlipperFeature {
-    @objc public name: String
+    var name: String { get set }
 }

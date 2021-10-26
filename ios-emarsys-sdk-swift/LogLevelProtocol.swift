@@ -5,5 +5,5 @@
 import Foundation
 
 @objc public protocol LogLevelProtocol {
-    @objc public let level: String
+    var level: String { get set }
 }

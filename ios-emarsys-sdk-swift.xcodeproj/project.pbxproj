@@ -14,12 +14,19 @@
 		2AAE102D272840D300064246 /* InApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1013272840D200064246 /* InApp.swift */; };
 		2AAE102E272840D300064246 /* MessageInbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1014272840D200064246 /* MessageInbox.swift */; };
 		2AAE102F272840D300064246 /* LogLevelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE101E272840D300064246 /* LogLevelProtocol.swift */; };
+		2AAE1030272849F100064246 /* Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1021272840D300064246 /* Push.swift */; };
+		2AAE1031272849FF00064246 /* OnEventAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1016272840D200064246 /* OnEventAction.swift */; };
+		2AAE103227284A1400064246 /* Geofence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1019272840D200064246 /* Geofence.swift */; };
+		2AAE103327284A1900064246 /* Predict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE101B272840D200064246 /* Predict.swift */; };
+		2AAE103427284A1E00064246 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE101D272840D300064246 /* Config.swift */; };
+		3F7D9521A1A9DF307BD7A66C /* ios_emarsys_sdk_swiftTests-ios_emarsys_sdk_swiftMocks.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57006B74FCA5E72444E851E /* ios_emarsys_sdk_swiftTests-ios_emarsys_sdk_swiftMocks.generated.swift */; };
 		5D2945E827215C45007FC73F /* ios_emarsys_sdk_swift.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5D2945E727215C45007FC73F /* ios_emarsys_sdk_swift.docc */; };
 		5D2945EE27215C45007FC73F /* ios_emarsys_sdk_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2945E327215C45007FC73F /* ios_emarsys_sdk_swift.framework */; };
 		5D2945F327215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2945F227215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift */; };
 		5D2945F427215C45007FC73F /* ios_emarsys_sdk_swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D2945E627215C45007FC73F /* ios_emarsys_sdk_swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D29460027216019007FC73F /* EmarsysSDKSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 5D2945FF27216019007FC73F /* EmarsysSDKSwift.podspec */; };
-		7E11502E8681E284FAD6B65A /* Pods_ios_emarsys_sdk_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4FC359D1398FA8E66C78A51 /* Pods_ios_emarsys_sdk_swift.framework */; };
+		5EA17B0E9F4F604CA7BA598F /* Pods_ios_emarsys_sdk_swiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD01AC576C40E92F7EB8D2B /* Pods_ios_emarsys_sdk_swiftTests.framework */; };
+		A28AA0D77D5EAAE9DE057E06 /* Pods_ios_emarsys_sdk_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5524DCE059D6541A6F926EE2 /* Pods_ios_emarsys_sdk_swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14191693894AB971A3C67C21 /* Pods-ios-emarsys-sdk-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swift.debug.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swift/Pods-ios-emarsys-sdk-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		2A2585B32727F92100A7E810 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2AAE100B2727FCB300064246 /* libEmarsysSDKExposed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libEmarsysSDKExposed.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AAE1013272840D200064246 /* InApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InApp.swift; sourceTree = "<group>"; };
@@ -47,14 +53,19 @@
 		2AAE101F272840D300064246 /* EmarsysConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmarsysConfig.swift; sourceTree = "<group>"; };
 		2AAE1021272840D300064246 /* Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Push.swift; sourceTree = "<group>"; };
 		2AAE1022272840D300064246 /* EmarsysSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmarsysSDK.swift; sourceTree = "<group>"; };
+		4CD01AC576C40E92F7EB8D2B /* Pods_ios_emarsys_sdk_swiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_emarsys_sdk_swiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5524DCE059D6541A6F926EE2 /* Pods_ios_emarsys_sdk_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_emarsys_sdk_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2945E327215C45007FC73F /* ios_emarsys_sdk_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ios_emarsys_sdk_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2945E627215C45007FC73F /* ios_emarsys_sdk_swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios_emarsys_sdk_swift.h; sourceTree = "<group>"; };
 		5D2945E727215C45007FC73F /* ios_emarsys_sdk_swift.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ios_emarsys_sdk_swift.docc; sourceTree = "<group>"; };
 		5D2945ED27215C45007FC73F /* ios-emarsys-sdk-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-emarsys-sdk-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2945F227215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_emarsys_sdk_swiftTests.swift; sourceTree = "<group>"; };
 		5D2945FF27216019007FC73F /* EmarsysSDKSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmarsysSDKSwift.podspec; sourceTree = "<group>"; };
-		A4FC359D1398FA8E66C78A51 /* Pods_ios_emarsys_sdk_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_emarsys_sdk_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBDF1AD5E73A7DA613191D2A /* Pods-ios-emarsys-sdk-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swift.release.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swift/Pods-ios-emarsys-sdk-swift.release.xcconfig"; sourceTree = "<group>"; };
+		8FCA90BB4A991A8DD458FAD3 /* Pods-ios-emarsys-sdk-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swift.debug.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swift/Pods-ios-emarsys-sdk-swift.debug.xcconfig"; sourceTree = "<group>"; };
+		97E98E8FEDCA55EC43419B2E /* Pods-ios-emarsys-sdk-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swift.release.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swift/Pods-ios-emarsys-sdk-swift.release.xcconfig"; sourceTree = "<group>"; };
+		BF981F8DA4C0FC930A6E5939 /* Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swiftTests/Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C6267FE4AE5B05C567B692C1 /* Pods-ios-emarsys-sdk-swiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swiftTests.release.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swiftTests/Pods-ios-emarsys-sdk-swiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		F57006B74FCA5E72444E851E /* ios_emarsys_sdk_swiftTests-ios_emarsys_sdk_swiftMocks.generated.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "ios_emarsys_sdk_swiftTests-ios_emarsys_sdk_swiftMocks.generated.swift"; path = "MockingbirdMocks/ios_emarsys_sdk_swiftTests-ios_emarsys_sdk_swiftMocks.generated.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E11502E8681E284FAD6B65A /* Pods_ios_emarsys_sdk_swift.framework in Frameworks */,
+				A28AA0D77D5EAAE9DE057E06 /* Pods_ios_emarsys_sdk_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +82,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D2945EE27215C45007FC73F /* ios_emarsys_sdk_swift.framework in Frameworks */,
+				5EA17B0E9F4F604CA7BA598F /* Pods_ios_emarsys_sdk_swiftTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +183,7 @@
 				5D2945E427215C45007FC73F /* Products */,
 				619FBACF8B007D1524A85FAB /* Pods */,
 				7B56BAB805C9E74EC330347A /* Frameworks */,
+				B61A3479B3110E74F5A3483F /* Generated Mocks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,8 +231,10 @@
 		619FBACF8B007D1524A85FAB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				14191693894AB971A3C67C21 /* Pods-ios-emarsys-sdk-swift.debug.xcconfig */,
-				DBDF1AD5E73A7DA613191D2A /* Pods-ios-emarsys-sdk-swift.release.xcconfig */,
+				8FCA90BB4A991A8DD458FAD3 /* Pods-ios-emarsys-sdk-swift.debug.xcconfig */,
+				97E98E8FEDCA55EC43419B2E /* Pods-ios-emarsys-sdk-swift.release.xcconfig */,
+				BF981F8DA4C0FC930A6E5939 /* Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig */,
+				C6267FE4AE5B05C567B692C1 /* Pods-ios-emarsys-sdk-swiftTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -228,9 +243,18 @@
 			isa = PBXGroup;
 			children = (
 				2AAE100B2727FCB300064246 /* libEmarsysSDKExposed.a */,
-				A4FC359D1398FA8E66C78A51 /* Pods_ios_emarsys_sdk_swift.framework */,
+				5524DCE059D6541A6F926EE2 /* Pods_ios_emarsys_sdk_swift.framework */,
+				4CD01AC576C40E92F7EB8D2B /* Pods_ios_emarsys_sdk_swiftTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B61A3479B3110E74F5A3483F /* Generated Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				F57006B74FCA5E72444E851E /* ios_emarsys_sdk_swiftTests-ios_emarsys_sdk_swiftMocks.generated.swift */,
+			);
+			name = "Generated Mocks";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,7 +275,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D2945F727215C45007FC73F /* Build configuration list for PBXNativeTarget "ios-emarsys-sdk-swift" */;
 			buildPhases = (
-				241051FDD0ADB68AFEE98A60 /* [CP] Check Pods Manifest.lock */,
+				075CEF45E4BAF397F5C37272 /* [CP] Check Pods Manifest.lock */,
 				5D2945DE27215C45007FC73F /* Headers */,
 				5D2945DF27215C45007FC73F /* Sources */,
 				5D2945E027215C45007FC73F /* Frameworks */,
@@ -270,9 +294,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D2945FA27215C45007FC73F /* Build configuration list for PBXNativeTarget "ios-emarsys-sdk-swiftTests" */;
 			buildPhases = (
+				3739F2A15D651E1DD0A29B8F /* [CP] Check Pods Manifest.lock */,
+				BB140169C9F6B674DFE50CE7 /* Clean Mockingbird Mocks */,
+				6DB9AEB4643A2380E0337A63 /* Generate Mockingbird Mocks */,
 				5D2945E927215C45007FC73F /* Sources */,
 				5D2945EA27215C45007FC73F /* Frameworks */,
 				5D2945EB27215C45007FC73F /* Resources */,
+				31682123DD564E294415FB5A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -341,7 +369,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		241051FDD0ADB68AFEE98A60 /* [CP] Check Pods Manifest.lock */ = {
+		075CEF45E4BAF397F5C37272 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -363,6 +391,80 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		31682123DD564E294415FB5A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-emarsys-sdk-swiftTests/Pods-ios-emarsys-sdk-swiftTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-emarsys-sdk-swiftTests/Pods-ios-emarsys-sdk-swiftTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios-emarsys-sdk-swiftTests/Pods-ios-emarsys-sdk-swiftTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3739F2A15D651E1DD0A29B8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios-emarsys-sdk-swiftTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DB9AEB4643A2380E0337A63 /* Generate Mockingbird Mocks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"/tmp/Mockingbird-D33649A3-C997-488E-BB54-EB6C7A5946FF",
+			);
+			name = "Generate Mockingbird Mocks";
+			outputPaths = (
+				"$(SRCROOT)/MockingbirdMocks/ios_emarsys_sdk_swiftTests-ios_emarsys_sdk_swiftMocks.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -eu\n\n# Ensure mocks are generated prior to running Compile Sources\nrm -f '/tmp/Mockingbird-D33649A3-C997-488E-BB54-EB6C7A5946FF'\n\nPods/MockingbirdFramework/mockingbird generate \\\n  --targets 'ios-emarsys-sdk-swift' \\\n  --outputs \"${SRCROOT}/MockingbirdMocks/ios_emarsys_sdk_swiftTests-ios_emarsys_sdk_swiftMocks.generated.swift\"";
+		};
+		BB140169C9F6B674DFE50CE7 /* Clean Mockingbird Mocks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Clean Mockingbird Mocks";
+			outputPaths = (
+				"/tmp/Mockingbird-D33649A3-C997-488E-BB54-EB6C7A5946FF",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo $RANDOM > '/tmp/Mockingbird-D33649A3-C997-488E-BB54-EB6C7A5946FF'\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -372,9 +474,14 @@
 			files = (
 				2AAE102F272840D300064246 /* LogLevelProtocol.swift in Sources */,
 				2AAE102E272840D300064246 /* MessageInbox.swift in Sources */,
+				2AAE103327284A1900064246 /* Predict.swift in Sources */,
 				2AAE102C272840D300064246 /* EmarsysConfig.swift in Sources */,
 				5D2945E827215C45007FC73F /* ios_emarsys_sdk_swift.docc in Sources */,
+				2AAE103427284A1E00064246 /* Config.swift in Sources */,
+				2AAE1031272849FF00064246 /* OnEventAction.swift in Sources */,
 				2AAE102A272840D300064246 /* EmarsysSDK.swift in Sources */,
+				2AAE1030272849F100064246 /* Push.swift in Sources */,
+				2AAE103227284A1400064246 /* Geofence.swift in Sources */,
 				2AAE102B272840D300064246 /* FlipperFeature.swift in Sources */,
 				2AAE102D272840D300064246 /* InApp.swift in Sources */,
 			);
@@ -385,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D2945F327215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift in Sources */,
+				3F7D9521A1A9DF307BD7A66C /* ios_emarsys_sdk_swiftTests-ios_emarsys_sdk_swiftMocks.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,7 +631,7 @@
 		};
 		5D2945F827215C45007FC73F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14191693894AB971A3C67C21 /* Pods-ios-emarsys-sdk-swift.debug.xcconfig */;
+			baseConfigurationReference = 8FCA90BB4A991A8DD458FAD3 /* Pods-ios-emarsys-sdk-swift.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -552,7 +660,7 @@
 		};
 		5D2945F927215C45007FC73F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBDF1AD5E73A7DA613191D2A /* Pods-ios-emarsys-sdk-swift.release.xcconfig */;
+			baseConfigurationReference = 97E98E8FEDCA55EC43419B2E /* Pods-ios-emarsys-sdk-swift.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -581,6 +689,7 @@
 		};
 		5D2945FB27215C45007FC73F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF981F8DA4C0FC930A6E5939 /* Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -603,6 +712,7 @@
 		};
 		5D2945FC27215C45007FC73F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6267FE4AE5B05C567B692C1 /* Pods-ios-emarsys-sdk-swiftTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
