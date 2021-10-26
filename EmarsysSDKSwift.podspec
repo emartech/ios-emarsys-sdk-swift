@@ -9,5 +9,6 @@ Pod::Spec.new do |spec|
 	spec.source               = { :git => 'https://github.com/emartech/ios-emarsys-sdk-swift.git', :tag => spec.version }
 	spec.source_files         = 'ios-emarsys-sdk-swift'
 	spec.swift_version        = '5.5'
+    spec.dependency 'EmarsysSDKExposed'
 	spec.libraries = 'z', 'c++'
 end
