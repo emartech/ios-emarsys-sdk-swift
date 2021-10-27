@@ -6,4 +6,6 @@ import Foundation
 
 @objc public protocol MessageInbox {
     
+    public func fetchMessages() async -> 
+    
 }

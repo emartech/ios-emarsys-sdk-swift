@@ -8,23 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		2A2585B42727F92100A7E810 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2A2585B32727F92100A7E810 /* Podfile */; };
-		2AAE102A272840D300064246 /* EmarsysSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1022272840D300064246 /* EmarsysSDK.swift */; };
 		2AAE102B272840D300064246 /* FlipperFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1017272840D200064246 /* FlipperFeature.swift */; };
-		2AAE102C272840D300064246 /* EmarsysConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE101F272840D300064246 /* EmarsysConfig.swift */; };
 		2AAE102D272840D300064246 /* InApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1013272840D200064246 /* InApp.swift */; };
 		2AAE102E272840D300064246 /* MessageInbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1014272840D200064246 /* MessageInbox.swift */; };
-		2AAE102F272840D300064246 /* LogLevelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE101E272840D300064246 /* LogLevelProtocol.swift */; };
 		2AAE1030272849F100064246 /* Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1021272840D300064246 /* Push.swift */; };
 		2AAE1031272849FF00064246 /* OnEventAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1016272840D200064246 /* OnEventAction.swift */; };
 		2AAE103227284A1400064246 /* Geofence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1019272840D200064246 /* Geofence.swift */; };
 		2AAE103327284A1900064246 /* Predict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE101B272840D200064246 /* Predict.swift */; };
 		2AAE103427284A1E00064246 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE101D272840D300064246 /* Config.swift */; };
-		3F7D9521A1A9DF307BD7A66C /* ios_emarsys_sdk_swiftTests-ios_emarsys_sdk_swiftMocks.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57006B74FCA5E72444E851E /* ios_emarsys_sdk_swiftTests-ios_emarsys_sdk_swiftMocks.generated.swift */; };
 		5D2945E827215C45007FC73F /* ios_emarsys_sdk_swift.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5D2945E727215C45007FC73F /* ios_emarsys_sdk_swift.docc */; };
 		5D2945EE27215C45007FC73F /* ios_emarsys_sdk_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2945E327215C45007FC73F /* ios_emarsys_sdk_swift.framework */; };
 		5D2945F327215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2945F227215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift */; };
 		5D2945F427215C45007FC73F /* ios_emarsys_sdk_swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D2945E627215C45007FC73F /* ios_emarsys_sdk_swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D29460027216019007FC73F /* EmarsysSDKSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 5D2945FF27216019007FC73F /* EmarsysSDKSwift.podspec */; };
+		5D4745E727297FC5007ECAD6 /* Emarsys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4745E627297FC5007ECAD6 /* Emarsys.swift */; };
+		5D4745E927298260007ECAD6 /* EmarsysConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4745E827298260007ECAD6 /* EmarsysConfig.swift */; };
+		5D4745EB272982AC007ECAD6 /* LogLevelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4745EA272982AC007ECAD6 /* LogLevelProtocol.swift */; };
+		5D4745ED272987CA007ECAD6 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4745EC272987CA007ECAD6 /* Closures.swift */; };
+		5D4745EF272988C8007ECAD6 /* NotificationInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4745EE272988C8007ECAD6 /* NotificationInformation.swift */; };
 		5EA17B0E9F4F604CA7BA598F /* Pods_ios_emarsys_sdk_swiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD01AC576C40E92F7EB8D2B /* Pods_ios_emarsys_sdk_swiftTests.framework */; };
 		A28AA0D77D5EAAE9DE057E06 /* Pods_ios_emarsys_sdk_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5524DCE059D6541A6F926EE2 /* Pods_ios_emarsys_sdk_swift.framework */; };
 /* End PBXBuildFile section */
@@ -49,10 +50,7 @@
 		2AAE1019272840D200064246 /* Geofence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geofence.swift; sourceTree = "<group>"; };
 		2AAE101B272840D200064246 /* Predict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Predict.swift; sourceTree = "<group>"; };
 		2AAE101D272840D300064246 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		2AAE101E272840D300064246 /* LogLevelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevelProtocol.swift; sourceTree = "<group>"; };
-		2AAE101F272840D300064246 /* EmarsysConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmarsysConfig.swift; sourceTree = "<group>"; };
 		2AAE1021272840D300064246 /* Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Push.swift; sourceTree = "<group>"; };
-		2AAE1022272840D300064246 /* EmarsysSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmarsysSDK.swift; sourceTree = "<group>"; };
 		4CD01AC576C40E92F7EB8D2B /* Pods_ios_emarsys_sdk_swiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_emarsys_sdk_swiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5524DCE059D6541A6F926EE2 /* Pods_ios_emarsys_sdk_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_emarsys_sdk_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2945E327215C45007FC73F /* ios_emarsys_sdk_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ios_emarsys_sdk_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,11 +59,15 @@
 		5D2945ED27215C45007FC73F /* ios-emarsys-sdk-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-emarsys-sdk-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2945F227215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_emarsys_sdk_swiftTests.swift; sourceTree = "<group>"; };
 		5D2945FF27216019007FC73F /* EmarsysSDKSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmarsysSDKSwift.podspec; sourceTree = "<group>"; };
+		5D4745E627297FC5007ECAD6 /* Emarsys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emarsys.swift; sourceTree = "<group>"; };
+		5D4745E827298260007ECAD6 /* EmarsysConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmarsysConfig.swift; sourceTree = "<group>"; };
+		5D4745EA272982AC007ECAD6 /* LogLevelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevelProtocol.swift; sourceTree = "<group>"; };
+		5D4745EC272987CA007ECAD6 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
+		5D4745EE272988C8007ECAD6 /* NotificationInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationInformation.swift; sourceTree = "<group>"; };
 		8FCA90BB4A991A8DD458FAD3 /* Pods-ios-emarsys-sdk-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swift.debug.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swift/Pods-ios-emarsys-sdk-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		97E98E8FEDCA55EC43419B2E /* Pods-ios-emarsys-sdk-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swift.release.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swift/Pods-ios-emarsys-sdk-swift.release.xcconfig"; sourceTree = "<group>"; };
 		BF981F8DA4C0FC930A6E5939 /* Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swiftTests/Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C6267FE4AE5B05C567B692C1 /* Pods-ios-emarsys-sdk-swiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swiftTests.release.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swiftTests/Pods-ios-emarsys-sdk-swiftTests.release.xcconfig"; sourceTree = "<group>"; };
-		F57006B74FCA5E72444E851E /* ios_emarsys_sdk_swiftTests-ios_emarsys_sdk_swiftMocks.generated.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "ios_emarsys_sdk_swiftTests-ios_emarsys_sdk_swiftMocks.generated.swift"; path = "MockingbirdMocks/ios_emarsys_sdk_swiftTests-ios_emarsys_sdk_swiftMocks.generated.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,39 +131,10 @@
 			path = Push;
 			sourceTree = "<group>";
 		};
-		2AAE1023272840D300064246 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				2AAE1024272840D300064246 /* Log */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		2AAE1024272840D300064246 /* Log */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Log;
-			sourceTree = "<group>";
-		};
-		2AAE1025272840D300064246 /* EmarsysSDK */ = {
-			isa = PBXGroup;
-			children = (
-				2AAE1026272840D300064246 /* Config */,
-			);
-			path = EmarsysSDK;
-			sourceTree = "<group>";
-		};
-		2AAE1026272840D300064246 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
 		2AAE1027272840D300064246 /* InApp */ = {
 			isa = PBXGroup;
 			children = (
+				2AAE1013272840D200064246 /* InApp.swift */,
 			);
 			path = InApp;
 			sourceTree = "<group>";
@@ -169,6 +142,7 @@
 		2AAE1029272840D300064246 /* MessageInbox */ = {
 			isa = PBXGroup;
 			children = (
+				2AAE1014272840D200064246 /* MessageInbox.swift */,
 			);
 			path = MessageInbox;
 			sourceTree = "<group>";
@@ -199,23 +173,21 @@
 		5D2945E527215C45007FC73F /* ios-emarsys-sdk-swift */ = {
 			isa = PBXGroup;
 			children = (
-				2AAE1023272840D300064246 /* Core */,
-				2AAE101E272840D300064246 /* LogLevelProtocol.swift */,
-				2AAE1025272840D300064246 /* EmarsysSDK */,
+				5D4745E627297FC5007ECAD6 /* Emarsys.swift */,
 				2AAE101C272840D300064246 /* Config */,
-				2AAE101F272840D300064246 /* EmarsysConfig.swift */,
-				2AAE1022272840D300064246 /* EmarsysSDK.swift */,
 				2AAE1017272840D200064246 /* FlipperFeature.swift */,
 				2AAE1018272840D200064246 /* Geofence */,
 				2AAE1027272840D300064246 /* InApp */,
-				2AAE1013272840D200064246 /* InApp.swift */,
 				2AAE1029272840D300064246 /* MessageInbox */,
-				2AAE1014272840D200064246 /* MessageInbox.swift */,
 				2AAE1015272840D200064246 /* OnEventAction */,
 				2AAE101A272840D200064246 /* Predict */,
 				2AAE1020272840D300064246 /* Push */,
 				5D2945E627215C45007FC73F /* ios_emarsys_sdk_swift.h */,
 				5D2945E727215C45007FC73F /* ios_emarsys_sdk_swift.docc */,
+				5D4745E827298260007ECAD6 /* EmarsysConfig.swift */,
+				5D4745EA272982AC007ECAD6 /* LogLevelProtocol.swift */,
+				5D4745EC272987CA007ECAD6 /* Closures.swift */,
+				5D4745EE272988C8007ECAD6 /* NotificationInformation.swift */,
 			);
 			path = "ios-emarsys-sdk-swift";
 			sourceTree = "<group>";
@@ -252,7 +224,6 @@
 		B61A3479B3110E74F5A3483F /* Generated Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				F57006B74FCA5E72444E851E /* ios_emarsys_sdk_swiftTests-ios_emarsys_sdk_swiftMocks.generated.swift */,
 			);
 			name = "Generated Mocks";
 			sourceTree = "<group>";
@@ -472,18 +443,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AAE102F272840D300064246 /* LogLevelProtocol.swift in Sources */,
 				2AAE102E272840D300064246 /* MessageInbox.swift in Sources */,
 				2AAE103327284A1900064246 /* Predict.swift in Sources */,
-				2AAE102C272840D300064246 /* EmarsysConfig.swift in Sources */,
 				5D2945E827215C45007FC73F /* ios_emarsys_sdk_swift.docc in Sources */,
 				2AAE103427284A1E00064246 /* Config.swift in Sources */,
 				2AAE1031272849FF00064246 /* OnEventAction.swift in Sources */,
-				2AAE102A272840D300064246 /* EmarsysSDK.swift in Sources */,
+				5D4745EB272982AC007ECAD6 /* LogLevelProtocol.swift in Sources */,
+				5D4745ED272987CA007ECAD6 /* Closures.swift in Sources */,
 				2AAE1030272849F100064246 /* Push.swift in Sources */,
 				2AAE103227284A1400064246 /* Geofence.swift in Sources */,
+				5D4745EF272988C8007ECAD6 /* NotificationInformation.swift in Sources */,
 				2AAE102B272840D300064246 /* FlipperFeature.swift in Sources */,
+				5D4745E727297FC5007ECAD6 /* Emarsys.swift in Sources */,
 				2AAE102D272840D300064246 /* InApp.swift in Sources */,
+				5D4745E927298260007ECAD6 /* EmarsysConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +465,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D2945F327215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift in Sources */,
-				3F7D9521A1A9DF307BD7A66C /* ios_emarsys_sdk_swiftTests-ios_emarsys_sdk_swiftMocks.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
