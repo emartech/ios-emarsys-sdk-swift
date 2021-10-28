@@ -9,25 +9,31 @@
 /* Begin PBXBuildFile section */
 		2A2585B42727F92100A7E810 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2A2585B32727F92100A7E810 /* Podfile */; };
 		2AAE102B272840D300064246 /* FlipperFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1017272840D200064246 /* FlipperFeature.swift */; };
-		2AAE102D272840D300064246 /* InApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1013272840D200064246 /* InApp.swift */; };
-		2AAE102E272840D300064246 /* MessageInbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1014272840D200064246 /* MessageInbox.swift */; };
-		2AAE1030272849F100064246 /* Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1021272840D300064246 /* Push.swift */; };
-		2AAE1031272849FF00064246 /* OnEventAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1016272840D200064246 /* OnEventAction.swift */; };
-		2AAE103227284A1400064246 /* Geofence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1019272840D200064246 /* Geofence.swift */; };
-		2AAE103327284A1900064246 /* Predict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE101B272840D200064246 /* Predict.swift */; };
-		2AAE103427284A1E00064246 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE101D272840D300064246 /* Config.swift */; };
+		2AAE102D272840D300064246 /* InAppApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1013272840D200064246 /* InAppApi.swift */; };
+		2AAE102E272840D300064246 /* InboxApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1014272840D200064246 /* InboxApi.swift */; };
+		2AAE1030272849F100064246 /* PushApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1021272840D300064246 /* PushApi.swift */; };
+		2AAE1031272849FF00064246 /* OnEventActionApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1016272840D200064246 /* OnEventActionApi.swift */; };
+		2AAE103227284A1400064246 /* GeofenceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1019272840D200064246 /* GeofenceApi.swift */; };
+		2AAE103327284A1900064246 /* PredictApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE101B272840D200064246 /* PredictApi.swift */; };
+		2AAE103427284A1E00064246 /* ConfigApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE101D272840D300064246 /* ConfigApi.swift */; };
 		5D2945E827215C45007FC73F /* ios_emarsys_sdk_swift.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5D2945E727215C45007FC73F /* ios_emarsys_sdk_swift.docc */; };
 		5D2945EE27215C45007FC73F /* ios_emarsys_sdk_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2945E327215C45007FC73F /* ios_emarsys_sdk_swift.framework */; };
 		5D2945F327215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2945F227215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift */; };
-		5D2945F427215C45007FC73F /* ios_emarsys_sdk_swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D2945E627215C45007FC73F /* ios_emarsys_sdk_swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D29460027216019007FC73F /* EmarsysSDKSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 5D2945FF27216019007FC73F /* EmarsysSDKSwift.podspec */; };
 		5D4745E727297FC5007ECAD6 /* Emarsys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4745E627297FC5007ECAD6 /* Emarsys.swift */; };
-		5D4745E927298260007ECAD6 /* EmarsysConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4745E827298260007ECAD6 /* EmarsysConfig.swift */; };
+		5D4745E927298260007ECAD6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4745E827298260007ECAD6 /* Config.swift */; };
 		5D4745EB272982AC007ECAD6 /* LogLevelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4745EA272982AC007ECAD6 /* LogLevelProtocol.swift */; };
-		5D4745ED272987CA007ECAD6 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4745EC272987CA007ECAD6 /* Closures.swift */; };
 		5D4745EF272988C8007ECAD6 /* NotificationInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4745EE272988C8007ECAD6 /* NotificationInformation.swift */; };
 		A28AA0D77D5EAAE9DE057E06 /* Pods_ios_emarsys_sdk_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5524DCE059D6541A6F926EE2 /* Pods_ios_emarsys_sdk_swift.framework */; };
+		FB89B17B7F5ABF02F5D67D7A /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89B9E9B168D229241CE7C7 /* Logic.swift */; };
+		FB89B2DA46EC705E655488DE /* EventPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89B79DE5A24FDFC6F7A067 /* EventPublisher.swift */; };
+		FB89B37D0B6AF7C46408535B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89BA9EFB9A14EA8170D85A /* Event.swift */; };
+		FB89B3A64A60B8F6B449CD2E /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89B7FAA67A859BABA8E63A /* CartItem.swift */; };
+		FB89B41C3FEB14F8CA4BA51D /* NotificationInformationPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89BB6309A501CE10FA30C8 /* NotificationInformationPublisher.swift */; };
+		FB89B5118F847604589471E9 /* RecommendationFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89BF69DFF669AFEB54D5DB /* RecommendationFilter.swift */; };
 		FB89B5149F16003DAAEAF6AB /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89BDFDEEECA711FE2D7A5B /* Action.swift */; };
+		FB89B5CBD2BE87DF419304B9 /* Geofence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89BEA28EEF852EDF2E97AB /* Geofence.swift */; };
+		FB89B742122B85D552F3CD02 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89BA9005BD847B0DF5D3EF /* Product.swift */; };
 		FB89BC8514C7A0D48C4D9616 /* InboxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89B099BA57BB940B2625DA /* InboxMessage.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,30 +50,36 @@
 /* Begin PBXFileReference section */
 		2A2585B32727F92100A7E810 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2AAE100B2727FCB300064246 /* libEmarsysSDKExposed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libEmarsysSDKExposed.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		2AAE1013272840D200064246 /* InApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InApp.swift; sourceTree = "<group>"; };
-		2AAE1014272840D200064246 /* MessageInbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInbox.swift; sourceTree = "<group>"; };
-		2AAE1016272840D200064246 /* OnEventAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnEventAction.swift; sourceTree = "<group>"; };
+		2AAE1013272840D200064246 /* InAppApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppApi.swift; sourceTree = "<group>"; };
+		2AAE1014272840D200064246 /* InboxApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxApi.swift; sourceTree = "<group>"; };
+		2AAE1016272840D200064246 /* OnEventActionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnEventActionApi.swift; sourceTree = "<group>"; };
 		2AAE1017272840D200064246 /* FlipperFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipperFeature.swift; sourceTree = "<group>"; };
-		2AAE1019272840D200064246 /* Geofence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geofence.swift; sourceTree = "<group>"; };
-		2AAE101B272840D200064246 /* Predict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Predict.swift; sourceTree = "<group>"; };
-		2AAE101D272840D300064246 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		2AAE1021272840D300064246 /* Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Push.swift; sourceTree = "<group>"; };
+		2AAE1019272840D200064246 /* GeofenceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceApi.swift; sourceTree = "<group>"; };
+		2AAE101B272840D200064246 /* PredictApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictApi.swift; sourceTree = "<group>"; };
+		2AAE101D272840D300064246 /* ConfigApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigApi.swift; sourceTree = "<group>"; };
+		2AAE1021272840D300064246 /* PushApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushApi.swift; sourceTree = "<group>"; };
 		5524DCE059D6541A6F926EE2 /* Pods_ios_emarsys_sdk_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_emarsys_sdk_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2945E327215C45007FC73F /* ios_emarsys_sdk_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ios_emarsys_sdk_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D2945E627215C45007FC73F /* ios_emarsys_sdk_swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios_emarsys_sdk_swift.h; sourceTree = "<group>"; };
 		5D2945E727215C45007FC73F /* ios_emarsys_sdk_swift.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ios_emarsys_sdk_swift.docc; sourceTree = "<group>"; };
 		5D2945ED27215C45007FC73F /* ios-emarsys-sdk-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-emarsys-sdk-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2945F227215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_emarsys_sdk_swiftTests.swift; sourceTree = "<group>"; };
 		5D2945FF27216019007FC73F /* EmarsysSDKSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmarsysSDKSwift.podspec; sourceTree = "<group>"; };
 		5D4745E627297FC5007ECAD6 /* Emarsys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emarsys.swift; sourceTree = "<group>"; };
-		5D4745E827298260007ECAD6 /* EmarsysConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmarsysConfig.swift; sourceTree = "<group>"; };
+		5D4745E827298260007ECAD6 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		5D4745EA272982AC007ECAD6 /* LogLevelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevelProtocol.swift; sourceTree = "<group>"; };
-		5D4745EC272987CA007ECAD6 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
 		5D4745EE272988C8007ECAD6 /* NotificationInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationInformation.swift; sourceTree = "<group>"; };
 		8FCA90BB4A991A8DD458FAD3 /* Pods-ios-emarsys-sdk-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swift.debug.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swift/Pods-ios-emarsys-sdk-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		97E98E8FEDCA55EC43419B2E /* Pods-ios-emarsys-sdk-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swift.release.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swift/Pods-ios-emarsys-sdk-swift.release.xcconfig"; sourceTree = "<group>"; };
 		FB89B099BA57BB940B2625DA /* InboxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxMessage.swift; sourceTree = "<group>"; };
+		FB89B79DE5A24FDFC6F7A067 /* EventPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPublisher.swift; path = EmarsysSDK/EventPublisher.swift; sourceTree = "<group>"; };
+		FB89B7FAA67A859BABA8E63A /* CartItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
+		FB89B9E9B168D229241CE7C7 /* Logic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logic.swift; sourceTree = "<group>"; };
+		FB89BA9005BD847B0DF5D3EF /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		FB89BA9EFB9A14EA8170D85A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = EmarsysSDK/Event.swift; sourceTree = "<group>"; };
+		FB89BB6309A501CE10FA30C8 /* NotificationInformationPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationInformationPublisher.swift; path = EmarsysSDK/NotificationInformationPublisher.swift; sourceTree = "<group>"; };
 		FB89BDFDEEECA711FE2D7A5B /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Action.swift; path = EmarsysSDK/Action.swift; sourceTree = "<group>"; };
+		FB89BEA28EEF852EDF2E97AB /* Geofence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geofence.swift; sourceTree = "<group>"; };
+		FB89BF69DFF669AFEB54D5DB /* RecommendationFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +105,7 @@
 		2AAE1015272840D200064246 /* OnEventAction */ = {
 			isa = PBXGroup;
 			children = (
-				2AAE1016272840D200064246 /* OnEventAction.swift */,
+				2AAE1016272840D200064246 /* OnEventActionApi.swift */,
 			);
 			path = OnEventAction;
 			sourceTree = "<group>";
@@ -101,7 +113,8 @@
 		2AAE1018272840D200064246 /* Geofence */ = {
 			isa = PBXGroup;
 			children = (
-				2AAE1019272840D200064246 /* Geofence.swift */,
+				2AAE1019272840D200064246 /* GeofenceApi.swift */,
+				FB89BEA28EEF852EDF2E97AB /* Geofence.swift */,
 			);
 			path = Geofence;
 			sourceTree = "<group>";
@@ -109,7 +122,11 @@
 		2AAE101A272840D200064246 /* Predict */ = {
 			isa = PBXGroup;
 			children = (
-				2AAE101B272840D200064246 /* Predict.swift */,
+				2AAE101B272840D200064246 /* PredictApi.swift */,
+				FB89B7FAA67A859BABA8E63A /* CartItem.swift */,
+				FB89B9E9B168D229241CE7C7 /* Logic.swift */,
+				FB89BF69DFF669AFEB54D5DB /* RecommendationFilter.swift */,
+				FB89BA9005BD847B0DF5D3EF /* Product.swift */,
 			);
 			path = Predict;
 			sourceTree = "<group>";
@@ -117,7 +134,7 @@
 		2AAE101C272840D300064246 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				2AAE101D272840D300064246 /* Config.swift */,
+				2AAE101D272840D300064246 /* ConfigApi.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -125,7 +142,7 @@
 		2AAE1020272840D300064246 /* Push */ = {
 			isa = PBXGroup;
 			children = (
-				2AAE1021272840D300064246 /* Push.swift */,
+				2AAE1021272840D300064246 /* PushApi.swift */,
 			);
 			path = Push;
 			sourceTree = "<group>";
@@ -133,7 +150,7 @@
 		2AAE1027272840D300064246 /* InApp */ = {
 			isa = PBXGroup;
 			children = (
-				2AAE1013272840D200064246 /* InApp.swift */,
+				2AAE1013272840D200064246 /* InAppApi.swift */,
 			);
 			path = InApp;
 			sourceTree = "<group>";
@@ -141,7 +158,7 @@
 		2AAE1029272840D300064246 /* MessageInbox */ = {
 			isa = PBXGroup;
 			children = (
-				2AAE1014272840D200064246 /* MessageInbox.swift */,
+				2AAE1014272840D200064246 /* InboxApi.swift */,
 				FB89B099BA57BB940B2625DA /* InboxMessage.swift */,
 			);
 			path = MessageInbox;
@@ -182,13 +199,14 @@
 				2AAE1015272840D200064246 /* OnEventAction */,
 				2AAE101A272840D200064246 /* Predict */,
 				2AAE1020272840D300064246 /* Push */,
-				5D2945E627215C45007FC73F /* ios_emarsys_sdk_swift.h */,
 				5D2945E727215C45007FC73F /* ios_emarsys_sdk_swift.docc */,
-				5D4745E827298260007ECAD6 /* EmarsysConfig.swift */,
+				5D4745E827298260007ECAD6 /* Config.swift */,
 				5D4745EA272982AC007ECAD6 /* LogLevelProtocol.swift */,
-				5D4745EC272987CA007ECAD6 /* Closures.swift */,
 				5D4745EE272988C8007ECAD6 /* NotificationInformation.swift */,
 				FB89BDFDEEECA711FE2D7A5B /* Action.swift */,
+				FB89BA9EFB9A14EA8170D85A /* Event.swift */,
+				FB89B79DE5A24FDFC6F7A067 /* EventPublisher.swift */,
+				FB89BB6309A501CE10FA30C8 /* NotificationInformationPublisher.swift */,
 			);
 			path = "ios-emarsys-sdk-swift";
 			sourceTree = "<group>";
@@ -233,7 +251,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D2945F427215C45007FC73F /* ios_emarsys_sdk_swift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,22 +414,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AAE102E272840D300064246 /* MessageInbox.swift in Sources */,
-				2AAE103327284A1900064246 /* Predict.swift in Sources */,
+				2AAE102E272840D300064246 /* InboxApi.swift in Sources */,
+				2AAE103327284A1900064246 /* PredictApi.swift in Sources */,
 				5D2945E827215C45007FC73F /* ios_emarsys_sdk_swift.docc in Sources */,
-				2AAE103427284A1E00064246 /* Config.swift in Sources */,
-				2AAE1031272849FF00064246 /* OnEventAction.swift in Sources */,
+				2AAE103427284A1E00064246 /* ConfigApi.swift in Sources */,
+				2AAE1031272849FF00064246 /* OnEventActionApi.swift in Sources */,
 				5D4745EB272982AC007ECAD6 /* LogLevelProtocol.swift in Sources */,
-				5D4745ED272987CA007ECAD6 /* Closures.swift in Sources */,
-				2AAE1030272849F100064246 /* Push.swift in Sources */,
-				2AAE103227284A1400064246 /* Geofence.swift in Sources */,
+				2AAE1030272849F100064246 /* PushApi.swift in Sources */,
+				2AAE103227284A1400064246 /* GeofenceApi.swift in Sources */,
 				5D4745EF272988C8007ECAD6 /* NotificationInformation.swift in Sources */,
 				2AAE102B272840D300064246 /* FlipperFeature.swift in Sources */,
 				5D4745E727297FC5007ECAD6 /* Emarsys.swift in Sources */,
-				2AAE102D272840D300064246 /* InApp.swift in Sources */,
-				5D4745E927298260007ECAD6 /* EmarsysConfig.swift in Sources */,
+				2AAE102D272840D300064246 /* InAppApi.swift in Sources */,
+				5D4745E927298260007ECAD6 /* Config.swift in Sources */,
 				FB89BC8514C7A0D48C4D9616 /* InboxMessage.swift in Sources */,
 				FB89B5149F16003DAAEAF6AB /* Action.swift in Sources */,
+				FB89B37D0B6AF7C46408535B /* Event.swift in Sources */,
+				FB89B2DA46EC705E655488DE /* EventPublisher.swift in Sources */,
+				FB89B41C3FEB14F8CA4BA51D /* NotificationInformationPublisher.swift in Sources */,
+				FB89B5CBD2BE87DF419304B9 /* Geofence.swift in Sources */,
+				FB89B3A64A60B8F6B449CD2E /* CartItem.swift in Sources */,
+				FB89B17B7F5ABF02F5D67D7A /* Logic.swift in Sources */,
+				FB89B5118F847604589471E9 /* RecommendationFilter.swift in Sources */,
+				FB89B742122B85D552F3CD02 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

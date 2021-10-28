@@ -1,5 +1,5 @@
 //
-//  Created by Emarsys on 2021. 10. 26..
+//  Copyright (c)  Emarsys on 2021. 10. 26..
 //
 
 import Foundation

@@ -1,14 +1,19 @@
 //
-// Created by Emarsys on 2021. 10. 27..
+// Copyright (c)  Emarsys on 2021. 10. 27..
 //
 
 import Foundation
 
-public class EmarsysConfig: NSObject {
+public class Config: NSObject {
+
     let applicationCode: String
+
     let experimentalFeatures: FlipperFeature
+
     let enabledConsoleLogLevels: LogLevelProtocol
+
     let merchantId: String
+
     let sharedKeychainAccessGroup: String
 
     public init(applicationCode: String,

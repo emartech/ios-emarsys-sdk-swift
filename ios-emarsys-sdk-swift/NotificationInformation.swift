@@ -1,21 +1,15 @@
 //
-//  Created by Emarsys on 2021. 10. 27..
+//  Copyright (c)  Emarsys on 2021. 10. 27..
 //
 
 import Foundation
 
-@objc public class NotificationInformation: NSObject {
-    
-    private var innerCampaignId: String
-    
-    @objc public var campaignId: String {
-        get {
-            innerCampaignId
-        }
-    }
+public class NotificationInformation: NSObject {
+
+    let campaignId: String
     
     public init(_ campaignId: String) {
-        self.innerCampaignId = campaignId
+        self.campaignId = campaignId
     }
     
 }

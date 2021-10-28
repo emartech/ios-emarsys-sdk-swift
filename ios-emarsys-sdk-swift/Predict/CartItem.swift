@@ -4,6 +4,6 @@
 
 import Foundation
 
-public class Geofence: NSObject {
+@objc public protocol CartItem {
 
 }

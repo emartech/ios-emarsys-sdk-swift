@@ -1,5 +1,5 @@
 //
-//  Created by Emarsys on 2021. 10. 21..
+//  Copyright (c)  Emarsys on 2021. 10. 21..
 //
 
 import XCTest

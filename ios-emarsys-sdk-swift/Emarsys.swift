@@ -1,54 +1,54 @@
 //
-//  Created by Emarsys on 2021. 10. 21..
+//  Copyright (c)  Emarsys on 2021. 10. 21..
 //
 
 import Foundation
 
-@objc public class Emarsys: NSObject {
+public class Emarsys: NSObject {
     
-//    public static var push: Push {
+//    public static var push: PushApi {
 //        get {
 //
 //        }
 //    }
 //
-//    public static var messageInbox: MessageInbox {
+//    public static var messageInbox: InboxApi {
 //        get {
 //
 //        }
 //    }
 //
-//    public static var inApp: InApp {
+//    public static var inApp: InAppApi {
 //        get {
 //
 //        }
 //    }
 //
-//    public static var geofence: Geofence {
+//    public static var geofence: GeofenceApi {
 //        get {
 //
 //        }
 //    }
 //
-//    public static var predict: Predict {
+//    public static var predict: PredictApi {
 //        get {
 //
 //        }
 //    }
 //
-//    public static var config: Config {
+//    public static var config: ConfigApi {
 //        get {
 //
 //        }
 //    }
 //
-//    public static var onEventAction: OnEventAction {
+//    public static var onEventAction: OnEventActionApi {
 //        get {
 //
 //        }
 //    }
-//
-    public func setup(_ config: EmarsysConfig) async throws {
+
+    public func setup(_ config: Config) async throws {
         
     }
     
