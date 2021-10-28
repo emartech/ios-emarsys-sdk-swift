@@ -6,6 +6,9 @@ import Foundation
 
 @objc public protocol MessageInbox {
     
-    public func fetchMessages() async -> 
-    
+    func fetchMessages() async throws -> [InboxMessage]
+
+    func addTag(_ tag: String, _ messageId: String) async throws
+
+    func removeTag(_ tag: String, _ messageId: String) async throws
 }

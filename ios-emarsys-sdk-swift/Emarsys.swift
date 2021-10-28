@@ -6,69 +6,69 @@ import Foundation
 
 @objc public class Emarsys: NSObject {
     
-    @objc public static var push: Push {
-        get {
-            
-        }
-    }
-    
-    @objc public static var messageInbox: MessageInbox {
-        get {
-
-        }
-    }
-    
-    @objc public static var inApp: InApp {
-        get {
-            
-        }
-    }
-    
-    @objc public static var geofence: Geofence {
-        get {
-            
-        }
-    }
-    
-    @objc public static var predict: Predict {
-        get {
-            
-        }
-    }
-    
-    @objc public static var config: Config {
-        get {
-            
-        }
-    }
-    
-    @objc public static var onEventAction: OnEventAction {
-        get {
-            
-        }
-    }
-    
-    @objc public func setup(_ config: EmarsysConfig) async {
+//    public static var push: Push {
+//        get {
+//
+//        }
+//    }
+//
+//    public static var messageInbox: MessageInbox {
+//        get {
+//
+//        }
+//    }
+//
+//    public static var inApp: InApp {
+//        get {
+//
+//        }
+//    }
+//
+//    public static var geofence: Geofence {
+//        get {
+//
+//        }
+//    }
+//
+//    public static var predict: Predict {
+//        get {
+//
+//        }
+//    }
+//
+//    public static var config: Config {
+//        get {
+//
+//        }
+//    }
+//
+//    public static var onEventAction: OnEventAction {
+//        get {
+//
+//        }
+//    }
+//
+    public func setup(_ config: EmarsysConfig) async throws {
         
     }
     
-    @objc public func setAuthenticatedContact(_ contactFieldId: Int, _ openIdToken: String) async -> Error? {
+    public func setAuthenticatedContact(_ contactFieldId: Int, _ openIdToken: String) async throws {
         
     }
     
-    @objc public func setContact(_ contactFieldId: Int, _ contactFieldValue: String) async -> Error? {
+    public func setContact(_ contactFieldId: Int, _ contactFieldValue: String) async throws {
         
     }
     
-    @objc public func clearContact() async -> Error? {
+    public func clearContact() async throws {
         
     }
     
-    @objc public func trackCustomEvent(_ eventName: String, eventAttributes: [String: String]? = nil) async -> Error? {
+    public func trackCustomEvent(_ eventName: String, eventAttributes: [String: String]? = nil) async throws {
         
     }
     
-    @objc public func trackDeepLink(_ userActivity: NSUserActivity) async -> Error? {
+    public func trackDeepLink(_ userActivity: NSUserActivity) async throws {
         
     }
 }

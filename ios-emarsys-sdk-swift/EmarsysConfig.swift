@@ -4,7 +4,7 @@
 
 import Foundation
 
-@objc public class EmarsysConfig {
+public class EmarsysConfig: NSObject {
     let applicationCode: String
     let experimentalFeatures: FlipperFeature
     let enabledConsoleLogLevels: LogLevelProtocol

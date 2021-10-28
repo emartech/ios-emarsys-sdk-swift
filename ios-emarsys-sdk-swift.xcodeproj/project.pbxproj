@@ -28,6 +28,8 @@
 		5D4745EF272988C8007ECAD6 /* NotificationInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4745EE272988C8007ECAD6 /* NotificationInformation.swift */; };
 		5EA17B0E9F4F604CA7BA598F /* Pods_ios_emarsys_sdk_swiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD01AC576C40E92F7EB8D2B /* Pods_ios_emarsys_sdk_swiftTests.framework */; };
 		A28AA0D77D5EAAE9DE057E06 /* Pods_ios_emarsys_sdk_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5524DCE059D6541A6F926EE2 /* Pods_ios_emarsys_sdk_swift.framework */; };
+		FB89B5149F16003DAAEAF6AB /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89BDFDEEECA711FE2D7A5B /* Action.swift */; };
+		FB89BC8514C7A0D48C4D9616 /* InboxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89B099BA57BB940B2625DA /* InboxMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		97E98E8FEDCA55EC43419B2E /* Pods-ios-emarsys-sdk-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swift.release.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swift/Pods-ios-emarsys-sdk-swift.release.xcconfig"; sourceTree = "<group>"; };
 		BF981F8DA4C0FC930A6E5939 /* Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swiftTests/Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C6267FE4AE5B05C567B692C1 /* Pods-ios-emarsys-sdk-swiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swiftTests.release.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swiftTests/Pods-ios-emarsys-sdk-swiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		FB89B099BA57BB940B2625DA /* InboxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxMessage.swift; sourceTree = "<group>"; };
+		FB89BDFDEEECA711FE2D7A5B /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Action.swift; path = EmarsysSDK/Action.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				2AAE1014272840D200064246 /* MessageInbox.swift */,
+				FB89B099BA57BB940B2625DA /* InboxMessage.swift */,
 			);
 			path = MessageInbox;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				5D4745EA272982AC007ECAD6 /* LogLevelProtocol.swift */,
 				5D4745EC272987CA007ECAD6 /* Closures.swift */,
 				5D4745EE272988C8007ECAD6 /* NotificationInformation.swift */,
+				FB89BDFDEEECA711FE2D7A5B /* Action.swift */,
 			);
 			path = "ios-emarsys-sdk-swift";
 			sourceTree = "<group>";
@@ -457,6 +463,8 @@
 				5D4745E727297FC5007ECAD6 /* Emarsys.swift in Sources */,
 				2AAE102D272840D300064246 /* InApp.swift in Sources */,
 				5D4745E927298260007ECAD6 /* EmarsysConfig.swift in Sources */,
+				FB89BC8514C7A0D48C4D9616 /* InboxMessage.swift in Sources */,
+				FB89B5149F16003DAAEAF6AB /* Action.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
