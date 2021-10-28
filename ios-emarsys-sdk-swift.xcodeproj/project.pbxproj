@@ -298,6 +298,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
+				ORGANIZATIONNAME = Emarsys;
 				TargetAttributes = {
 					5D2945E227215C45007FC73F = {
 						CreatedOnToolsVersion = 13.0;
