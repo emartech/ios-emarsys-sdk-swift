@@ -4,23 +4,23 @@
 
 import Foundation
 
-public class Config: NSObject {
+@objc public class Config: NSObject {
 
-    let applicationCode: String
+    @objc public let applicationCode: String?
 
-    let experimentalFeatures: FlipperFeature
+    @objc public let experimentalFeatures: FlipperFeature?
 
-    let enabledConsoleLogLevels: LogLevelProtocol
+    @objc public let enabledConsoleLogLevels: LogLevelProtocol?
 
-    let merchantId: String
+    @objc public let merchantId: String?
 
-    let sharedKeychainAccessGroup: String
+    @objc public let sharedKeychainAccessGroup: String?
 
-    public init(applicationCode: String,
-                experimentalFeatures: FlipperFeature,
-                enabledConsoleLogLevels: LogLevelProtocol,
-                merchantId: String,
-                sharedKeychainAccessGroup: String) {
+    @objc public init(applicationCode: String?,
+                experimentalFeatures: FlipperFeature?,
+                enabledConsoleLogLevels: LogLevelProtocol?,
+                merchantId: String?,
+                sharedKeychainAccessGroup: String?) {
         self.applicationCode = applicationCode
         self.experimentalFeatures = experimentalFeatures
         self.enabledConsoleLogLevels = enabledConsoleLogLevels

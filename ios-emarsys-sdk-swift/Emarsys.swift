@@ -4,7 +4,7 @@
 
 import Foundation
 
-public class Emarsys: NSObject {
+@objc public class Emarsys: NSObject {
     
 //    public static var push: PushApi {
 //        get {
@@ -48,27 +48,27 @@ public class Emarsys: NSObject {
 //        }
 //    }
 
-    public func setup(_ config: Config) async throws {
+    @objc public static func setup(_ config: Config) async throws {
         
     }
     
-    public func setAuthenticatedContact(_ contactFieldId: Int, _ openIdToken: String) async throws {
+    @objc public static func setAuthenticatedContact(_ contactFieldId: Int, _ openIdToken: String) async throws {
         
     }
     
-    public func setContact(_ contactFieldId: Int, _ contactFieldValue: String) async throws {
+    @objc public static func setContact(_ contactFieldId: Int, _ contactFieldValue: String) async throws {
         
     }
     
-    public func clearContact() async throws {
+    @objc public static func clearContact() async throws {
         
     }
     
-    public func trackCustomEvent(_ eventName: String, eventAttributes: [String: String]? = nil) async throws {
+    @objc public static func trackCustomEvent(_ eventName: String, eventAttributes: [String: String]? = nil) async throws {
         
     }
     
-    public func trackDeepLink(_ userActivity: NSUserActivity) async throws {
+    @objc public static func trackDeepLink(_ userActivity: NSUserActivity) async throws {
         
     }
 }
