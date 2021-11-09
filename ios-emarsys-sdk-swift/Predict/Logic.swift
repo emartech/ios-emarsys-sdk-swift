@@ -18,18 +18,18 @@ import Foundation
     }
 
     static func search() -> Logic {
-        Logic(logicName: LogicType.SEARCH.rawValue)
+        Logic(logicName: LogicType.search.rawValue)
     }
 
     static func search(searchTerm: String) -> Logic {
         let data = [
             "q": searchTerm
         ]
-        return Logic(logicName: LogicType.SEARCH.rawValue, data: data)
+        return Logic(logicName: LogicType.search.rawValue, data: data)
     }
 
     static func cart() -> Logic {
-        Logic(logicName: LogicType.CART.rawValue)
+        Logic(logicName: LogicType.cart.rawValue)
     }
 
     static func cart(cartItems: [CartItem]) -> Logic {
@@ -37,67 +37,67 @@ import Foundation
             "cv": "1",
             "ca": cartItemsToQueryParam(cartItems)
         ]
-        return Logic(logicName: LogicType.CART.rawValue, data: data)
+        return Logic(logicName: LogicType.cart.rawValue, data: data)
     }
 
     static func related() -> Logic {
-        Logic(logicName: LogicType.RELATED.rawValue)
+        Logic(logicName: LogicType.related.rawValue)
     }
 
     static func related(itemId: String) -> Logic {
         let data = [
             "v": "i:\(itemId)"
         ]
-        return Logic(logicName: LogicType.RELATED.rawValue, data: data)
+        return Logic(logicName: LogicType.related.rawValue, data: data)
     }
 
     static func category() -> Logic {
-        Logic(logicName: LogicType.CATEGORY.rawValue)
+        Logic(logicName: LogicType.category.rawValue)
     }
 
     static func category(categoryPath: String) -> Logic {
         let data = [
             "vc": categoryPath
         ]
-        return Logic(logicName: LogicType.CATEGORY.rawValue, data: data)
+        return Logic(logicName: LogicType.category.rawValue, data: data)
     }
 
     static func alsoBought() -> Logic {
-        Logic(logicName: LogicType.ALSO_BOUGHT.rawValue)
+        Logic(logicName: LogicType.alsoBought.rawValue)
     }
 
     static func alsoBought(itemId: String) -> Logic {
         let data = [
             "v": "i:\(itemId)"
         ]
-        return Logic(logicName: LogicType.ALSO_BOUGHT.rawValue, data: data)
+        return Logic(logicName: LogicType.alsoBought.rawValue, data: data)
     }
 
     static func popular() -> Logic {
-        Logic(logicName: LogicType.POPULAR.rawValue)
+        Logic(logicName: LogicType.popular.rawValue)
     }
 
     static func popular(categoryPath: String) -> Logic {
         let data = [
             "vc": categoryPath
         ]
-        return Logic(logicName: LogicType.POPULAR.rawValue, data: data)
+        return Logic(logicName: LogicType.popular.rawValue, data: data)
     }
 
     static func personal() -> Logic {
-        Logic(logicName: LogicType.PERSONAL.rawValue)
+        Logic(logicName: LogicType.personal.rawValue)
     }
 
     static func personal(variants: [String]) -> Logic {
-        Logic(logicName: LogicType.PERSONAL.rawValue, variants: variants)
+        Logic(logicName: LogicType.personal.rawValue, variants: variants)
     }
 
     static func home() -> Logic {
-        Logic(logicName: LogicType.HOME.rawValue)
+        Logic(logicName: LogicType.home.rawValue)
     }
 
     static func home(variants: [String]) -> Logic {
-        Logic(logicName: LogicType.HOME.rawValue, variants: variants)
+        Logic(logicName: LogicType.home.rawValue, variants: variants)
     }
 
     private static func cartItemsToQueryParam(_ items: [CartItem]) -> String {

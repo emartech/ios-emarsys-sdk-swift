@@ -5,12 +5,12 @@
 import Foundation
 
 enum LogicType: String {
-    case SEARCH = "SEARCH"
-    case CART = "CART"
-    case RELATED = "RELATED"
-    case CATEGORY = "CATEGORY"
-    case ALSO_BOUGHT = "ALSO_BOUGHT"
-    case POPULAR = "POPULAR"
-    case PERSONAL = "PERSONAL"
-    case HOME = "HOME"
+    case search = "SEARCH"
+    case cart = "CART"
+    case related = "RELATED"
+    case category = "CATEGORY"
+    case alsoBought = "ALSO_BOUGHT"
+    case popular = "POPULAR"
+    case personal = "PERSONAL"
+    case home = "HOME"
 }

@@ -8,13 +8,13 @@ import XCTest
 class LogicTests: XCTestCase {
 
     func testConstructor_variants_mustBeEmptyList_withoutVariantsParam() {
-        let logic = Logic(logicName: LogicType.SEARCH.rawValue)
+        let logic = Logic(logicName: LogicType.search.rawValue)
         XCTAssertEqual(logic.variants, [])
     }
 
 
     func testConstructor_variants_mustBeEmptyList_withoutVariantsParam_data_mustBeEmptyMap_withoutDataParam() {
-        let logic = Logic(logicName: LogicType.SEARCH.rawValue)
+        let logic = Logic(logicName: LogicType.search.rawValue)
 
         XCTAssertEqual(logic.variants, [])
         XCTAssertEqual(logic.data, [:])
