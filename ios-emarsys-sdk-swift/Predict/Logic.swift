@@ -44,7 +44,7 @@ import Foundation
         Logic(logicName: LogicType.RELATED.rawValue)
     }
 
-    static func related(itemId: String?) -> Logic {
+    static func related(itemId: String) -> Logic {
         let data = [
             "v": "i:\(itemId)"
         ]
