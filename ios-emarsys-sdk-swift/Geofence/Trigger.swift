@@ -31,9 +31,6 @@ class Trigger: NSObject {
         if self === object {
             return true
         }
-        if type(of: self) != type(of: object) {
-            return false
-        }
         if self.id != object.id {
             return false
         }

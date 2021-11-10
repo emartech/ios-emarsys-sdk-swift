@@ -4,8 +4,8 @@
 
 import Foundation
 
-enum TriggerType {
-    case enter
-    case exit
-    case dwelling
+enum TriggerType: String {
+    case enter = "ENTER"
+    case exit = "EXIT"
+    case dwelling = "DWELLING"
 }

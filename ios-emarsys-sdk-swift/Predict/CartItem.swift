@@ -3,9 +3,8 @@
 //
 
 import Foundation
+import EmarsysSDKExposed
 
-@objc public protocol CartItem {
-    var itemId: String { get set }
-    var price: Double { get set }
-    var quantity: Double { get set }
+@objc public protocol CartItem: EMSCartItemProtocol {
+
 }

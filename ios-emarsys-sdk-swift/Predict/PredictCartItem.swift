@@ -4,15 +4,26 @@
 
 import Foundation
 
-class PredictCartItem: CartItem {
-    var itemId: String
-    var price: Double
-    var quantity: Double
+class PredictCartItem: NSObject, CartItem {
+    var predictItemId: String
+    var predictPrice: Double
+    var predictQuantity: Double
 
     init(itemId: String, price: Double, quantity: Double) {
-        self.itemId = itemId
-        self.price = price
-        self.quantity = quantity
+        predictItemId = itemId
+        predictPrice = price
+        predictQuantity = quantity
     }
-
+    
+    func itemId() -> String! {
+        predictItemId
+    }
+    
+    func price() -> Double {
+        predictPrice
+    }
+    
+    func quantity() -> Double {
+        predictQuantity
+    }
 }

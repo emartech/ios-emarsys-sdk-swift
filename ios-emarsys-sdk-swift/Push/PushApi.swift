@@ -23,6 +23,6 @@ import UserNotifications
 
     func trackMessageOpen(_ userInfo: [String: Any]) async throws
 
-    func handleMessage(_ userInfo: [String: Any]) async throws
+    func handleMessage(_ userInfo: [String: Any]) async
 
 }

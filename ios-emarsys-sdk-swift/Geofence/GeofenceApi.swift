@@ -12,7 +12,7 @@ import Foundation
 
     var isEnabled: Bool { get }
 
-    func requestAlwaysAuthorization() async throws
+    func requestAlwaysAuthorization() async
 
     func registeredGeofences() async -> [Geofence]
 

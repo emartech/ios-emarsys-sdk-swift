@@ -9,14 +9,24 @@
 /* Begin PBXBuildFile section */
 		0DC5752327356DAA00825A7C /* LogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA036B512C36FF0DCC8F2 /* LogicTests.swift */; };
 		2A2585B42727F92100A7E810 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2A2585B32727F92100A7E810 /* Podfile */; };
+		2A4C94CF273AB4170016985C /* ConfigInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C94CE273AB4170016985C /* ConfigInternal.swift */; };
+		2A4C94D2273AB47A0016985C /* InAppInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C94D0273AB47A0016985C /* InAppInternal.swift */; };
+		2A4C94D3273AB47A0016985C /* InAppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C94D1273AB47A0016985C /* InAppLogger.swift */; };
+		2A4C94D6273AB4B50016985C /* GeofenceInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C94D4273AB4B50016985C /* GeofenceInternal.swift */; };
+		2A4C94D7273AB4B50016985C /* GeofenceLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C94D5273AB4B50016985C /* GeofenceLogger.swift */; };
+		2A4C94D9273AB4FB0016985C /* PushInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C94D8273AB4FB0016985C /* PushInternal.swift */; };
+		2A7E1D78273BF8D00003F33E /* InboxInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E1D73273BF8D00003F33E /* InboxInternal.swift */; };
+		2A7E1D79273BF8D00003F33E /* InboxApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E1D74273BF8D00003F33E /* InboxApi.swift */; };
+		2A7E1D7A273BF8D00003F33E /* InboxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E1D75273BF8D00003F33E /* InboxMessage.swift */; };
+		2A7E1D7C273BF8D00003F33E /* InboxLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E1D77273BF8D00003F33E /* InboxLogger.swift */; };
 		2AAE102B272840D300064246 /* FlipperFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1017272840D200064246 /* FlipperFeature.swift */; };
 		2AAE102D272840D300064246 /* InAppApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1013272840D200064246 /* InAppApi.swift */; };
-		2AAE102E272840D300064246 /* InboxApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1014272840D200064246 /* InboxApi.swift */; };
 		2AAE1030272849F100064246 /* PushApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1021272840D300064246 /* PushApi.swift */; };
 		2AAE1031272849FF00064246 /* OnEventActionApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1016272840D200064246 /* OnEventActionApi.swift */; };
 		2AAE103227284A1400064246 /* GeofenceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1019272840D200064246 /* GeofenceApi.swift */; };
 		2AAE103327284A1900064246 /* PredictApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE101B272840D200064246 /* PredictApi.swift */; };
 		2AAE103427284A1E00064246 /* ConfigApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE101D272840D300064246 /* ConfigApi.swift */; };
+		59C28434F0CDAB06EE2C04A5 /* Pods_ios_emarsys_sdk_swiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8200B29284D9D3A812ACE09 /* Pods_ios_emarsys_sdk_swiftTests.framework */; };
 		5D2945E827215C45007FC73F /* ios_emarsys_sdk_swift.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5D2945E727215C45007FC73F /* ios_emarsys_sdk_swift.docc */; };
 		5D2945EE27215C45007FC73F /* ios_emarsys_sdk_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2945E327215C45007FC73F /* ios_emarsys_sdk_swift.framework */; };
 		5D2945F327215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2945F227215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift */; };
@@ -29,8 +39,6 @@
 		5D4745E927298260007ECAD6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4745E827298260007ECAD6 /* Config.swift */; };
 		5D4745EB272982AC007ECAD6 /* LogLevelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4745EA272982AC007ECAD6 /* LogLevelProtocol.swift */; };
 		5D4745EF272988C8007ECAD6 /* NotificationInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4745EE272988C8007ECAD6 /* NotificationInformation.swift */; };
-		C4DC807A33FDA8D57929CC45 /* Pods_ios_emarsys_sdk_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840DFF068AB633B0878B4D48 /* Pods_ios_emarsys_sdk_swift.framework */; };
-		E7749E5E831F877C89044E0F /* Pods_ios_emarsys_sdk_swiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FB2FCD5CADD1037BE1E170 /* Pods_ios_emarsys_sdk_swiftTests.framework */; };
 		FB89B2DA46EC705E655488DE /* EventPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89B79DE5A24FDFC6F7A067 /* EventPublisher.swift */; };
 		FB89B37D0B6AF7C46408535B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89BA9EFB9A14EA8170D85A /* Event.swift */; };
 		FB89B3A64A60B8F6B449CD2E /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89B7FAA67A859BABA8E63A /* CartItem.swift */; };
@@ -39,7 +47,14 @@
 		FB89B5149F16003DAAEAF6AB /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89BDFDEEECA711FE2D7A5B /* Action.swift */; };
 		FB89B5CBD2BE87DF419304B9 /* Geofence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89BEA28EEF852EDF2E97AB /* Geofence.swift */; };
 		FB89B742122B85D552F3CD02 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89BA9005BD847B0DF5D3EF /* Product.swift */; };
-		FB89BC8514C7A0D48C4D9616 /* InboxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89B099BA57BB940B2625DA /* InboxMessage.swift */; };
+		FB8A315F7713CD6D95BDA06D /* InboxLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A36B09464F52DA50AF22E /* InboxLogger.swift */; };
+		FB8A3256880B61349203E432 /* GeofenceMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A38186C6EF2E3EEE0F7D7 /* GeofenceMapperTests.swift */; };
+		FB8A33450029B183C6F58B03 /* PushLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A3DF7FF9234E9E88D723D /* PushLogger.swift */; };
+		FB8A3476E57417A115E9A418 /* OnEventActionLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A381B4802196E7E8516C3 /* OnEventActionLogger.swift */; };
+		FB8A358BFE5EE80FAD29120B /* OnEventActionInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A3597AAA18B3DEB73B4CB /* OnEventActionInternal.swift */; };
+		FB8A3A23E7B6AEDD9CCD0BF2 /* GeofenceMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A38941791A32636DBFBB6 /* GeofenceMapper.swift */; };
+		FB8A3D163329BC4B39BC7A5F /* PredictInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A34B535BF7849E90F9CA8 /* PredictInternal.swift */; };
+		FB8A3F0996FFAB811D1CBDDF /* PredictLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A3D8F756BA9984865F01F /* PredictLogger.swift */; };
 		FB8AA060E030258E80955F44 /* PredictCartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA1A169B53D9ECD4AEE1C /* PredictCartItem.swift */; };
 		FB8AA0C138F990876F5C33B0 /* ComparisonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA72E1DA3B2FE4FB8932C /* ComparisonType.swift */; };
 		FB8AA1731ED61F678772D0BB /* RecommendationFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AAC2E05DA3847BCFB47B8 /* RecommendationFilterTests.swift */; };
@@ -47,6 +62,7 @@
 		FB8AAA94F8ED81AB7239DBEB /* Trigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA9CE9A2FF0654B4981FC /* Trigger.swift */; };
 		FB8AACB08D111DD99BB31994 /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AAAF31022B978FE0764E7 /* Logic.swift */; };
 		FB8AACC7C5E4E4733427A1B3 /* LogicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AADED4ACBBBBD07029966 /* LogicType.swift */; };
+		FF38A441E8C83498D6D39435 /* Pods_ios_emarsys_sdk_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAF84258FA0CAB8C9B92735 /* Pods_ios_emarsys_sdk_swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,17 +76,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1FAF84258FA0CAB8C9B92735 /* Pods_ios_emarsys_sdk_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_emarsys_sdk_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2585B32727F92100A7E810 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2A4C94CE273AB4170016985C /* ConfigInternal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigInternal.swift; sourceTree = "<group>"; };
+		2A4C94D0273AB47A0016985C /* InAppInternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppInternal.swift; sourceTree = "<group>"; };
+		2A4C94D1273AB47A0016985C /* InAppLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppLogger.swift; sourceTree = "<group>"; };
+		2A4C94D4273AB4B50016985C /* GeofenceInternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeofenceInternal.swift; sourceTree = "<group>"; };
+		2A4C94D5273AB4B50016985C /* GeofenceLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeofenceLogger.swift; sourceTree = "<group>"; };
+		2A4C94D8273AB4FB0016985C /* PushInternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushInternal.swift; sourceTree = "<group>"; };
+		2A7E1D73273BF8D00003F33E /* InboxInternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxInternal.swift; sourceTree = "<group>"; };
+		2A7E1D74273BF8D00003F33E /* InboxApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxApi.swift; sourceTree = "<group>"; };
+		2A7E1D75273BF8D00003F33E /* InboxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxMessage.swift; sourceTree = "<group>"; };
+		2A7E1D77273BF8D00003F33E /* InboxLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxLogger.swift; sourceTree = "<group>"; };
 		2AAE1013272840D200064246 /* InAppApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppApi.swift; sourceTree = "<group>"; };
-		2AAE1014272840D200064246 /* InboxApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxApi.swift; sourceTree = "<group>"; };
 		2AAE1016272840D200064246 /* OnEventActionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnEventActionApi.swift; sourceTree = "<group>"; };
 		2AAE1017272840D200064246 /* FlipperFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipperFeature.swift; sourceTree = "<group>"; };
 		2AAE1019272840D200064246 /* GeofenceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceApi.swift; sourceTree = "<group>"; };
 		2AAE101B272840D200064246 /* PredictApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictApi.swift; sourceTree = "<group>"; };
 		2AAE101D272840D300064246 /* ConfigApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigApi.swift; sourceTree = "<group>"; };
 		2AAE1021272840D300064246 /* PushApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushApi.swift; sourceTree = "<group>"; };
-		38FB2FCD5CADD1037BE1E170 /* Pods_ios_emarsys_sdk_swiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_emarsys_sdk_swiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		54FE24EBB4400FCC4835EBC8 /* Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swiftTests/Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5874EFFE4FF605E7CD054B5A /* Pods-ios-emarsys-sdk-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swift.debug.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swift/Pods-ios-emarsys-sdk-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		5D2945E327215C45007FC73F /* ios_emarsys_sdk_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ios_emarsys_sdk_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2945E727215C45007FC73F /* ios_emarsys_sdk_swift.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ios_emarsys_sdk_swift.docc; sourceTree = "<group>"; };
 		5D2945ED27215C45007FC73F /* ios-emarsys-sdk-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-emarsys-sdk-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,11 +110,10 @@
 		5D4745E827298260007ECAD6 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		5D4745EA272982AC007ECAD6 /* LogLevelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevelProtocol.swift; sourceTree = "<group>"; };
 		5D4745EE272988C8007ECAD6 /* NotificationInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationInformation.swift; sourceTree = "<group>"; };
-		71B212D3ECBAC078DF13E751 /* Pods-ios-emarsys-sdk-swiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swiftTests.release.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swiftTests/Pods-ios-emarsys-sdk-swiftTests.release.xcconfig"; sourceTree = "<group>"; };
-		840DFF068AB633B0878B4D48 /* Pods_ios_emarsys_sdk_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_emarsys_sdk_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		99803ECFF29ADF6DF6A4B229 /* Pods-ios-emarsys-sdk-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swift.release.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swift/Pods-ios-emarsys-sdk-swift.release.xcconfig"; sourceTree = "<group>"; };
-		D1197800FCCF30F163F5B064 /* Pods-ios-emarsys-sdk-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swift.debug.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swift/Pods-ios-emarsys-sdk-swift.debug.xcconfig"; sourceTree = "<group>"; };
-		FB89B099BA57BB940B2625DA /* InboxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxMessage.swift; sourceTree = "<group>"; };
+		657AD61858261E36C471A2D5 /* Pods-ios-emarsys-sdk-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swift.release.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swift/Pods-ios-emarsys-sdk-swift.release.xcconfig"; sourceTree = "<group>"; };
+		67F253A0E01485905B23A228 /* Pods-ios-emarsys-sdk-swiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swiftTests.release.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swiftTests/Pods-ios-emarsys-sdk-swiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		D8200B29284D9D3A812ACE09 /* Pods_ios_emarsys_sdk_swiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_emarsys_sdk_swiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB7C0224DDC0293B6430CD4B /* Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swiftTests/Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FB89B79DE5A24FDFC6F7A067 /* EventPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPublisher.swift; path = EmarsysSDK/EventPublisher.swift; sourceTree = "<group>"; };
 		FB89B7FAA67A859BABA8E63A /* CartItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		FB89BA9005BD847B0DF5D3EF /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -98,6 +122,14 @@
 		FB89BDFDEEECA711FE2D7A5B /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Action.swift; path = EmarsysSDK/Action.swift; sourceTree = "<group>"; };
 		FB89BEA28EEF852EDF2E97AB /* Geofence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geofence.swift; sourceTree = "<group>"; };
 		FB89BF69DFF669AFEB54D5DB /* RecommendationFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationFilter.swift; sourceTree = "<group>"; };
+		FB8A34B535BF7849E90F9CA8 /* PredictInternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictInternal.swift; sourceTree = "<group>"; };
+		FB8A3597AAA18B3DEB73B4CB /* OnEventActionInternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnEventActionInternal.swift; sourceTree = "<group>"; };
+		FB8A36B09464F52DA50AF22E /* InboxLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InboxLogger.swift; path = Inbox/InboxLogger.swift; sourceTree = "<group>"; };
+		FB8A38186C6EF2E3EEE0F7D7 /* GeofenceMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeofenceMapperTests.swift; path = Geofence/GeofenceMapperTests.swift; sourceTree = "<group>"; };
+		FB8A381B4802196E7E8516C3 /* OnEventActionLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnEventActionLogger.swift; sourceTree = "<group>"; };
+		FB8A38941791A32636DBFBB6 /* GeofenceMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeofenceMapper.swift; sourceTree = "<group>"; };
+		FB8A3D8F756BA9984865F01F /* PredictLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictLogger.swift; sourceTree = "<group>"; };
+		FB8A3DF7FF9234E9E88D723D /* PushLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushLogger.swift; sourceTree = "<group>"; };
 		FB8AA036B512C36FF0DCC8F2 /* LogicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicTests.swift; sourceTree = "<group>"; };
 		FB8AA1A169B53D9ECD4AEE1C /* PredictCartItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictCartItem.swift; sourceTree = "<group>"; };
 		FB8AA72E1DA3B2FE4FB8932C /* ComparisonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparisonType.swift; sourceTree = "<group>"; };
@@ -113,7 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4DC807A33FDA8D57929CC45 /* Pods_ios_emarsys_sdk_swift.framework in Frameworks */,
+				FF38A441E8C83498D6D39435 /* Pods_ios_emarsys_sdk_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D2945EE27215C45007FC73F /* ios_emarsys_sdk_swift.framework in Frameworks */,
-				E7749E5E831F877C89044E0F /* Pods_ios_emarsys_sdk_swiftTests.framework in Frameworks */,
+				59C28434F0CDAB06EE2C04A5 /* Pods_ios_emarsys_sdk_swiftTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,19 +168,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		12D6A302402645FCB49A836C /* Frameworks */ = {
+		2A7E1D72273BF8B00003F33E /* Inbox */ = {
 			isa = PBXGroup;
 			children = (
-				840DFF068AB633B0878B4D48 /* Pods_ios_emarsys_sdk_swift.framework */,
-				38FB2FCD5CADD1037BE1E170 /* Pods_ios_emarsys_sdk_swiftTests.framework */,
+				2A7E1D74273BF8D00003F33E /* InboxApi.swift */,
+				2A7E1D73273BF8D00003F33E /* InboxInternal.swift */,
+				2A7E1D77273BF8D00003F33E /* InboxLogger.swift */,
+				2A7E1D75273BF8D00003F33E /* InboxMessage.swift */,
 			);
-			name = Frameworks;
+			path = Inbox;
 			sourceTree = "<group>";
 		};
 		2AAE1015272840D200064246 /* OnEventAction */ = {
 			isa = PBXGroup;
 			children = (
 				2AAE1016272840D200064246 /* OnEventActionApi.swift */,
+				FB8A3597AAA18B3DEB73B4CB /* OnEventActionInternal.swift */,
+				FB8A381B4802196E7E8516C3 /* OnEventActionLogger.swift */,
 			);
 			path = OnEventAction;
 			sourceTree = "<group>";
@@ -156,10 +192,13 @@
 		2AAE1018272840D200064246 /* Geofence */ = {
 			isa = PBXGroup;
 			children = (
+				2A4C94D4273AB4B50016985C /* GeofenceInternal.swift */,
+				2A4C94D5273AB4B50016985C /* GeofenceLogger.swift */,
 				2AAE1019272840D200064246 /* GeofenceApi.swift */,
 				FB89BEA28EEF852EDF2E97AB /* Geofence.swift */,
 				FB8AA9CE9A2FF0654B4981FC /* Trigger.swift */,
 				FB8AADF3D2688B1AE22836CF /* TriggerType.swift */,
+				FB8A38941791A32636DBFBB6 /* GeofenceMapper.swift */,
 			);
 			path = Geofence;
 			sourceTree = "<group>";
@@ -175,6 +214,8 @@
 				FB8AADED4ACBBBBD07029966 /* LogicType.swift */,
 				FB8AA1A169B53D9ECD4AEE1C /* PredictCartItem.swift */,
 				FB8AA72E1DA3B2FE4FB8932C /* ComparisonType.swift */,
+				FB8A34B535BF7849E90F9CA8 /* PredictInternal.swift */,
+				FB8A3D8F756BA9984865F01F /* PredictLogger.swift */,
 			);
 			path = Predict;
 			sourceTree = "<group>";
@@ -183,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				2AAE101D272840D300064246 /* ConfigApi.swift */,
+				2A4C94CE273AB4170016985C /* ConfigInternal.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -190,7 +232,9 @@
 		2AAE1020272840D300064246 /* Push */ = {
 			isa = PBXGroup;
 			children = (
+				2A4C94D8273AB4FB0016985C /* PushInternal.swift */,
 				2AAE1021272840D300064246 /* PushApi.swift */,
+				FB8A3DF7FF9234E9E88D723D /* PushLogger.swift */,
 			);
 			path = Push;
 			sourceTree = "<group>";
@@ -198,18 +242,11 @@
 		2AAE1027272840D300064246 /* InApp */ = {
 			isa = PBXGroup;
 			children = (
+				2A4C94D0273AB47A0016985C /* InAppInternal.swift */,
+				2A4C94D1273AB47A0016985C /* InAppLogger.swift */,
 				2AAE1013272840D200064246 /* InAppApi.swift */,
 			);
 			path = InApp;
-			sourceTree = "<group>";
-		};
-		2AAE1029272840D300064246 /* MessageInbox */ = {
-			isa = PBXGroup;
-			children = (
-				2AAE1014272840D200064246 /* InboxApi.swift */,
-				FB89B099BA57BB940B2625DA /* InboxMessage.swift */,
-			);
-			path = MessageInbox;
 			sourceTree = "<group>";
 		};
 		5D2945D927215C45007FC73F = {
@@ -222,7 +259,7 @@
 				5D2F0D9B273A6C93004D35B0 /* SDKHostSwift */,
 				5D2945E427215C45007FC73F /* Products */,
 				619FBACF8B007D1524A85FAB /* Pods */,
-				12D6A302402645FCB49A836C /* Frameworks */,
+				F18093C355BFE8FCE6738D85 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -239,12 +276,12 @@
 		5D2945E527215C45007FC73F /* ios-emarsys-sdk-swift */ = {
 			isa = PBXGroup;
 			children = (
+				2A7E1D72273BF8B00003F33E /* Inbox */,
 				5D4745E627297FC5007ECAD6 /* Emarsys.swift */,
 				2AAE101C272840D300064246 /* Config */,
 				2AAE1017272840D200064246 /* FlipperFeature.swift */,
 				2AAE1018272840D200064246 /* Geofence */,
 				2AAE1027272840D300064246 /* InApp */,
-				2AAE1029272840D300064246 /* MessageInbox */,
 				2AAE1015272840D200064246 /* OnEventAction */,
 				2AAE101A272840D200064246 /* Predict */,
 				2AAE1020272840D300064246 /* Push */,
@@ -256,6 +293,7 @@
 				FB89BA9EFB9A14EA8170D85A /* Event.swift */,
 				FB89B79DE5A24FDFC6F7A067 /* EventPublisher.swift */,
 				FB89BB6309A501CE10FA30C8 /* NotificationInformationPublisher.swift */,
+				FB8A36B09464F52DA50AF22E /* InboxLogger.swift */,
 			);
 			path = "ios-emarsys-sdk-swift";
 			sourceTree = "<group>";
@@ -265,6 +303,7 @@
 			children = (
 				5D2945F227215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift */,
 				FB8AA5219A646BAE3C3A7E89 /* Predict */,
+				FB8A38186C6EF2E3EEE0F7D7 /* GeofenceMapperTests.swift */,
 			);
 			path = "ios-emarsys-sdk-swiftTests";
 			sourceTree = "<group>";
@@ -291,12 +330,21 @@
 		619FBACF8B007D1524A85FAB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D1197800FCCF30F163F5B064 /* Pods-ios-emarsys-sdk-swift.debug.xcconfig */,
-				99803ECFF29ADF6DF6A4B229 /* Pods-ios-emarsys-sdk-swift.release.xcconfig */,
-				54FE24EBB4400FCC4835EBC8 /* Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig */,
-				71B212D3ECBAC078DF13E751 /* Pods-ios-emarsys-sdk-swiftTests.release.xcconfig */,
+				5874EFFE4FF605E7CD054B5A /* Pods-ios-emarsys-sdk-swift.debug.xcconfig */,
+				657AD61858261E36C471A2D5 /* Pods-ios-emarsys-sdk-swift.release.xcconfig */,
+				DB7C0224DDC0293B6430CD4B /* Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig */,
+				67F253A0E01485905B23A228 /* Pods-ios-emarsys-sdk-swiftTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F18093C355BFE8FCE6738D85 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FAF84258FA0CAB8C9B92735 /* Pods_ios_emarsys_sdk_swift.framework */,
+				D8200B29284D9D3A812ACE09 /* Pods_ios_emarsys_sdk_swiftTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FB8AA5219A646BAE3C3A7E89 /* Predict */ = {
@@ -325,7 +373,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D2945F727215C45007FC73F /* Build configuration list for PBXNativeTarget "ios-emarsys-sdk-swift" */;
 			buildPhases = (
-				53F081EF4F3479E16CBDFF96 /* [CP] Check Pods Manifest.lock */,
+				63E9B3B64F4B05E520E7E8E5 /* [CP] Check Pods Manifest.lock */,
 				5D2945DE27215C45007FC73F /* Headers */,
 				5D2945DF27215C45007FC73F /* Sources */,
 				5D2945E027215C45007FC73F /* Frameworks */,
@@ -344,11 +392,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D2945FA27215C45007FC73F /* Build configuration list for PBXNativeTarget "ios-emarsys-sdk-swiftTests" */;
 			buildPhases = (
-				2920307E34607FC14FDD1F89 /* [CP] Check Pods Manifest.lock */,
+				7B30B88F2DD4445C551C3813 /* [CP] Check Pods Manifest.lock */,
 				5D2945E927215C45007FC73F /* Sources */,
 				5D2945EA27215C45007FC73F /* Frameworks */,
 				5D2945EB27215C45007FC73F /* Resources */,
-				96EF28BDF25A98066D60E01F /* [CP] Embed Pods Frameworks */,
+				C9FBD1322383335C2CE28FCA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -449,29 +497,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2920307E34607FC14FDD1F89 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ios-emarsys-sdk-swiftTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		53F081EF4F3479E16CBDFF96 /* [CP] Check Pods Manifest.lock */ = {
+		63E9B3B64F4B05E520E7E8E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -493,7 +519,29 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		96EF28BDF25A98066D60E01F /* [CP] Embed Pods Frameworks */ = {
+		7B30B88F2DD4445C551C3813 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios-emarsys-sdk-swiftTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9FBD1322383335C2CE28FCA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -517,20 +565,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AAE102E272840D300064246 /* InboxApi.swift in Sources */,
 				2AAE103327284A1900064246 /* PredictApi.swift in Sources */,
 				5D2945E827215C45007FC73F /* ios_emarsys_sdk_swift.docc in Sources */,
+				2A4C94D7273AB4B50016985C /* GeofenceLogger.swift in Sources */,
+				2A7E1D79273BF8D00003F33E /* InboxApi.swift in Sources */,
 				2AAE103427284A1E00064246 /* ConfigApi.swift in Sources */,
 				2AAE1031272849FF00064246 /* OnEventActionApi.swift in Sources */,
 				5D4745EB272982AC007ECAD6 /* LogLevelProtocol.swift in Sources */,
 				2AAE1030272849F100064246 /* PushApi.swift in Sources */,
+				2A4C94D6273AB4B50016985C /* GeofenceInternal.swift in Sources */,
 				2AAE103227284A1400064246 /* GeofenceApi.swift in Sources */,
 				5D4745EF272988C8007ECAD6 /* NotificationInformation.swift in Sources */,
+				2A4C94D9273AB4FB0016985C /* PushInternal.swift in Sources */,
 				2AAE102B272840D300064246 /* FlipperFeature.swift in Sources */,
 				5D4745E727297FC5007ECAD6 /* Emarsys.swift in Sources */,
 				2AAE102D272840D300064246 /* InAppApi.swift in Sources */,
+				2A7E1D78273BF8D00003F33E /* InboxInternal.swift in Sources */,
 				5D4745E927298260007ECAD6 /* Config.swift in Sources */,
-				FB89BC8514C7A0D48C4D9616 /* InboxMessage.swift in Sources */,
 				FB89B5149F16003DAAEAF6AB /* Action.swift in Sources */,
 				FB89B37D0B6AF7C46408535B /* Event.swift in Sources */,
 				FB89B2DA46EC705E655488DE /* EventPublisher.swift in Sources */,
@@ -542,9 +593,21 @@
 				FB8AACB08D111DD99BB31994 /* Logic.swift in Sources */,
 				FB8AACC7C5E4E4733427A1B3 /* LogicType.swift in Sources */,
 				FB8AA060E030258E80955F44 /* PredictCartItem.swift in Sources */,
+				2A7E1D7A273BF8D00003F33E /* InboxMessage.swift in Sources */,
+				2A4C94D2273AB47A0016985C /* InAppInternal.swift in Sources */,
+				2A4C94CF273AB4170016985C /* ConfigInternal.swift in Sources */,
 				FB8AA0C138F990876F5C33B0 /* ComparisonType.swift in Sources */,
+				2A4C94D3273AB47A0016985C /* InAppLogger.swift in Sources */,
 				FB8AAA94F8ED81AB7239DBEB /* Trigger.swift in Sources */,
 				FB8AA47C67596EF912BC6952 /* TriggerType.swift in Sources */,
+				FB8A33450029B183C6F58B03 /* PushLogger.swift in Sources */,
+				2A7E1D7C273BF8D00003F33E /* InboxLogger.swift in Sources */,
+				FB8A358BFE5EE80FAD29120B /* OnEventActionInternal.swift in Sources */,
+				FB8A3476E57417A115E9A418 /* OnEventActionLogger.swift in Sources */,
+				FB8A3A23E7B6AEDD9CCD0BF2 /* GeofenceMapper.swift in Sources */,
+				FB8A315F7713CD6D95BDA06D /* InboxLogger.swift in Sources */,
+				FB8A3D163329BC4B39BC7A5F /* PredictInternal.swift in Sources */,
+				FB8A3F0996FFAB811D1CBDDF /* PredictLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +618,7 @@
 				0DC5752327356DAA00825A7C /* LogicTests.swift in Sources */,
 				5D2945F327215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift in Sources */,
 				FB8AA1731ED61F678772D0BB /* RecommendationFilterTests.swift in Sources */,
+				FB8A3256880B61349203E432 /* GeofenceMapperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,7 +766,7 @@
 		};
 		5D2945F827215C45007FC73F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1197800FCCF30F163F5B064 /* Pods-ios-emarsys-sdk-swift.debug.xcconfig */;
+			baseConfigurationReference = 5874EFFE4FF605E7CD054B5A /* Pods-ios-emarsys-sdk-swift.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -732,7 +796,7 @@
 		};
 		5D2945F927215C45007FC73F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99803ECFF29ADF6DF6A4B229 /* Pods-ios-emarsys-sdk-swift.release.xcconfig */;
+			baseConfigurationReference = 657AD61858261E36C471A2D5 /* Pods-ios-emarsys-sdk-swift.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -762,7 +826,7 @@
 		};
 		5D2945FB27215C45007FC73F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54FE24EBB4400FCC4835EBC8 /* Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig */;
+			baseConfigurationReference = DB7C0224DDC0293B6430CD4B /* Pods-ios-emarsys-sdk-swiftTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -786,7 +850,7 @@
 		};
 		5D2945FC27215C45007FC73F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71B212D3ECBAC078DF13E751 /* Pods-ios-emarsys-sdk-swiftTests.release.xcconfig */;
+			baseConfigurationReference = 67F253A0E01485905B23A228 /* Pods-ios-emarsys-sdk-swiftTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
