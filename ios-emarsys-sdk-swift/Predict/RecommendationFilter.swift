@@ -3,26 +3,43 @@
 //
 
 import Foundation
+import EmarsysSDKExposed
 
-public class RecommendationFilter: NSObject {
+public class RecommendationFilter: NSObject, EMSRecommendationFilterProtocol {
 
-    let type: String
-    let field: String
-    let comparison: String
-    let expectations: [String?]
+    let filterType: String
+    let filterField: String
+    let filterComparison: String
+    let filterExpectations: [String]
 
-    internal init(type: String, field: String, comparison: ComparisonType, expectations: [String?]) {
-        self.type = type
-        self.field = field
-        self.comparison = comparison.rawValue
-        self.expectations = expectations
+    internal init(type: String, field: String, comparison: ComparisonType, expectations: [String]) {
+        self.filterType = type
+        self.filterField = field
+        self.filterComparison = comparison.rawValue
+        self.filterExpectations = expectations
     }
 
-    internal init(type: String, field: String, comparison: ComparisonType, expectation: String?) {
-        self.type = type
-        self.field = field
-        self.comparison = comparison.rawValue
-        expectations = [expectation]
+    internal init(type: String, field: String, comparison: ComparisonType, expectation: String) {
+        self.filterType = type
+        self.filterField = field
+        self.filterComparison = comparison.rawValue
+        filterExpectations = [expectation]
+    }
+    
+    public func type() -> String! {
+        self.filterType
+    }
+    
+    public func field() -> String! {
+        self.filterField
+    }
+    
+    public func comparison() -> String! {
+        self.filterComparison
+    }
+    
+    public func expectations() -> [String]! {
+        self.filterExpectations
     }
 
     static func exclude(_ field: String) -> Exclude {
@@ -34,10 +51,10 @@ public class RecommendationFilter: NSObject {
     }
 
     public override var hash: Int {
-        var result = type.hashValue
-        result = result &* 31 &+ field.hashValue
-        result = result &* 31 &+ comparison.hashValue
-        result = result &* 31 &+ expectations.hashValue
+        var result = filterType.hashValue
+        result = result &* 31 &+ filterField.hashValue
+        result = result &* 31 &+ filterComparison.hashValue
+        result = result &* 31 &+ filterExpectations.hashValue
         return result
     }
 
@@ -48,10 +65,10 @@ public class RecommendationFilter: NSObject {
         if self === object {
             return true
         }
-        return self.type == object.type
-                && self.field == object.field
-                && self.comparison == object.comparison
-                && self.expectations == object.expectations
+        return self.filterType == object.filterType
+                && self.filterField == object.filterField
+                && self.filterComparison == object.filterComparison
+                && self.filterExpectations == object.filterExpectations
     }
 
     class Exclude {

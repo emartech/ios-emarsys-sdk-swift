@@ -3,20 +3,34 @@
 //
 
 import Foundation
+import EmarsysSDKExposed
 
-@objc public class Logic: NSObject {
+@objc public class Logic: NSObject, EMSLogicProtocol {
+    
     public var logicName: String
 
-    public var data: [String: String]
+    public var logicData: [String: String]
 
-    public var variants: [String]
+    public var logicVariants: [String]
 
     internal init(logicName: String, data: [String: String] = [:], variants: [String] = []) {
         self.logicName = logicName
-        self.data = data
-        self.variants = variants
+        self.logicData = data
+        self.logicVariants = variants
     }
-
+    
+    public func logic() -> String! {
+        self.logicName
+    }
+    
+    public func data() -> [String : String]! {
+        self.logicData
+    }
+    
+    public func variants() -> [String]! {
+        self.logicVariants
+    }
+    
     static func search() -> Logic {
         Logic(logicName: LogicType.search.rawValue)
     }
@@ -112,6 +126,6 @@ import Foundation
     }
 
     private static func cartItemToQueryParam(_ cartItem: CartItem) -> String {
-        "i:\(cartItem.itemId),p:\(cartItem.price),q:\(cartItem.quantity)"
+        "i:\(String(describing: cartItem.itemId()!)),p:\(String(describing: cartItem.price())),q:\(String(describing: cartItem.quantity()))"
     }
 }

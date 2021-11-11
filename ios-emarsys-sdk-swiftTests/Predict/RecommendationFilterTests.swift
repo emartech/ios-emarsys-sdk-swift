@@ -4,6 +4,7 @@
 
 import XCTest
 @testable import ios_emarsys_sdk_swift
+@testable import EmarsysSDKExposed
 
 class RecommendationFilterTests: XCTestCase {
 

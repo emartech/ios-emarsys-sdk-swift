@@ -42,12 +42,12 @@ class PredictLogger: PredictApi {
     }
 
     func recommendProducts(logic: Logic, filters: [RecommendationFilter]?, limit: NSNumber?, availabilityZone: String?) async throws -> [Product] {
-        try await withUnsafeThrowingContinuation { continuation in
+        return try await withUnsafeThrowingContinuation { continuation in
             emsLoggingPredict.recommendProducts(logic: logic, filters: filters, limit: limit, availabilityZone: availabilityZone) { products, error  in
                 if let error = error {
                     continuation.resume(throwing: error)
                 } else if let products = products {
-                    continuation.resume(returning: products)
+                    continuation.resume(returning: products.map{ Product($0) })
                 }
             }
         }
