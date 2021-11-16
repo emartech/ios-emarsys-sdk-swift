@@ -26,6 +26,14 @@
 		2AAE103227284A1400064246 /* GeofenceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1019272840D200064246 /* GeofenceApi.swift */; };
 		2AAE103327284A1900064246 /* PredictApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE101B272840D200064246 /* PredictApi.swift */; };
 		2AAE103427284A1E00064246 /* ConfigApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE101D272840D300064246 /* ConfigApi.swift */; };
+		5714DB602743A73A006290BC /* PushInternalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DB5F2743A73A006290BC /* PushInternalTests.swift */; };
+		5714DB622743A81E006290BC /* FakeEMSPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DB612743A81E006290BC /* FakeEMSPush.swift */; };
+		5714DB662743B6BE006290BC /* FakeEMSInApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DB652743B6BE006290BC /* FakeEMSInApp.swift */; };
+		5714DB692743B6ED006290BC /* InAppInternalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DB682743B6ED006290BC /* InAppInternalTests.swift */; };
+		5714DB6C2743BC95006290BC /* ConfigInternalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DB6B2743BC95006290BC /* ConfigInternalTests.swift */; };
+		5714DB6F2743BCBC006290BC /* FakeEMSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DB6E2743BCBB006290BC /* FakeEMSConfig.swift */; };
+		5714DB722743E273006290BC /* GeofenceInternalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DB712743E273006290BC /* GeofenceInternalTests.swift */; };
+		5714DB752743E2AA006290BC /* FakeEMSGeofence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DB742743E2AA006290BC /* FakeEMSGeofence.swift */; };
 		57C2DE52273D62ED00302EB1 /* FakeEMSInbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2DE51273D62ED00302EB1 /* FakeEMSInbox.swift */; };
 		57C2DE56273D63BB00302EB1 /* InboxInternalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2DE55273D63BB00302EB1 /* InboxInternalTests.swift */; };
 		5D2945E827215C45007FC73F /* ios_emarsys_sdk_swift.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5D2945E727215C45007FC73F /* ios_emarsys_sdk_swift.docc */; };
@@ -96,6 +104,14 @@
 		2AAE101B272840D200064246 /* PredictApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictApi.swift; sourceTree = "<group>"; };
 		2AAE101D272840D300064246 /* ConfigApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigApi.swift; sourceTree = "<group>"; };
 		2AAE1021272840D300064246 /* PushApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushApi.swift; sourceTree = "<group>"; };
+		5714DB5F2743A73A006290BC /* PushInternalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushInternalTests.swift; sourceTree = "<group>"; };
+		5714DB612743A81E006290BC /* FakeEMSPush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEMSPush.swift; sourceTree = "<group>"; };
+		5714DB652743B6BE006290BC /* FakeEMSInApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEMSInApp.swift; sourceTree = "<group>"; };
+		5714DB682743B6ED006290BC /* InAppInternalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppInternalTests.swift; sourceTree = "<group>"; };
+		5714DB6B2743BC95006290BC /* ConfigInternalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigInternalTests.swift; sourceTree = "<group>"; };
+		5714DB6E2743BCBB006290BC /* FakeEMSConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEMSConfig.swift; sourceTree = "<group>"; };
+		5714DB712743E273006290BC /* GeofenceInternalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceInternalTests.swift; sourceTree = "<group>"; };
+		5714DB742743E2AA006290BC /* FakeEMSGeofence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEMSGeofence.swift; sourceTree = "<group>"; };
 		57C2DE51273D62ED00302EB1 /* FakeEMSInbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEMSInbox.swift; sourceTree = "<group>"; };
 		57C2DE55273D63BB00302EB1 /* InboxInternalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxInternalTests.swift; sourceTree = "<group>"; };
 		5D2945E327215C45007FC73F /* ios_emarsys_sdk_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ios_emarsys_sdk_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,7 +145,7 @@
 		FB8A34B535BF7849E90F9CA8 /* PredictInternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictInternal.swift; sourceTree = "<group>"; };
 		FB8A3597AAA18B3DEB73B4CB /* OnEventActionInternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnEventActionInternal.swift; sourceTree = "<group>"; };
 		FB8A36B09464F52DA50AF22E /* InboxLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InboxLogger.swift; path = Inbox/InboxLogger.swift; sourceTree = "<group>"; };
-		FB8A38186C6EF2E3EEE0F7D7 /* GeofenceMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeofenceMapperTests.swift; path = Geofence/GeofenceMapperTests.swift; sourceTree = "<group>"; };
+		FB8A38186C6EF2E3EEE0F7D7 /* GeofenceMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeofenceMapperTests.swift; sourceTree = "<group>"; };
 		FB8A381B4802196E7E8516C3 /* OnEventActionLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnEventActionLogger.swift; sourceTree = "<group>"; };
 		FB8A38941791A32636DBFBB6 /* GeofenceMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeofenceMapper.swift; sourceTree = "<group>"; };
 		FB8A3D8F756BA9984865F01F /* PredictLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictLogger.swift; sourceTree = "<group>"; };
@@ -253,9 +269,78 @@
 			path = InApp;
 			sourceTree = "<group>";
 		};
+		5714DB5D2743A6FE006290BC /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				5714DB5F2743A73A006290BC /* PushInternalTests.swift */,
+			);
+			path = Push;
+			sourceTree = "<group>";
+		};
+		5714DB632743A82C006290BC /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				5714DB612743A81E006290BC /* FakeEMSPush.swift */,
+			);
+			path = Push;
+			sourceTree = "<group>";
+		};
+		5714DB642743B6AA006290BC /* InApp */ = {
+			isa = PBXGroup;
+			children = (
+				5714DB652743B6BE006290BC /* FakeEMSInApp.swift */,
+			);
+			path = InApp;
+			sourceTree = "<group>";
+		};
+		5714DB672743B6D5006290BC /* InApp */ = {
+			isa = PBXGroup;
+			children = (
+				5714DB682743B6ED006290BC /* InAppInternalTests.swift */,
+			);
+			path = InApp;
+			sourceTree = "<group>";
+		};
+		5714DB6A2743BC7D006290BC /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				5714DB6B2743BC95006290BC /* ConfigInternalTests.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		5714DB6D2743BCA7006290BC /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				5714DB6E2743BCBB006290BC /* FakeEMSConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		5714DB702743E162006290BC /* Geofence */ = {
+			isa = PBXGroup;
+			children = (
+				FB8A38186C6EF2E3EEE0F7D7 /* GeofenceMapperTests.swift */,
+				5714DB712743E273006290BC /* GeofenceInternalTests.swift */,
+			);
+			path = Geofence;
+			sourceTree = "<group>";
+		};
+		5714DB732743E27B006290BC /* Geofence */ = {
+			isa = PBXGroup;
+			children = (
+				5714DB742743E2AA006290BC /* FakeEMSGeofence.swift */,
+			);
+			path = Geofence;
+			sourceTree = "<group>";
+		};
 		57C2DE4F273D62A400302EB1 /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
+				5714DB732743E27B006290BC /* Geofence */,
+				5714DB6D2743BCA7006290BC /* Config */,
+				5714DB642743B6AA006290BC /* InApp */,
+				5714DB632743A82C006290BC /* Push */,
 				57C2DE50273D62BD00302EB1 /* Inbox */,
 			);
 			path = Fakes;
@@ -329,11 +414,14 @@
 		5D2945F127215C45007FC73F /* ios-emarsys-sdk-swiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				5714DB702743E162006290BC /* Geofence */,
+				5714DB6A2743BC7D006290BC /* Config */,
+				5714DB672743B6D5006290BC /* InApp */,
+				5714DB5D2743A6FE006290BC /* Push */,
 				57C2DE54273D639300302EB1 /* Inbox */,
 				57C2DE4F273D62A400302EB1 /* Fakes */,
 				5D2945F227215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift */,
 				FB8AA5219A646BAE3C3A7E89 /* Predict */,
-				FB8A38186C6EF2E3EEE0F7D7 /* GeofenceMapperTests.swift */,
 			);
 			path = "ios-emarsys-sdk-swiftTests";
 			sourceTree = "<group>";
@@ -645,12 +733,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5714DB622743A81E006290BC /* FakeEMSPush.swift in Sources */,
 				57C2DE52273D62ED00302EB1 /* FakeEMSInbox.swift in Sources */,
 				57C2DE56273D63BB00302EB1 /* InboxInternalTests.swift in Sources */,
+				5714DB692743B6ED006290BC /* InAppInternalTests.swift in Sources */,
 				0DC5752327356DAA00825A7C /* LogicTests.swift in Sources */,
 				5D2945F327215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift in Sources */,
+				5714DB752743E2AA006290BC /* FakeEMSGeofence.swift in Sources */,
 				FB8AA1731ED61F678772D0BB /* RecommendationFilterTests.swift in Sources */,
+				5714DB602743A73A006290BC /* PushInternalTests.swift in Sources */,
+				5714DB6F2743BCBC006290BC /* FakeEMSConfig.swift in Sources */,
+				5714DB662743B6BE006290BC /* FakeEMSInApp.swift in Sources */,
 				FB8A3256880B61349203E432 /* GeofenceMapperTests.swift in Sources */,
+				5714DB6C2743BC95006290BC /* ConfigInternalTests.swift in Sources */,
+				5714DB722743E273006290BC /* GeofenceInternalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@ class ConfigInternal: ConfigApi {
 
     var applicationCode: String {
         get {
-            emsConfig.applicationCode()
+           emsConfig.applicationCode()
         }
     }
 
