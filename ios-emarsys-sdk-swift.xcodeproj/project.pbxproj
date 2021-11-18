@@ -42,6 +42,16 @@
 		57F5B7E427452C6D002BA84C /* FakeEMSProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F5B7E327452C6D002BA84C /* FakeEMSProduct.swift */; };
 		57F5B7E627464642002BA84C /* FakeInboxResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F5B7E527464642002BA84C /* FakeInboxResult.swift */; };
 		57F5B7E8274646D4002BA84C /* CallHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F5B7E7274646D4002BA84C /* CallHandler.swift */; };
+		57F5B7EB27467484002BA84C /* MobileEngageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F5B7EA27467484002BA84C /* MobileEngageApi.swift */; };
+		57F5B7ED274674A6002BA84C /* MobileEngageInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F5B7EC274674A6002BA84C /* MobileEngageInternal.swift */; };
+		57F5B7EF274674BE002BA84C /* MobileEngageLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F5B7EE274674BE002BA84C /* MobileEngageLogger.swift */; };
+		57F5B7F227467771002BA84C /* MobileEngageInternalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F5B7F127467771002BA84C /* MobileEngageInternalTests.swift */; };
+		57F5B7F5274677A2002BA84C /* FakeEMSMobileEngage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F5B7F4274677A2002BA84C /* FakeEMSMobileEngage.swift */; };
+		57F5B7F827468CAE002BA84C /* DeepLinkApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F5B7F727468CAE002BA84C /* DeepLinkApi.swift */; };
+		57F5B7FA27468CC4002BA84C /* DeepLinkInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F5B7F927468CC4002BA84C /* DeepLinkInternal.swift */; };
+		57F5B7FC27468CD6002BA84C /* DeepLinkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F5B7FB27468CD6002BA84C /* DeepLinkLogger.swift */; };
+		57F5B7FF27469656002BA84C /* DeepLinkInternalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F5B7FE27469656002BA84C /* DeepLinkInternalTests.swift */; };
+		57F5B80227469681002BA84C /* FakeEMSDeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F5B80127469681002BA84C /* FakeEMSDeepLink.swift */; };
 		5D2945E827215C45007FC73F /* ios_emarsys_sdk_swift.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5D2945E727215C45007FC73F /* ios_emarsys_sdk_swift.docc */; };
 		5D2945EE27215C45007FC73F /* ios_emarsys_sdk_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2945E327215C45007FC73F /* ios_emarsys_sdk_swift.framework */; };
 		5D2945F327215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2945F227215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift */; };
@@ -127,6 +137,16 @@
 		57F5B7E327452C6D002BA84C /* FakeEMSProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEMSProduct.swift; sourceTree = "<group>"; };
 		57F5B7E527464642002BA84C /* FakeInboxResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeInboxResult.swift; sourceTree = "<group>"; };
 		57F5B7E7274646D4002BA84C /* CallHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHandler.swift; sourceTree = "<group>"; };
+		57F5B7EA27467484002BA84C /* MobileEngageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileEngageApi.swift; sourceTree = "<group>"; };
+		57F5B7EC274674A6002BA84C /* MobileEngageInternal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileEngageInternal.swift; sourceTree = "<group>"; };
+		57F5B7EE274674BE002BA84C /* MobileEngageLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileEngageLogger.swift; sourceTree = "<group>"; };
+		57F5B7F127467771002BA84C /* MobileEngageInternalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileEngageInternalTests.swift; sourceTree = "<group>"; };
+		57F5B7F4274677A2002BA84C /* FakeEMSMobileEngage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEMSMobileEngage.swift; sourceTree = "<group>"; };
+		57F5B7F727468CAE002BA84C /* DeepLinkApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkApi.swift; sourceTree = "<group>"; };
+		57F5B7F927468CC4002BA84C /* DeepLinkInternal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkInternal.swift; sourceTree = "<group>"; };
+		57F5B7FB27468CD6002BA84C /* DeepLinkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkLogger.swift; sourceTree = "<group>"; };
+		57F5B7FE27469656002BA84C /* DeepLinkInternalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkInternalTests.swift; sourceTree = "<group>"; };
+		57F5B80127469681002BA84C /* FakeEMSDeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEMSDeepLink.swift; sourceTree = "<group>"; };
 		5D2945E327215C45007FC73F /* ios_emarsys_sdk_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ios_emarsys_sdk_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2945E727215C45007FC73F /* ios_emarsys_sdk_swift.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ios_emarsys_sdk_swift.docc; sourceTree = "<group>"; };
 		5D2945ED27215C45007FC73F /* ios-emarsys-sdk-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-emarsys-sdk-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -356,6 +376,8 @@
 		57C2DE4F273D62A400302EB1 /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
+				57F5B8002746966B002BA84C /* DeepLink */,
+				57F5B7F32746777E002BA84C /* MobileEngage */,
 				57F5B7E027450F01002BA84C /* Predict */,
 				5714DB732743E27B006290BC /* Geofence */,
 				5714DB6D2743BCA7006290BC /* Config */,
@@ -392,6 +414,58 @@
 			path = Predict;
 			sourceTree = "<group>";
 		};
+		57F5B7E92746745C002BA84C /* MobileEngage */ = {
+			isa = PBXGroup;
+			children = (
+				57F5B7EA27467484002BA84C /* MobileEngageApi.swift */,
+				57F5B7EC274674A6002BA84C /* MobileEngageInternal.swift */,
+				57F5B7EE274674BE002BA84C /* MobileEngageLogger.swift */,
+			);
+			path = MobileEngage;
+			sourceTree = "<group>";
+		};
+		57F5B7F027467756002BA84C /* MobileEngage */ = {
+			isa = PBXGroup;
+			children = (
+				57F5B7F127467771002BA84C /* MobileEngageInternalTests.swift */,
+			);
+			path = MobileEngage;
+			sourceTree = "<group>";
+		};
+		57F5B7F32746777E002BA84C /* MobileEngage */ = {
+			isa = PBXGroup;
+			children = (
+				57F5B7F4274677A2002BA84C /* FakeEMSMobileEngage.swift */,
+			);
+			path = MobileEngage;
+			sourceTree = "<group>";
+		};
+		57F5B7F627468C94002BA84C /* DeepLink */ = {
+			isa = PBXGroup;
+			children = (
+				57F5B7F727468CAE002BA84C /* DeepLinkApi.swift */,
+				57F5B7F927468CC4002BA84C /* DeepLinkInternal.swift */,
+				57F5B7FB27468CD6002BA84C /* DeepLinkLogger.swift */,
+			);
+			path = DeepLink;
+			sourceTree = "<group>";
+		};
+		57F5B7FD27469630002BA84C /* DeepLink */ = {
+			isa = PBXGroup;
+			children = (
+				57F5B7FE27469656002BA84C /* DeepLinkInternalTests.swift */,
+			);
+			path = DeepLink;
+			sourceTree = "<group>";
+		};
+		57F5B8002746966B002BA84C /* DeepLink */ = {
+			isa = PBXGroup;
+			children = (
+				57F5B80127469681002BA84C /* FakeEMSDeepLink.swift */,
+			);
+			path = DeepLink;
+			sourceTree = "<group>";
+		};
 		5D2945D927215C45007FC73F = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +493,8 @@
 		5D2945E527215C45007FC73F /* ios-emarsys-sdk-swift */ = {
 			isa = PBXGroup;
 			children = (
+				57F5B7F627468C94002BA84C /* DeepLink */,
+				57F5B7E92746745C002BA84C /* MobileEngage */,
 				2A7E1D72273BF8B00003F33E /* Inbox */,
 				5D4745E627297FC5007ECAD6 /* Emarsys.swift */,
 				2AAE101C272840D300064246 /* Config */,
@@ -444,6 +520,8 @@
 		5D2945F127215C45007FC73F /* ios-emarsys-sdk-swiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				57F5B7FD27469630002BA84C /* DeepLink */,
+				57F5B7F027467756002BA84C /* MobileEngage */,
 				5714DB702743E162006290BC /* Geofence */,
 				5714DB6A2743BC7D006290BC /* Config */,
 				5714DB672743B6D5006290BC /* InApp */,
@@ -709,8 +787,10 @@
 				2AAE103327284A1900064246 /* PredictApi.swift in Sources */,
 				5D2945E827215C45007FC73F /* ios_emarsys_sdk_swift.docc in Sources */,
 				2A4C94D7273AB4B50016985C /* GeofenceLogger.swift in Sources */,
+				57F5B7ED274674A6002BA84C /* MobileEngageInternal.swift in Sources */,
 				2A7E1D79273BF8D00003F33E /* InboxApi.swift in Sources */,
 				2AAE103427284A1E00064246 /* ConfigApi.swift in Sources */,
+				57F5B7EF274674BE002BA84C /* MobileEngageLogger.swift in Sources */,
 				2AAE1031272849FF00064246 /* OnEventActionApi.swift in Sources */,
 				5D4745EB272982AC007ECAD6 /* LogLevelProtocol.swift in Sources */,
 				2AAE1030272849F100064246 /* PushApi.swift in Sources */,
@@ -719,9 +799,11 @@
 				5D4745EF272988C8007ECAD6 /* NotificationInformation.swift in Sources */,
 				2A4C94D9273AB4FB0016985C /* PushInternal.swift in Sources */,
 				2AAE102B272840D300064246 /* FlipperFeature.swift in Sources */,
+				57F5B7EB27467484002BA84C /* MobileEngageApi.swift in Sources */,
 				5D4745E727297FC5007ECAD6 /* Emarsys.swift in Sources */,
 				2AAE102D272840D300064246 /* InAppApi.swift in Sources */,
 				2A7E1D78273BF8D00003F33E /* InboxInternal.swift in Sources */,
+				57F5B7FC27468CD6002BA84C /* DeepLinkLogger.swift in Sources */,
 				5D4745E927298260007ECAD6 /* Config.swift in Sources */,
 				FB89B5149F16003DAAEAF6AB /* Action.swift in Sources */,
 				FB89B37D0B6AF7C46408535B /* Event.swift in Sources */,
@@ -729,6 +811,7 @@
 				FB89B41C3FEB14F8CA4BA51D /* NotificationInformationPublisher.swift in Sources */,
 				FB89B5CBD2BE87DF419304B9 /* Geofence.swift in Sources */,
 				FB89B3A64A60B8F6B449CD2E /* CartItem.swift in Sources */,
+				57F5B7FA27468CC4002BA84C /* DeepLinkInternal.swift in Sources */,
 				FB89B5118F847604589471E9 /* RecommendationFilter.swift in Sources */,
 				FB89B742122B85D552F3CD02 /* Product.swift in Sources */,
 				FB8AACB08D111DD99BB31994 /* Logic.swift in Sources */,
@@ -743,6 +826,7 @@
 				FB8AA47C67596EF912BC6952 /* TriggerType.swift in Sources */,
 				FB8A33450029B183C6F58B03 /* PushLogger.swift in Sources */,
 				2A7E1D7C273BF8D00003F33E /* InboxLogger.swift in Sources */,
+				57F5B7F827468CAE002BA84C /* DeepLinkApi.swift in Sources */,
 				FB8A358BFE5EE80FAD29120B /* OnEventActionInternal.swift in Sources */,
 				FB8A3476E57417A115E9A418 /* OnEventActionLogger.swift in Sources */,
 				FB8A3A23E7B6AEDD9CCD0BF2 /* GeofenceMapper.swift in Sources */,
@@ -757,18 +841,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				5714DB622743A81E006290BC /* FakeEMSPush.swift in Sources */,
+				57F5B7F227467771002BA84C /* MobileEngageInternalTests.swift in Sources */,
 				57C2DE52273D62ED00302EB1 /* FakeEMSInbox.swift in Sources */,
 				57C2DE56273D63BB00302EB1 /* InboxInternalTests.swift in Sources */,
 				5714DB692743B6ED006290BC /* InAppInternalTests.swift in Sources */,
 				57F5B7E427452C6D002BA84C /* FakeEMSProduct.swift in Sources */,
 				57F5B7DF27450ECC002BA84C /* PredictInternalTests.swift in Sources */,
 				0DC5752327356DAA00825A7C /* LogicTests.swift in Sources */,
+				57F5B7F5274677A2002BA84C /* FakeEMSMobileEngage.swift in Sources */,
 				57F5B7E227450F21002BA84C /* FakeEMSPredict.swift in Sources */,
 				5D2945F327215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift in Sources */,
 				5714DB752743E2AA006290BC /* FakeEMSGeofence.swift in Sources */,
+				57F5B7FF27469656002BA84C /* DeepLinkInternalTests.swift in Sources */,
 				FB8AA1731ED61F678772D0BB /* RecommendationFilterTests.swift in Sources */,
 				5714DB602743A73A006290BC /* PushInternalTests.swift in Sources */,
 				57F5B7E627464642002BA84C /* FakeInboxResult.swift in Sources */,
+				57F5B80227469681002BA84C /* FakeEMSDeepLink.swift in Sources */,
 				5714DB6F2743BCBC006290BC /* FakeEMSConfig.swift in Sources */,
 				5714DB662743B6BE006290BC /* FakeEMSInApp.swift in Sources */,
 				FB8A3256880B61349203E432 /* GeofenceMapperTests.swift in Sources */,
