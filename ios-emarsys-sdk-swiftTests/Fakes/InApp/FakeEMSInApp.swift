@@ -8,9 +8,8 @@ import ios_emarsys_sdk_swift
 
 @objc public class FakeEMSInApp: NSObject, EMSInAppProtocol {
     public var eventHandler: EMSEventHandlerBlock!
-    var callHandler: (() -> ())!
+    var callHandler: CallHandler!
     var isPausedValue: Bool = true
-
 
     public func pause() {
         self.callHandler()

@@ -20,9 +20,7 @@ class InAppInternalTests: XCTestCase {
     func testPause() async {
         var isCalled: Bool = false
 
-        fakeEMSInApp.callHandler = {
-            isCalled = true
-        }
+        fakeEMSInApp.callHandler = { (_ param: Any?...) in isCalled = true }
 
         await self.inAppInternal.pause()
 
@@ -31,10 +29,8 @@ class InAppInternalTests: XCTestCase {
 
     func testResume() async {
         var isCalled: Bool = false
-
-        fakeEMSInApp.callHandler = {
-            isCalled = true
-        }
+        
+        fakeEMSInApp.callHandler = { (_ param: Any?...) in isCalled = true }
 
         await self.inAppInternal.resume()
 
@@ -43,13 +39,10 @@ class InAppInternalTests: XCTestCase {
 
     func testIsPaused() async {
         var isCalled: Bool = false
-
-        fakeEMSInApp.callHandler = {
-            isCalled = true
-        }
+        
+        fakeEMSInApp.callHandler = { (_ param: Any?...) in isCalled = true }
 
         XCTAssertTrue(self.inAppInternal.isPaused)
-
         XCTAssertTrue(isCalled)
 
     }

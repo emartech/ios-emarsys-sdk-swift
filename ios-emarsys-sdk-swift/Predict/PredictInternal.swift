@@ -48,6 +48,8 @@ class PredictInternal: PredictApi {
                     continuation.resume(throwing: error)
                 } else if let products = products {
                     continuation.resume(returning: products.map{ Product($0) })
+                } else {
+                    continuation.resume(returning: [])
                 }
             }
         }

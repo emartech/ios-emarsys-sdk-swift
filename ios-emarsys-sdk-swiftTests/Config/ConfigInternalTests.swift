@@ -10,8 +10,8 @@ class ConfigInternalTests: XCTestCase {
 
     var fakeEMSConfig: FakeEMSConfig!
     var configInternal: ConfigInternal!
-    var testApplicationCodeValue: String = "testApplicationCode"
-    var testMerchantIdValue: String = "testMerchantId"
+    var testApplicationCodeValue: String = "testApplicationCodeValue"
+    var testMerchantIdValue: String = "testMerchantIdValue"
 
     override func setUp() {
         super.setUp()
@@ -21,11 +21,9 @@ class ConfigInternalTests: XCTestCase {
 
     func testApplicationCode() {
         var isCalled: Bool = false
-
-        fakeEMSConfig.callHandler = {
-            isCalled = true
-        }
-
+        
+        fakeEMSConfig.callHandler = { (_ param: Any?...) in isCalled = true }
+        
         XCTAssertEqual(self.configInternal.applicationCode, "testApplicationCode")
 
         XCTAssertTrue(isCalled)
@@ -33,10 +31,7 @@ class ConfigInternalTests: XCTestCase {
 
     func testMerchantId() {
         var isCalled: Bool = false
-
-        fakeEMSConfig.callHandler = {
-            isCalled = true
-        }
+        fakeEMSConfig.callHandler = { (_ param: Any?...) in isCalled = true }
 
         XCTAssertEqual(self.configInternal.merchantId, "testMerchantId")
 
@@ -46,9 +41,7 @@ class ConfigInternalTests: XCTestCase {
     func testContactFieldId() {
         var isCalled: Bool = false
 
-        fakeEMSConfig.callHandler = {
-            isCalled = true
-        }
+        fakeEMSConfig.callHandler = { (_ param: Any?...) in isCalled = true }
 
         XCTAssertEqual(self.configInternal.contactFieldId, 2)
 
@@ -58,10 +51,8 @@ class ConfigInternalTests: XCTestCase {
     func testHardwareId() {
         var isCalled: Bool = false
 
-        fakeEMSConfig.callHandler = {
-            isCalled = true
-        }
-
+        fakeEMSConfig.callHandler = { (_ param: Any?...) in isCalled = true }
+        
         XCTAssertEqual(self.configInternal.hardwareId, "testHardwareId")
 
         XCTAssertTrue(isCalled)
@@ -69,11 +60,9 @@ class ConfigInternalTests: XCTestCase {
 
     func testLanguageCode() {
         var isCalled: Bool = false
-
-        fakeEMSConfig.callHandler = {
-            isCalled = true
-        }
-
+        
+        fakeEMSConfig.callHandler = { (_ param: Any?...) in isCalled = true }
+        
         XCTAssertEqual(self.configInternal.languageCode, "testLanguageCode")
 
         XCTAssertTrue(isCalled)
@@ -82,10 +71,8 @@ class ConfigInternalTests: XCTestCase {
     func testPushSettings() {
         var isCalled: Bool = false
 
-        fakeEMSConfig.callHandler = {
-            isCalled = true
-        }
-
+        fakeEMSConfig.callHandler = { (_ param: Any?...) in isCalled = true }
+        
         XCTAssertEqual(self.configInternal.pushSettings["test"] as? String?, "push")
         XCTAssertEqual(self.configInternal.pushSettings.count, 1)
 
@@ -95,10 +82,8 @@ class ConfigInternalTests: XCTestCase {
     func testSdkVersion() {
         var isCalled: Bool = false
 
-        fakeEMSConfig.callHandler = {
-            isCalled = true
-        }
-
+        fakeEMSConfig.callHandler = { (_ param: Any?...) in isCalled = true }
+        
         XCTAssertEqual(self.configInternal.sdkVersion, "testSdkVersionValue")
 
         XCTAssertTrue(isCalled)
@@ -106,25 +91,35 @@ class ConfigInternalTests: XCTestCase {
 
     func testChangeApplicationCode() async throws {
         var isCalled: Bool = false
+        var applicationCode : String = ""
+        var completionBlock : EMSCompletionBlock? = nil
 
-        fakeEMSConfig.callHandler = {
+        fakeEMSConfig.callHandler = { (_ param: Any?...) in
             isCalled = true
+            applicationCode = param[0] as! String
+            completionBlock = (param[1] as! EMSCompletionBlock)
         }
-
+        
         fakeEMSConfig.error = nil
 
         try await self.configInternal.changeApplicationCode(testApplicationCodeValue)
 
+        XCTAssertEqual(applicationCode, testApplicationCodeValue)
+        XCTAssertNotNil(completionBlock)
         XCTAssertTrue(isCalled)
     }
 
     func testChangeApplicationCode_withError() async throws {
         var isCalled: Bool = false
+        var applicationCode : String = ""
+        var completionBlock : EMSCompletionBlock? = nil
 
-        fakeEMSConfig.callHandler = {
+        fakeEMSConfig.callHandler = { (_ param: Any?...) in
             isCalled = true
+            applicationCode = param[0] as! String
+            completionBlock = (param[1] as! EMSCompletionBlock)
         }
-
+        
         fakeEMSConfig.error = NSError(code: 42, localizedDescription: "testErrorChangeApplicationCode")
 
         do {
@@ -133,30 +128,42 @@ class ConfigInternalTests: XCTestCase {
             XCTAssertEqual(error.localizedDescription, "testErrorChangeApplicationCode")
         }
 
+        XCTAssertEqual(applicationCode, testApplicationCodeValue)
+        XCTAssertNotNil(completionBlock)
         XCTAssertTrue(isCalled)
     }
 
     func testChangeMerchantId() async throws {
         var isCalled: Bool = false
+        var merchantId : String = ""
+        var completionBlock : EMSCompletionBlock? = nil
 
-        fakeEMSConfig.callHandler = {
+        fakeEMSConfig.callHandler = { (_ param: Any?...) in
             isCalled = true
+            merchantId = param[0] as! String
+            completionBlock = (param[1] as! EMSCompletionBlock)
         }
-
+        
         fakeEMSConfig.error = nil
 
         try await self.configInternal.changeMerchantId(testMerchantIdValue)
-
+        
+        XCTAssertEqual(merchantId, testMerchantIdValue)
+        XCTAssertNotNil(completionBlock)
         XCTAssertTrue(isCalled)
     }
 
     func testChangeMerchantId_withError() async throws {
         var isCalled: Bool = false
+        var merchantId : String = ""
+        var completionBlock : EMSCompletionBlock? = nil
 
-        fakeEMSConfig.callHandler = {
+        fakeEMSConfig.callHandler = { (_ param: Any?...) in
             isCalled = true
+            merchantId = param[0] as! String
+            completionBlock = (param[1] as! EMSCompletionBlock)
         }
-
+        
         fakeEMSConfig.error = NSError(code: 42, localizedDescription: "testErrorChangeMerchantId")
 
         do {
@@ -164,6 +171,9 @@ class ConfigInternalTests: XCTestCase {
         } catch {
             XCTAssertEqual(error.localizedDescription, "testErrorChangeMerchantId")
         }
+        
+        XCTAssertEqual(merchantId, testMerchantIdValue)
+        XCTAssertNotNil(completionBlock)
         XCTAssertTrue(isCalled)
     }
 }

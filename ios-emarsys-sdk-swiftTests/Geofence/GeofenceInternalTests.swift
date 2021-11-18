@@ -23,9 +23,7 @@ class GeofenceInternalTests: XCTestCase {
     func testIsEnabled() {
         var isCalled: Bool = false
 
-        fakeEmsGeofence.callHandler = {
-            isCalled = true
-        }
+        fakeEmsGeofence.callHandler = { (_ param: Any?...) in isCalled = true }
 
         XCTAssertTrue(self.geofenceInternal.isEnabled)
 
@@ -35,9 +33,7 @@ class GeofenceInternalTests: XCTestCase {
     func testDisable() async {
         var isCalled: Bool = false
 
-        fakeEmsGeofence.callHandler = {
-            isCalled = true
-        }
+        fakeEmsGeofence.callHandler = { (_ param: Any?...) in isCalled = true }
 
         await self.geofenceInternal.disable()
 
@@ -46,21 +42,26 @@ class GeofenceInternalTests: XCTestCase {
 
     func testEnable() async throws {
         var isCalled: Bool = false
+        var completionBlock : EMSCompletionBlock? = nil
 
-        fakeEmsGeofence.callHandler = {
+        fakeEmsGeofence.callHandler = { (_ param: Any?...) in
             isCalled = true
+            completionBlock = (param[0] as! EMSCompletionBlock)
         }
-
+        
         try await self.geofenceInternal.enable()
 
+        XCTAssertNotNil(completionBlock)
         XCTAssertTrue(isCalled)
     }
 
     func testEnable_withError() async throws {
         var isCalled: Bool = false
+        var completionBlock : EMSCompletionBlock? = nil
 
-        fakeEmsGeofence.callHandler = {
+        fakeEmsGeofence.callHandler = { (_ param: Any?...) in
             isCalled = true
+            completionBlock = (param[0] as! EMSCompletionBlock)
         }
 
         fakeEmsGeofence.error = NSError(code: 42, localizedDescription: "testErrorEnable")
@@ -71,6 +72,7 @@ class GeofenceInternalTests: XCTestCase {
             XCTAssertEqual(error.localizedDescription, "testErrorEnable")
         }
 
+        XCTAssertNotNil(completionBlock)
         XCTAssertTrue(isCalled)
     }
 
@@ -81,13 +83,12 @@ class GeofenceInternalTests: XCTestCase {
         geofences.append(geofence!)
 
         fakeEmsGeofence.geofences = geofences
-        fakeEmsGeofence.callHandler = {
-            isCalled = true
-        }
+        
+        fakeEmsGeofence.callHandler = { (_ param: Any?...) in isCalled = true }
 
-        var expectedGeofences = [Geofence(id: "testGeofence", lat: 47.4, lon: 27.5, radius: 300, waitInterval: 50.3, triggers: [])]
+        let expectedGeofences = [Geofence(id: "testGeofence", lat: 47.4, lon: 27.5, radius: 300, waitInterval: 50.3, triggers: [])]
 
-        var result = await self.geofenceInternal.registeredGeofences()
+        let result = await self.geofenceInternal.registeredGeofences()
 
         XCTAssertEqual(result, expectedGeofences)
 
@@ -97,9 +98,7 @@ class GeofenceInternalTests: XCTestCase {
     func testInitialTriggerEnabled_get() {
         var isCalled: Bool = false
 
-        fakeEmsGeofence.callHandler = {
-            isCalled = true
-        }
+        fakeEmsGeofence.callHandler = { (_ param: Any?...) in isCalled = true }
 
         let result = self.geofenceInternal.initialEnterTriggerEnabled
 
@@ -110,10 +109,8 @@ class GeofenceInternalTests: XCTestCase {
     func testInitialTriggerEnabled_set() {
         var isCalled: Bool = false
 
-        fakeEmsGeofence.callHandler = {
-            isCalled = true
-        }
-
+        fakeEmsGeofence.callHandler = { (_ param: Any?...) in isCalled = true }
+        
         self.geofenceInternal.initialEnterTriggerEnabled = false
 
         XCTAssertTrue(isCalled)
@@ -122,10 +119,8 @@ class GeofenceInternalTests: XCTestCase {
     func testRequestalwaysAuthoruzation() async {
         var isCalled: Bool = false
 
-        fakeEmsGeofence.callHandler = {
-            isCalled = true
-        }
-
+        fakeEmsGeofence.callHandler = { (_ param: Any?...) in isCalled = true }
+        
         await self.geofenceInternal.requestAlwaysAuthorization()
 
         XCTAssertTrue(isCalled)

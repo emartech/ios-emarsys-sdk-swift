@@ -8,7 +8,7 @@ import EmarsysSDKExposed
 @objc public class FakeEMSGeofence: NSObject, EMSGeofenceProtocol {
 
     public var eventHandler: EMSEventHandlerBlock!
-    var callHandler: (() -> ())!
+    var callHandler: CallHandler!
     var error: NSError?
     var geofences: [EMSGeofence] = []
     var enabledValue: Bool = true
@@ -43,7 +43,7 @@ import EmarsysSDKExposed
 
     public func enable(completionBlock: EMSCompletionBlock? = nil) {
         completionBlock?(self.error)
-        self.callHandler()
+        self.callHandler(completionBlock)
     }
 
     public func disable() {

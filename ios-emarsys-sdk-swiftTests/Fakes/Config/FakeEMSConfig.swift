@@ -7,7 +7,7 @@ import Foundation
 import ios_emarsys_sdk_swift
 
 @objc public class FakeEMSConfig: NSObject, EMSConfigProtocol {
-    var callHandler: (() -> ())!
+    var callHandler: CallHandler!
     var error: NSError?
     var applicationCodeValue: String = "testApplicationCode"
     var merchantIdValue: String = "testMerchantId"
@@ -17,19 +17,18 @@ import ios_emarsys_sdk_swift
     var pushSettingsValue: [AnyHashable: Any] = ["test": "push"]
     var sdkVersionValue: String = "testSdkVersionValue"
 
-
     public func changeApplicationCode(applicationCode: String?, completionBlock: EMSCompletionBlock? = nil) {
         completionBlock?(self.error)
-        self.callHandler()
+        self.callHandler(applicationCode, completionBlock)
     }
 
     public func changeMerchantId(merchantId: String?) {
-        self.callHandler()
+        self.callHandler(merchantId)
     }
 
     public func changeMerchantId(merchantId: String?, completionBlock: EMSCompletionBlock? = nil) {
         completionBlock?(self.error)
-        self.callHandler()
+        self.callHandler(merchantId, completionBlock)
     }
 
     public func applicationCode() -> String {
