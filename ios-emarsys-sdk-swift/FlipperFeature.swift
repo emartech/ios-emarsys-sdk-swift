@@ -3,8 +3,9 @@
 //
 
 import Foundation
+import EmarsysSDKExposed
 
-@objc public protocol FlipperFeature {
+@objc public protocol FlipperFeature: EMSFlipperFeature {
 
     var name: String { get set }
 

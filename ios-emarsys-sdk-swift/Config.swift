@@ -8,17 +8,17 @@ import Foundation
 
     @objc public let applicationCode: String?
 
-    @objc public let experimentalFeatures: FlipperFeature?
+    @objc public let experimentalFeatures: [FlipperFeature]?
 
-    @objc public let enabledConsoleLogLevels: LogLevelProtocol?
+    @objc public let enabledConsoleLogLevels: [LogLevelProtocol]?
 
     @objc public let merchantId: String?
 
     @objc public let sharedKeychainAccessGroup: String?
 
     @objc public init(applicationCode: String?,
-                experimentalFeatures: FlipperFeature?,
-                enabledConsoleLogLevels: LogLevelProtocol?,
+                experimentalFeatures: [FlipperFeature]?,
+                enabledConsoleLogLevels: [LogLevelProtocol]?,
                 merchantId: String?,
                 sharedKeychainAccessGroup: String?) {
         self.applicationCode = applicationCode

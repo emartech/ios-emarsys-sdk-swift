@@ -3,8 +3,9 @@
 //
 
 import Foundation
+import EmarsysSDKExposed
 
-@objc public protocol LogLevelProtocol {
+@objc public protocol LogLevelProtocol: EMSLogLevelProtocol {
 
     var level: String { get set }
 
