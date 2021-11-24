@@ -3,21 +3,55 @@
 //
 
 import Foundation
+import Combine
+import EmarsysSDKExposed
 
-@objc public protocol GeofenceApi {
+public class GeofenceApi: NSObject {
 
-    var eventPublisher: EventPublisher { get }
+    @objc public var eventHandler: EMSEventHandlerBlock? {
+        get {
+            self.eventHandler
+        }
+        set {
+            self.eventHandler = newValue
+        }
+    }
 
-    var initialEnterTriggerEnabled: Bool { get set }
+    public let eventStream: PassthroughSubject<Event, Error>
 
-    var isEnabled: Bool { get }
+    @objc public var initialEnterTriggerEnabled: Bool {
+        get {
+            self.initialEnterTriggerEnabled
+        }
+        set {
+            self.initialEnterTriggerEnabled = newValue
+        }
+    }
 
-    func requestAlwaysAuthorization() async
+    @objc public var isEnabled: Bool {
+        get {
+            self.isEnabled
+        }
+    }
 
-    func registeredGeofences() async -> [Geofence]
+    @objc public func requestAlwaysAuthorization() async {
 
-    func enable() async throws
+    }
 
-    func disable() async
+    @objc public func registeredGeofences() async -> [Geofence] {
+        []
+    }
 
+    @objc public func enable() async throws {
+
+    }
+
+    @objc public func disable() async {
+
+    }
+
+    public init(eventStream: PassthroughSubject<Event, Error>) {
+        self.eventStream = eventStream
+        super.init()
+    }
 }

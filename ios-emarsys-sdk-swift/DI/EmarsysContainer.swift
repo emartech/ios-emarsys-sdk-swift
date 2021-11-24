@@ -10,16 +10,16 @@ struct EmarsysContainer: EmarsysDependency {
     
     private var emarsysConfig: EMSConfig
     internal var completionMiddleware: EMSCompletionMiddleware = EMSCompletionMiddleware(successBlock: { requestId, response in },
-                                                                                errorBlock: { requestId, response in })
-
+                                                                                         errorBlock: { requestId, response in })
+    
     private lazy var suiteNames = Constants.suiteNames
-
+    
     lazy var clientServiceUrlProvider = EMSValueProvider(defaultValue: ServiceUrls.Defaults.client, valueKey: ServiceUrls.Keys.client)
     lazy var eventServiceUrlProvider = EMSValueProvider(defaultValue: ServiceUrls.Defaults.event, valueKey: ServiceUrls.Keys.event)
     lazy var predictUrlProvider = EMSValueProvider(defaultValue: ServiceUrls.Defaults.predict, valueKey: ServiceUrls.Keys.predict)
     lazy var deeplinkUrlProvider = EMSValueProvider(defaultValue: ServiceUrls.Defaults.deeplink, valueKey: ServiceUrls.Keys.deeplink)
     lazy var v3MessageInboxUrlProvider = EMSValueProvider(defaultValue: ServiceUrls.Defaults.messageInbox, valueKey: ServiceUrls.Keys.messageInbox)
-
+    
     lazy var coreQueue: EMSOperationQueue = {
         var queue = EMSOperationQueue()
         queue.maxConcurrentOperationCount = 1
@@ -27,7 +27,7 @@ struct EmarsysContainer: EmarsysDependency {
         queue.name = "core_sdk_queue_\(self.uuidProvider.provideUUIDString())"
         return queue
     }()
-
+    
     lazy var urlSession: URLSession = {
         var sessionConfiguration = URLSessionConfiguration()
         sessionConfiguration.timeoutIntervalForRequest = 30.0
@@ -35,7 +35,7 @@ struct EmarsysContainer: EmarsysDependency {
         let session = URLSession(configuration: sessionConfiguration)
         return session
     }()
-
+    
     lazy var meRequestContext: MERequestContext = MERequestContext(applicationCode: emarsysConfig.applicationCode,
                                                                    uuidProvider: self.uuidProvider,
                                                                    timestampProvider: self.timeStampProvider,
@@ -223,9 +223,12 @@ struct EmarsysContainer: EmarsysDependency {
                                                                                                                                  endpoint: self.endpoint),
                                                                                   productMapper: EMSProductMapper()))
     lazy var loggingPredict: PredictApi = PredictLogger(emsLoggingPredict: EMSLoggingPredictInternal())
+    let geofenceEventStream = PassthroughSubject<Event, Error>()
     lazy var geofence: GeofenceApi = GeofenceInternal(emsGeofence: emsGeofenceInternal,
-                                                      geofenceMapper: GeofenceMapper())
-    lazy var loggingGeofence: GeofenceApi = GeofenceLogger(emsLoggingGeofence: EMSLoggingGeofenceInternal())
+                                                      geofenceMapper: GeofenceMapper(),
+                                                      eventStream: geofenceEventStream)
+    lazy var loggingGeofence: GeofenceApi = GeofenceLogger(emsLoggingGeofence: EMSLoggingGeofenceInternal(),
+                                                           eventStream: geofenceEventStream)
     lazy var inbox: InboxApi = InboxInternal(emsInbox: self.emsInbox)
     lazy var loggingInbox: InboxApi = InboxLogger(emsLoggingInbox: EMSLoggingInboxV3())
     lazy var onEventAction: OnEventActionApi = OnEventActionInternal(emsOnEventAction: self.emsOnEventAction)
@@ -261,14 +264,14 @@ struct EmarsysContainer: EmarsysDependency {
     
     lazy var meIAM: MEInApp = {
         var meInApp = MEInApp(windowProvider: EMSWindowProvider(viewControllerProvider: EMSViewControllerProvider(),
-                sceneProvider: EMSSceneProvider(application: UIApplication.shared)),
-                mainWindowProvider: EMSMainWindowProvider(application: UIApplication.shared),
-                timestampProvider: self.timeStampProvider,
-                completionBlockProvider: EMSCompletionBlockProvider(operationQueue: self.coreQueue),
-                displayedIamRepository: self.displayedIamRepository,
-                buttonClickRepository: self.buttonClickRepository,
-                operationQueue: self.coreQueue)
-
+                                                                sceneProvider: EMSSceneProvider(application: UIApplication.shared)),
+                              mainWindowProvider: EMSMainWindowProvider(application: UIApplication.shared),
+                              timestampProvider: self.timeStampProvider,
+                              completionBlockProvider: EMSCompletionBlockProvider(operationQueue: self.coreQueue),
+                              displayedIamRepository: self.displayedIamRepository,
+                              buttonClickRepository: self.buttonClickRepository,
+                              operationQueue: self.coreQueue)
+        
         meInApp.inAppTracker = self.emsInAppInternal
         return meInApp
     }()

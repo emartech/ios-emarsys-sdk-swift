@@ -3,19 +3,13 @@
 //
 
 import Foundation
+import Combine
 import EmarsysSDKExposed
 
 class GeofenceLogger: GeofenceApi {
     let emsLoggingGeofence: EMSGeofenceProtocol
 
-    var eventPublisher: EventPublisher {
-        get {
-            emsLoggingGeofence.eventHandler
-            return EventPublisher()
-        }
-    }
-
-    var initialEnterTriggerEnabled: Bool {
+    override var initialEnterTriggerEnabled: Bool {
         get {
             emsLoggingGeofence.initialEnterTriggerEnabled
         }
@@ -24,26 +18,28 @@ class GeofenceLogger: GeofenceApi {
         }
     }
 
-    var isEnabled: Bool {
+    override var isEnabled: Bool {
         get {
             emsLoggingGeofence.isEnabled()
         }
     }
 
-    init(emsLoggingGeofence: EMSGeofenceProtocol) {
+    init(emsLoggingGeofence: EMSGeofenceProtocol,
+         eventStream: PassthroughSubject<Event, Error>) {
         self.emsLoggingGeofence = emsLoggingGeofence
+        super.init(eventStream: eventStream)
     }
 
-    func requestAlwaysAuthorization() async {
+    override func requestAlwaysAuthorization() async {
         emsLoggingGeofence.requestAlwaysAuthorization()
     }
 
-    func registeredGeofences() async -> [Geofence] {
+    override func registeredGeofences() async -> [Geofence] {
         emsLoggingGeofence.registeredGeofences()
         return []
     }
 
-    func enable() async throws {
+    override func enable() async throws {
         return try await withUnsafeThrowingContinuation { continuation in
             emsLoggingGeofence.enable { error in
                 if let error = error {
@@ -55,7 +51,7 @@ class GeofenceLogger: GeofenceApi {
         }
     }
 
-    func disable() async {
+    override func disable() async {
         emsLoggingGeofence.disable()
     }
 }

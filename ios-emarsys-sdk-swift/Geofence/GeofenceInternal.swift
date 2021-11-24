@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import Combine
 import EmarsysSDKExposed
 
 class GeofenceInternal: GeofenceApi {
@@ -10,13 +11,7 @@ class GeofenceInternal: GeofenceApi {
     let emsGeofence: EMSGeofenceProtocol
     let geofenceMapper: GeofenceMapper
 
-    var eventPublisher: EventPublisher {
-        get {
-            EventPublisher()
-        }
-    }
-
-    var initialEnterTriggerEnabled: Bool {
+    override var initialEnterTriggerEnabled: Bool {
         get {
             emsGeofence.initialEnterTriggerEnabled
         }
@@ -25,27 +20,33 @@ class GeofenceInternal: GeofenceApi {
         }
     }
 
-    var isEnabled: Bool {
+    override var isEnabled: Bool {
         get {
             emsGeofence.isEnabled()
         }
     }
 
     init(emsGeofence: EMSGeofenceProtocol,
-         geofenceMapper: GeofenceMapper) {
+         geofenceMapper: GeofenceMapper,
+         eventStream: PassthroughSubject<Event, Error>) {
         self.emsGeofence = emsGeofence
         self.geofenceMapper = geofenceMapper
+        self.emsGeofence.eventHandler = { [unowned self] name, payload in
+            self.eventStream.send(Event(name, payload))
+            self.eventHandler?(name, payload)
+        }
+        super.init(eventStream: eventStream)
     }
 
-    func requestAlwaysAuthorization() async {
+    override func requestAlwaysAuthorization() async {
         emsGeofence.requestAlwaysAuthorization()
     }
 
-    func registeredGeofences() async -> [Geofence] {
+    override func registeredGeofences() async -> [Geofence] {
         geofenceMapper.map(emsGeofence.registeredGeofences())
     }
 
-    func enable() async throws {
+    override func enable() async throws {
         return try await withUnsafeThrowingContinuation { continuation in
             emsGeofence.enable { error in
                 if let error = error {
@@ -57,7 +58,7 @@ class GeofenceInternal: GeofenceApi {
         }
     }
 
-    func disable() async {
+    override func disable() async {
         emsGeofence.disable()
     }
 }
