@@ -11,5 +11,4 @@ public class NotificationInformation: NSObject {
     public init(_ campaignId: String) {
         self.campaignId = campaignId
     }
-    
 }

@@ -18,7 +18,8 @@ class PushLogger: NSObject, PushApi {
          silentNotificationEventPublisher: EventPublisher,
          silentNotificationInformationPublisher: NotificationInformationPublisher,
          notificationEventPublisher: EventPublisher,
-         notificationInformationPublisher: NotificationInformationPublisher) {
+         notificationInformationPublisher: NotificationInformationPublisher
+    ) {
         self.emsLoggingPush = emsLoggingPush
         self.delegate = delegate
         self.silentNotificationEventPublisher = silentNotificationEventPublisher

@@ -14,5 +14,4 @@ public class EventPublisher: NSObject, Publisher {
     public func receive<S>(subscriber: S) where S: Subscriber, Error == S.Failure, Event == S.Input {
 
     }
-
 }

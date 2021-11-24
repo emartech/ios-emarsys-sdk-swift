@@ -4,31 +4,40 @@
 
 import Foundation
 import EmarsysSDKExposed
+import Combine
 
 class InAppInternal: InAppApi {
+    @objc override var eventHandler: EMSEventHandlerBlock? {
+        get {
+            self.eventHandler
+        }
+        set {
+            self.eventHandler = newValue
+        }
+    }
+    
     let emsInApp: EMSInAppProtocol
-
-    var eventPublisher: EventPublisher {
-        get {
-            EventPublisher()
-        }
-    }
-
-    init(emsInApp: EMSInAppProtocol) {
+    
+    init(emsInApp: EMSInAppProtocol, eventStream: PassthroughSubject<Event, Error>) {
         self.emsInApp = emsInApp
-    }
-
-    var isPaused: Bool {
-        get {
-            emsInApp.isPaused()
+        super.init(eventStream: eventStream)
+        self.emsInApp.eventHandler = { [unowned self] name, payload in
+            self.eventStream.send(Event(name, payload))
+            self.eventHandler?(name, payload)
         }
     }
-
-    func pause() async {
+    
+    @objc override var isPaused: Bool {
+        get {
+            self.emsInApp.isPaused()
+        }
+    }
+    
+    @objc override func pause() async {
         emsInApp.pause()
     }
-
-    func resume() async {
+    
+    @objc override func resume() async {
         emsInApp.resume()
     }
 }

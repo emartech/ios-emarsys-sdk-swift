@@ -3,33 +3,38 @@
 //
 
 import Foundation
+import Combine
 import EmarsysSDKExposed
 
 class InAppLogger: InAppApi {
     let emsLoggingInApp: EMSInAppProtocol
 
-    var eventPublisher: EventPublisher {
+    @objc var emsEventHandler: EMSEventHandlerBlock? {
         get {
-            emsLoggingInApp.eventHandler
-            return EventPublisher()
+            self.emsLoggingInApp.eventHandler
+        }
+        set {
+            self.emsLoggingInApp.eventHandler = newValue
         }
     }
 
-    init(emsLoggingInApp: EMSInAppProtocol) {
+    init(emsLoggingInApp: EMSInAppProtocol,
+         eventStream: PassthroughSubject<Event, Error>) {
         self.emsLoggingInApp = emsLoggingInApp
+        super.init(eventStream: eventStream)
     }
-
-    var isPaused: Bool {
+    
+    @objc override var isPaused: Bool {
         get {
-            emsLoggingInApp.isPaused()
+            self.emsLoggingInApp.isPaused()
         }
     }
-
-    func pause() async {
+    
+    @objc override func pause() async {
         emsLoggingInApp.pause()
     }
-
-    func resume() async {
+    
+    @objc override func resume() async {
         emsLoggingInApp.resume()
     }
 }

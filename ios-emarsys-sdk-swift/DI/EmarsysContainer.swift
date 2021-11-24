@@ -3,12 +3,13 @@
 //
 
 import Foundation
+import Combine
 import EmarsysSDKExposed
 
 struct EmarsysContainer: EmarsysDependency {
     
     private var emarsysConfig: EMSConfig
-    private var completionMiddleware: EMSCompletionMiddleware = EMSCompletionMiddleware(successBlock: { requestId, response in },
+    internal var completionMiddleware: EMSCompletionMiddleware = EMSCompletionMiddleware(successBlock: { requestId, response in },
                                                                                 errorBlock: { requestId, response in })
 
     private lazy var suiteNames = Constants.suiteNames
@@ -84,7 +85,7 @@ struct EmarsysContainer: EmarsysDependency {
                                                         EMSContactTokenMapper(requestContext: self.meRequestContext, endpoint: self.endpoint)
                                                        ],
                                                        responseHandlers: [],
-                                                       mobileEngageBodyParser: nil)
+                                                       mobileEngageBodyParser: EMSMobileEngageNullSafeBodyParser(endpoint: self.endpoint))
     lazy var storage: EMSStorage = EMSStorage(suiteNames: suiteNames, accessGroup: emarsysConfig.sharedKeychainAccessGroup)
     lazy var crypto: EMSCrypto = EMSCrypto()
     lazy var requestManager: EMSRequestManager = EMSRequestManager(coreQueue: self.coreQueue,
@@ -213,8 +214,9 @@ struct EmarsysContainer: EmarsysDependency {
                                                silentNotificationInformationPublisher: NotificationInformationPublisher(),
                                                notificationEventPublisher: EventPublisher(),
                                                notificationInformationPublisher: NotificationInformationPublisher())
-    lazy var iam: InAppApi = InAppInternal(emsInApp: self.meIAM)
-    lazy var loggingIam: InAppApi = InAppLogger(emsLoggingInApp: EMSLoggingInApp())
+    let inAppEventStream = PassthroughSubject<Event, Error>()
+    lazy var iam: InAppApi = InAppInternal(emsInApp: self.meIAM, eventStream: inAppEventStream)
+    lazy var loggingIam: InAppApi = InAppLogger(emsLoggingInApp: EMSLoggingInApp(), eventStream: inAppEventStream)
     lazy var predict: PredictApi = PredictInternal(emsPredict: EMSPredictInternal(requestContext: self.predictRequestContext,
                                                                                   requestManager: self.requestManager,
                                                                                   request: EMSPredictRequestModelBuilderProvider(requestContext: self.predictRequestContext,
@@ -298,19 +300,19 @@ struct EmarsysContainer: EmarsysDependency {
     
     init(_ config: Config) {
         self.emarsysConfig = EMSConfig.make { builder in
-            if let applicationCode = config.applicationCode {
+            if let applicationCode = config.applicationCode as? String {
                 builder.setMobileEngageApplicationCode(applicationCode)
             }
-            if let merchantId = config.merchantId {
+            if let merchantId = config.merchantId as? String {
                 builder.setMerchantId(merchantId)
             }
-            if let experimentalFeatures = config.experimentalFeatures {
+            if let experimentalFeatures = config.experimentalFeatures as? [EMSFlipperFeature]{
                 builder.setExperimentalFeatures(experimentalFeatures)
             }
-            if let enabledConsoleLogLevels = config.enabledConsoleLogLevels {
+            if let enabledConsoleLogLevels = config.enabledConsoleLogLevels as? [EMSLogLevelProtocol] {
                 builder.enableConsoleLogLevels(enabledConsoleLogLevels)
             }
-            if let sharedKeychainAccessGroup = config.sharedKeychainAccessGroup {
+            if let sharedKeychainAccessGroup = config.sharedKeychainAccessGroup as? String {
                 builder.setSharedKeychainAccessGroup(sharedKeychainAccessGroup)
             }
         }
