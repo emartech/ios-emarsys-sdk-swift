@@ -23,7 +23,9 @@ class InAppInternalTests: XCTestCase {
     func testPause() async {
         var isCalled: Bool = false
 
-        fakeEMSInApp.callHandler = { (_ param: Any?...) in isCalled = true }
+        fakeEMSInApp.callHandler = { (_ param: Any?...) in
+            isCalled = true
+        }
 
         await self.inAppInternal.pause()
 
@@ -32,8 +34,10 @@ class InAppInternalTests: XCTestCase {
 
     func testResume() async {
         var isCalled: Bool = false
-        
-        fakeEMSInApp.callHandler = { (_ param: Any?...) in isCalled = true }
+
+        fakeEMSInApp.callHandler = { (_ param: Any?...) in
+            isCalled = true
+        }
 
         await self.inAppInternal.resume()
 
@@ -42,11 +46,46 @@ class InAppInternalTests: XCTestCase {
 
     func testIsPaused() async {
         var isCalled: Bool = false
-        
-        fakeEMSInApp.callHandler = { (_ param: Any?...) in isCalled = true }
+
+        fakeEMSInApp.callHandler = { (_ param: Any?...) in
+            isCalled = true
+        }
 
         XCTAssertTrue(self.inAppInternal.isPaused)
         XCTAssertTrue(isCalled)
 
+    }
+
+    func testEventHandler() {
+        var eventName = ""
+        var eventPayload: [String: Any?]? = [:]
+
+        self.inAppInternal.eventHandler = { name, payload in
+            eventName = name
+            eventPayload = payload
+        }
+
+        fakeEMSInApp.eventHandler("testName", ["test": "payload"])
+
+        XCTAssertEqual(eventName, "testName")
+        XCTAssertEqual(eventPayload as! [String: String], ["test": "payload"])
+    }
+
+    func testEventStream() {
+        var testName = ""
+        var testPayload: [String: String] = [:]
+
+        let cancellable = self.inAppInternal.eventStream.sink { error in
+            print(error)
+        } receiveValue: { event in
+            testName = event.name
+            testPayload = event.payload as! [String: String]
+        }
+
+        fakeEMSInApp.eventHandler("testName", ["test": "payload"])
+
+        XCTAssertEqual("testName", testName)
+        XCTAssertEqual("payload", testPayload["test"])
+        cancellable.cancel()
     }
 }

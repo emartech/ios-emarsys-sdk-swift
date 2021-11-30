@@ -7,17 +7,9 @@ import EmarsysSDKExposed
 import Combine
 
 class InAppInternal: InAppApi {
-    @objc override var eventHandler: EMSEventHandlerBlock? {
-        get {
-            self.eventHandler
-        }
-        set {
-            self.eventHandler = newValue
-        }
-    }
-    
+
     let emsInApp: EMSInAppProtocol
-    
+
     init(emsInApp: EMSInAppProtocol, eventStream: PassthroughSubject<Event, Error>) {
         self.emsInApp = emsInApp
         super.init(eventStream: eventStream)
@@ -26,17 +18,17 @@ class InAppInternal: InAppApi {
             self.eventHandler?(name, payload)
         }
     }
-    
+
     @objc override var isPaused: Bool {
         get {
             self.emsInApp.isPaused()
         }
     }
-    
+
     @objc override func pause() async {
         emsInApp.pause()
     }
-    
+
     @objc override func resume() async {
         emsInApp.resume()
     }

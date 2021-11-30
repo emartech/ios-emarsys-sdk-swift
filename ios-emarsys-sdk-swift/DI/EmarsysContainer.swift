@@ -203,17 +203,15 @@ struct EmarsysContainer: EmarsysDependency {
     lazy var deepLink: DeepLinkApi = DeepLinkInternal(emsDeepLink: EMSDeepLinkInternal(requestManager: requestManager, requestFactory: requestFactory))
     lazy var loggingDeepLink: DeepLinkApi = DeepLinkLogger(emsDeepLinkLogger: EMSLoggingDeepLinkInternal())
     lazy var push: PushApi = PushInternal(emsPush: self.emsPushInternal,
-                                          delegate: nil,
-                                          silentNotificationEventPublisher: EventPublisher(),
-                                          silentNotificationInformationPublisher: NotificationInformationPublisher(),
-                                          notificationEventPublisher: EventPublisher(),
-                                          notificationInformationPublisher: NotificationInformationPublisher())
+                                          silentNotificationEventStream: PassthroughSubject<Event, Error>(),
+                                          silentNotificationInformationStream: PassthroughSubject<NotificationInformation, Error>(),
+                                          notificationEventStream: PassthroughSubject<Event, Error>(),
+                                          notificationInformationStream: PassthroughSubject<NotificationInformation, Error>())
     lazy var loggingPush: PushApi = PushLogger(emsLoggingPush: EMSLoggingPushInternal(),
-                                               delegate: nil,
-                                               silentNotificationEventPublisher: EventPublisher(),
-                                               silentNotificationInformationPublisher: NotificationInformationPublisher(),
-                                               notificationEventPublisher: EventPublisher(),
-                                               notificationInformationPublisher: NotificationInformationPublisher())
+                                          silentNotificationEventStream: PassthroughSubject<Event, Error>(),
+                                          silentNotificationInformationStream: PassthroughSubject<NotificationInformation, Error>(),
+                                          notificationEventStream: PassthroughSubject<Event, Error>(),
+                                          notificationInformationStream: PassthroughSubject<NotificationInformation, Error>())
     let inAppEventStream = PassthroughSubject<Event, Error>()
     lazy var iam: InAppApi = InAppInternal(emsInApp: self.meIAM, eventStream: inAppEventStream)
     lazy var loggingIam: InAppApi = InAppLogger(emsLoggingInApp: EMSLoggingInApp(), eventStream: inAppEventStream)
@@ -231,8 +229,8 @@ struct EmarsysContainer: EmarsysDependency {
                                                            eventStream: geofenceEventStream)
     lazy var inbox: InboxApi = InboxInternal(emsInbox: self.emsInbox)
     lazy var loggingInbox: InboxApi = InboxLogger(emsLoggingInbox: EMSLoggingInboxV3())
-    lazy var onEventAction: OnEventActionApi = OnEventActionInternal(emsOnEventAction: self.emsOnEventAction)
-    lazy var loggingOnEventAction: OnEventActionApi = OnEventActionLogger(emsLoggingOnEventAction: EMSLoggingOnEventActionInternal())
+    lazy var onEventAction: OnEventActionApi = OnEventActionInternal(emsOnEventAction: self.emsOnEventAction, eventStream: PassthroughSubject<Event, Error>())
+    lazy var loggingOnEventAction: OnEventActionApi = OnEventActionLogger(emsLoggingOnEventAction: EMSLoggingOnEventActionInternal(), eventStream: PassthroughSubject<Event, Error>())
     lazy var config: ConfigApi = ConfigInternal(emsConfig: self.emsConfigInternal)
     
     lazy var emsConfigInternal: EMSConfigInternal = EMSConfigInternal(requestManager: self.requestManager,

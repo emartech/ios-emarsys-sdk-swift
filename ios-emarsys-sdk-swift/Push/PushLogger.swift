@@ -4,32 +4,43 @@
 
 import Foundation
 import EmarsysSDKExposed
+import Combine
 
-class PushLogger: NSObject, PushApi {
+class PushLogger: PushApi {
     let emsLoggingPush: EMSPushNotificationProtocol
-    var delegate: UNUserNotificationCenterDelegate?
-    var silentNotificationEventPublisher: EventPublisher
-    var silentNotificationInformationPublisher: NotificationInformationPublisher
-    var notificationEventPublisher: EventPublisher
-    var notificationInformationPublisher: NotificationInformationPublisher
 
     init(emsLoggingPush: EMSPushNotificationProtocol,
-         delegate: UNUserNotificationCenterDelegate?,
-         silentNotificationEventPublisher: EventPublisher,
-         silentNotificationInformationPublisher: NotificationInformationPublisher,
-         notificationEventPublisher: EventPublisher,
-         notificationInformationPublisher: NotificationInformationPublisher
+         silentNotificationEventStream: PassthroughSubject<Event, Error>,
+         silentNotificationInformationStream: PassthroughSubject<NotificationInformation, Error>,
+         notificationEventStream: PassthroughSubject<Event, Error>,
+         notificationInformationStream: PassthroughSubject<NotificationInformation, Error>
     ) {
         self.emsLoggingPush = emsLoggingPush
-        self.delegate = delegate
-        self.silentNotificationEventPublisher = silentNotificationEventPublisher
-        self.silentNotificationInformationPublisher = silentNotificationInformationPublisher
-        self.notificationEventPublisher = notificationEventPublisher
-        self.notificationInformationPublisher = notificationInformationPublisher
-        super.init()
+
+        super.init(silentNotificationEventStream: silentNotificationEventStream,
+                silentNotificationInformationStream: silentNotificationInformationStream,
+                notificationEventStream: notificationEventStream,
+                notificationInformationStream: notificationInformationStream)
+
+        self.emsLoggingPush.silentMessageEventHandler = { [unowned self] name, payload in
+            self.silentNotificationEventStream.send(Event(name, payload))
+            self.silentNotificationEventHandler?(name, payload)
+        }
+        self.emsLoggingPush.silentMessageInformationBlock = { [unowned self]  notificationInformation in
+            self.silentNotificationInformationStream.send(NotificationInformation(notificationInformation.campaignId))
+            self.silentNotificationInformationHandler?(notificationInformation)
+        }
+        self.emsLoggingPush.notificationEventHandler = { [unowned self] name, payload in
+            self.notificationEventStream.send(Event(name, payload))
+            self.notificationEventHandler?(name, payload)
+        }
+        self.emsLoggingPush.notificationInformationBlock = { [unowned self]  notificationInformation in
+            self.silentNotificationInformationStream.send(NotificationInformation(notificationInformation.campaignId))
+            self.notificationInformationHandler?(notificationInformation)
+        }
     }
 
-    func setPushToken(_ pushToken: Data) async throws {
+    @objc override func setPushToken(_ pushToken: Data) async throws {
         return try await withUnsafeThrowingContinuation { continuation in
             emsLoggingPush.setPushToken(pushToken: pushToken) { error in
                 if let error = error {
@@ -41,7 +52,7 @@ class PushLogger: NSObject, PushApi {
         }
     }
 
-    func clearPushToken() async throws {
+    @objc override func clearPushToken() async throws {
         return try await withUnsafeThrowingContinuation { continuation in
             emsLoggingPush.clearPushToken { error in
                 if let error = error {
@@ -53,7 +64,7 @@ class PushLogger: NSObject, PushApi {
         }
     }
 
-    func trackMessageOpen(_ userInfo: [String: Any]) async throws {
+    @objc override func trackMessageOpen(_ userInfo: [String: Any]) async throws {
         return try await withUnsafeThrowingContinuation { continuation in
             emsLoggingPush.trackMessageOpen(userInfo: userInfo) { error in
                 if let error = error {
@@ -65,7 +76,7 @@ class PushLogger: NSObject, PushApi {
         }
     }
 
-    func handleMessage(_ userInfo: [String: Any]) async {
+    @objc override func handleMessage(_ userInfo: [String: Any]) async {
         emsLoggingPush.handleMessage(userInfo: userInfo)
     }
 }

@@ -9,7 +9,7 @@ import EmarsysSDKExposed
 class GeofenceLogger: GeofenceApi {
     let emsLoggingGeofence: EMSGeofenceProtocol
 
-    override var initialEnterTriggerEnabled: Bool {
+    @objc override var initialEnterTriggerEnabled: Bool {
         get {
             emsLoggingGeofence.initialEnterTriggerEnabled
         }
@@ -18,7 +18,7 @@ class GeofenceLogger: GeofenceApi {
         }
     }
 
-    override var isEnabled: Bool {
+    @objc override var isEnabled: Bool {
         get {
             emsLoggingGeofence.isEnabled()
         }
@@ -30,16 +30,16 @@ class GeofenceLogger: GeofenceApi {
         super.init(eventStream: eventStream)
     }
 
-    override func requestAlwaysAuthorization() async {
+    @objc override func requestAlwaysAuthorization() async {
         emsLoggingGeofence.requestAlwaysAuthorization()
     }
 
-    override func registeredGeofences() async -> [Geofence] {
+    @objc override func registeredGeofences() async -> [Geofence] {
         emsLoggingGeofence.registeredGeofences()
         return []
     }
 
-    override func enable() async throws {
+    @objc override func enable() async throws {
         return try await withUnsafeThrowingContinuation { continuation in
             emsLoggingGeofence.enable { error in
                 if let error = error {
@@ -51,7 +51,7 @@ class GeofenceLogger: GeofenceApi {
         }
     }
 
-    override func disable() async {
+    @objc override func disable() async {
         emsLoggingGeofence.disable()
     }
 }

@@ -3,9 +3,16 @@
 //
 
 import Foundation
+import Combine
+import EmarsysSDKExposed
 
-@objc public protocol OnEventActionApi {
+public class OnEventActionApi: NSObject {
 
-    var eventPublisher: EventPublisher { get }
+    @objc public var eventHandler: EMSEventHandlerBlock?
 
+    public let eventStream: PassthroughSubject<Event, Error>
+
+    public init(eventStream: PassthroughSubject<Event, Error>) {
+        self.eventStream = eventStream
+    }
 }

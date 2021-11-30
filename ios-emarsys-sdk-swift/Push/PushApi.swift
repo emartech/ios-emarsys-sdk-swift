@@ -4,25 +4,52 @@
 
 import Foundation
 import UserNotifications
+import Combine
+import EmarsysSDKExposed
 
-@objc public protocol PushApi: UNUserNotificationCenterDelegate {
+public class PushApi: NSObject, UNUserNotificationCenterDelegate {
 
-    weak var delegate: UNUserNotificationCenterDelegate? { get set }
+    @objc public weak var delegate: UNUserNotificationCenterDelegate?
 
-    var silentNotificationEventPublisher: EventPublisher { get }
+    @objc public var silentNotificationEventHandler: EMSEventHandlerBlock?
 
-    var silentNotificationInformationPublisher: NotificationInformationPublisher { get }
+    @objc public var silentNotificationInformationHandler: EMSSilentNotificationInformationBlock?
 
-    var notificationEventPublisher: EventPublisher { get }
+    @objc public var notificationEventHandler: EMSEventHandlerBlock?
 
-    var notificationInformationPublisher: NotificationInformationPublisher { get }
+    @objc public var notificationInformationHandler: EMSSilentNotificationInformationBlock?
 
-    func setPushToken(_ pushToken: Data) async throws
+    public let silentNotificationEventStream: PassthroughSubject<Event, Error>
+    public let silentNotificationInformationStream: PassthroughSubject<NotificationInformation, Error>
+    public let notificationEventStream: PassthroughSubject<Event, Error>
+    public let notificationInformationStream: PassthroughSubject<NotificationInformation, Error>
 
-    func clearPushToken() async throws
+    @objc public func setPushToken(_ pushToken: Data) async throws {
 
-    func trackMessageOpen(_ userInfo: [String: Any]) async throws
+    }
 
-    func handleMessage(_ userInfo: [String: Any]) async
+    @objc public func clearPushToken() async throws {
 
+    }
+
+    @objc public func trackMessageOpen(_ userInfo: [String: Any]) async throws {
+
+    }
+
+    @objc public func handleMessage(_ userInfo: [String: Any]) async {
+
+    }
+
+    public init(
+            silentNotificationEventStream: PassthroughSubject<Event, Error>,
+            silentNotificationInformationStream: PassthroughSubject<NotificationInformation, Error>,
+            notificationEventStream: PassthroughSubject<Event, Error>,
+            notificationInformationStream: PassthroughSubject<NotificationInformation, Error>
+
+    ) {
+        self.silentNotificationEventStream = silentNotificationEventStream
+        self.silentNotificationInformationStream = silentNotificationInformationStream
+        self.notificationEventStream = notificationEventStream
+        self.notificationInformationStream = notificationInformationStream
+    }
 }

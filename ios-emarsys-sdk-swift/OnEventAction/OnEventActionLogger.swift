@@ -4,18 +4,22 @@
 
 import Foundation
 import EmarsysSDKExposed
+import Combine
 
 class OnEventActionLogger: OnEventActionApi {
     var emsLoggingOnEventAction: EMSOnEventActionProtocol
 
-    var eventPublisher: EventPublisher {
+    @objc var emsEventHandler: EMSEventHandlerBlock? {
         get {
-            emsLoggingOnEventAction.eventHandler
-            return EventPublisher()
+            self.emsLoggingOnEventAction.eventHandler
+        }
+        set {
+            self.emsLoggingOnEventAction.eventHandler = newValue
         }
     }
 
-    init(emsLoggingOnEventAction: EMSOnEventActionProtocol) {
+    init(emsLoggingOnEventAction: EMSOnEventActionProtocol, eventStream: PassthroughSubject<Event, Error>) {
         self.emsLoggingOnEventAction = emsLoggingOnEventAction
+        super.init(eventStream: eventStream)
     }
 }

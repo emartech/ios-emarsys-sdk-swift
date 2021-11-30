@@ -8,14 +8,7 @@ import EmarsysSDKExposed
 
 public class GeofenceApi: NSObject {
 
-    @objc public var eventHandler: EMSEventHandlerBlock? {
-        get {
-            self.eventHandler
-        }
-        set {
-            self.eventHandler = newValue
-        }
-    }
+    @objc public var eventHandler: EMSEventHandlerBlock?
 
     public let eventStream: PassthroughSubject<Event, Error>
 
