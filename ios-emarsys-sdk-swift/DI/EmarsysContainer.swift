@@ -27,7 +27,7 @@ struct EmarsysContainer: EmarsysDependency {
         var queue = EMSOperationQueue()
         queue.maxConcurrentOperationCount = 1
         queue.qualityOfService = .utility
-        queue.name = "core_sdk_queue_\(self.uuidProvider.provideUUIDString())"
+        queue.name = "core_sdk_queue_\(String(describing: self.uuidProvider.provideUUIDString()))"
         return queue
     }()
     
@@ -300,19 +300,19 @@ struct EmarsysContainer: EmarsysDependency {
     init(_ config: Config) {
         self.setupConfig = config
         self.emarsysConfig = EMSConfig.make { builder in
-            if let applicationCode = config.applicationCode as? String {
+            if let applicationCode = config.applicationCode {
                 builder.setMobileEngageApplicationCode(applicationCode)
             }
-            if let merchantId = config.merchantId as? String {
+            if let merchantId = config.merchantId {
                 builder.setMerchantId(merchantId)
             }
-            if let experimentalFeatures = config.experimentalFeatures as? [EMSFlipperFeature]{
+            if let experimentalFeatures = config.experimentalFeatures{
                 builder.setExperimentalFeatures(experimentalFeatures)
             }
-            if let enabledConsoleLogLevels = config.enabledConsoleLogLevels as? [EMSLogLevelProtocol] {
+            if let enabledConsoleLogLevels = config.enabledConsoleLogLevels {
                 builder.enableConsoleLogLevels(enabledConsoleLogLevels)
             }
-            if let sharedKeychainAccessGroup = config.sharedKeychainAccessGroup as? String {
+            if let sharedKeychainAccessGroup = config.sharedKeychainAccessGroup {
                 builder.setSharedKeychainAccessGroup(sharedKeychainAccessGroup)
             }
         }

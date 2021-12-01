@@ -83,7 +83,6 @@
 		FB89B5CBD2BE87DF419304B9 /* Geofence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89BEA28EEF852EDF2E97AB /* Geofence.swift */; };
 		FB89B742122B85D552F3CD02 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89BA9005BD847B0DF5D3EF /* Product.swift */; };
 		FB8A3137A1CDA666090D6714 /* NotificationInformationPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A39C0A8B64471513C314E /* NotificationInformationPublisher.swift */; };
-		FB8A315F7713CD6D95BDA06D /* InboxLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A36B09464F52DA50AF22E /* InboxLogger.swift */; };
 		FB8A3256880B61349203E432 /* GeofenceMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A38186C6EF2E3EEE0F7D7 /* GeofenceMapperTests.swift */; };
 		FB8A33450029B183C6F58B03 /* PushLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A3DF7FF9234E9E88D723D /* PushLogger.swift */; };
 		FB8A344F9985C0F7B45615F0 /* InAppInternalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A3F4E0ECE46D1072D09FF /* InAppInternalProtocol.swift */; };
@@ -757,7 +756,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = Emarsys;
 				TargetAttributes = {
 					5D2945E227215C45007FC73F = {
@@ -938,7 +937,6 @@
 				FB8A358BFE5EE80FAD29120B /* OnEventActionInternal.swift in Sources */,
 				FB8A3476E57417A115E9A418 /* OnEventActionLogger.swift in Sources */,
 				FB8A3A23E7B6AEDD9CCD0BF2 /* GeofenceMapper.swift in Sources */,
-				FB8A315F7713CD6D95BDA06D /* InboxLogger.swift in Sources */,
 				5777159527562FC80005F800 /* FakeNotificationCenterDelegate.swift in Sources */,
 				FB8A3D163329BC4B39BC7A5F /* PredictInternal.swift in Sources */,
 				FB8A3F0996FFAB811D1CBDDF /* PredictLogger.swift in Sources */,
