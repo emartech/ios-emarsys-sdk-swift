@@ -5,10 +5,13 @@
 import Foundation
 import Combine
 import EmarsysSDKExposed
+import UIKit
 
+@SdkActor
 struct EmarsysContainer: EmarsysDependency {
     
     private var emarsysConfig: EMSConfig
+    private var setupConfig: Config
     internal var completionMiddleware: EMSCompletionMiddleware = EMSCompletionMiddleware(successBlock: { requestId, response in },
                                                                                          errorBlock: { requestId, response in })
     
@@ -29,7 +32,7 @@ struct EmarsysContainer: EmarsysDependency {
     }()
     
     lazy var urlSession: URLSession = {
-        var sessionConfiguration = URLSessionConfiguration()
+        let sessionConfiguration = URLSessionConfiguration.default
         sessionConfiguration.timeoutIntervalForRequest = 30.0
         sessionConfiguration.httpCookieStorage = nil
         let session = URLSession(configuration: sessionConfiguration)
@@ -185,19 +188,13 @@ struct EmarsysContainer: EmarsysDependency {
                                                                                            deviceInfo: self.deviceInfo,
                                                                                            requestContext: self.meRequestContext)
     lazy var locationManager: CLLocationManager = CLLocationManager()
-    lazy var mobileEngageRouterLogicBlock: RouterLogicBlock = {
-        MEExperimental.isFeatureEnabled(EMSInnerFeature.mobileEngage)
-    }
-    lazy var predictEngageRouterLogicBlock: RouterLogicBlock = {
-        MEExperimental.isFeatureEnabled(EMSInnerFeature.predict)
-    }
     lazy var session: EMSSession = EMSSession(sessionIdHolder: self.sessionIdHolder,
                                               requestManager: self.requestManager,
                                               requestFactory: self.requestFactory,
                                               operationQueue: self.coreQueue,
                                               timestampProvider: self.timeStampProvider)
-    lazy var onEventActionFactory: EMSActionFactory = EMSActionFactory(application: UIApplication.shared, mobileEngage: self.emsMobileEngage)
-    lazy var actionFactory: EMSActionFactory = EMSActionFactory(application: UIApplication.shared, mobileEngage: self.emsMobileEngage)
+    lazy var onEventActionFactory: EMSActionFactory = EMSActionFactory(application: SdkActor.uiApplication, mobileEngage: self.emsMobileEngage)
+    lazy var actionFactory: EMSActionFactory = EMSActionFactory(application: SdkActor.uiApplication, mobileEngage: self.emsMobileEngage)
     lazy var mobileEngage: MobileEngageApi = MobileEngageInternal(emsMobileEngage: self.emsMobileEngage)
     lazy var loggingMobileEngage: MobileEngageApi = MobileEngageLogger(emsLoggingMobileEngage: EMSLoggingMobileEngageInternal())
     lazy var deepLink: DeepLinkApi = DeepLinkInternal(emsDeepLink: EMSDeepLinkInternal(requestManager: requestManager, requestFactory: requestFactory))
@@ -208,10 +205,10 @@ struct EmarsysContainer: EmarsysDependency {
                                           notificationEventStream: PassthroughSubject<Event, Error>(),
                                           notificationInformationStream: PassthroughSubject<NotificationInformation, Error>())
     lazy var loggingPush: PushApi = PushLogger(emsLoggingPush: EMSLoggingPushInternal(),
-                                          silentNotificationEventStream: PassthroughSubject<Event, Error>(),
-                                          silentNotificationInformationStream: PassthroughSubject<NotificationInformation, Error>(),
-                                          notificationEventStream: PassthroughSubject<Event, Error>(),
-                                          notificationInformationStream: PassthroughSubject<NotificationInformation, Error>())
+                                               silentNotificationEventStream: PassthroughSubject<Event, Error>(),
+                                               silentNotificationInformationStream: PassthroughSubject<NotificationInformation, Error>(),
+                                               notificationEventStream: PassthroughSubject<Event, Error>(),
+                                               notificationInformationStream: PassthroughSubject<NotificationInformation, Error>())
     let inAppEventStream = PassthroughSubject<Event, Error>()
     lazy var iam: InAppApi = InAppInternal(emsInApp: self.meIAM, eventStream: inAppEventStream)
     lazy var loggingIam: InAppApi = InAppLogger(emsLoggingInApp: EMSLoggingInApp(), eventStream: inAppEventStream)
@@ -260,25 +257,26 @@ struct EmarsysContainer: EmarsysDependency {
                                                        storage: self.storage,
                                                        queue: self.coreQueue)
     
-    lazy var meIAM: MEInApp = {
-        var meInApp = MEInApp(windowProvider: EMSWindowProvider(viewControllerProvider: EMSViewControllerProvider(),
-                                                                sceneProvider: EMSSceneProvider(application: UIApplication.shared)),
-                              mainWindowProvider: EMSMainWindowProvider(application: UIApplication.shared),
-                              timestampProvider: self.timeStampProvider,
-                              completionBlockProvider: EMSCompletionBlockProvider(operationQueue: self.coreQueue),
-                              displayedIamRepository: self.displayedIamRepository,
-                              buttonClickRepository: self.buttonClickRepository,
-                              operationQueue: self.coreQueue)
-        
-        meInApp.inAppTracker = self.emsInAppInternal
-        return meInApp
-    }()
+    lazy var meIAM: MEInApp = MEInApp(windowProvider: EMSWindowProvider(viewControllerProvider: EMSViewControllerProvider(),
+                                                                        sceneProvider: EMSSceneProvider(application: SdkActor.uiApplication)),
+                                      mainWindowProvider: EMSMainWindowProvider(application: SdkActor.uiApplication),
+                                      timestampProvider: self.timeStampProvider,
+                                      completionBlockProvider: EMSCompletionBlockProvider(operationQueue: self.coreQueue),
+                                      displayedIamRepository: self.displayedIamRepository,
+                                      buttonClickRepository: self.buttonClickRepository,
+                                      operationQueue: self.coreQueue)
     
-    lazy var emsInAppInternal: EMSInAppInternal = EMSInAppInternal(requestManager: self.requestManager,
-                                                                   requestFactory: self.requestFactory,
-                                                                   meInApp: self.meIAM,
-                                                                   timestampProvider: self.timeStampProvider,
-                                                                   uuidProvider: self.uuidProvider)
+    
+    lazy var emsInAppInternal: EMSInAppInternal = {
+        let inAppInternal = EMSInAppInternal(requestManager: self.requestManager,
+                                             requestFactory: self.requestFactory,
+                                             meInApp: self.meIAM,
+                                             timestampProvider: self.timeStampProvider,
+                                             uuidProvider: self.uuidProvider)
+        
+        self.meIAM.inAppTracker = inAppInternal
+        return inAppInternal!
+    }()
     
     lazy var emsPushInternal: EMSPushNotificationProtocol = EMSPushV3Internal(requestFactory: self.requestFactory,
                                                                               requestManager: self.requestManager,
@@ -300,6 +298,7 @@ struct EmarsysContainer: EmarsysDependency {
                                                                                   session: self.session)
     
     init(_ config: Config) {
+        self.setupConfig = config
         self.emarsysConfig = EMSConfig.make { builder in
             if let applicationCode = config.applicationCode as? String {
                 builder.setMobileEngageApplicationCode(applicationCode)

@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import EmarsysSDKExposed
 
 @objc public class Emarsys: NSObject {
     
@@ -49,7 +50,13 @@ import Foundation
 //    }
 
     @objc public static func setup(_ config: Config) async throws {
-        
+        if let applicationCode = config.applicationCode, !applicationCode.isEmpty {
+            MEExperimental.enable(EMSInnerFeature.mobileEngage)
+            MEExperimental.enable(EMSInnerFeature.eventServiceV4)
+        }
+        if let merchantId = config.merchantId, !merchantId.isEmpty {
+            MEExperimental.enable(EMSInnerFeature.predict)
+        }
     }
     
     @objc public static func setAuthenticatedContact(_ contactFieldId: Int, _ openIdToken: String) async throws {

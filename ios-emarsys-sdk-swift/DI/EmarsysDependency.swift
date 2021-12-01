@@ -5,6 +5,7 @@
 import Foundation
 import EmarsysSDKExposed
 
+@SdkActor
 protocol EmarsysDependency {
     var coreQueue: EMSOperationQueue { mutating get }
     var endpoint: EMSEndpoint { mutating get }
@@ -36,8 +37,6 @@ protocol EmarsysDependency {
     var appStartBlockProvider: EMSAppStartBlockProvider { mutating get }
     var deviceInfoClient: EMSDeviceInfoClientProtocol { mutating get }
     var locationManager: CLLocationManager { mutating get }
-    var mobileEngageRouterLogicBlock: RouterLogicBlock { mutating get }
-    var predictEngageRouterLogicBlock: RouterLogicBlock { mutating get }
     var session: EMSSession { mutating get }
     var onEventActionFactory: EMSActionFactory { mutating get }
     var actionFactory: EMSActionFactory { mutating get }
