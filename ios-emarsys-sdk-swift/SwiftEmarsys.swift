@@ -7,47 +7,47 @@ import EmarsysSDKExposed
 
 @objc public class SwiftEmarsys: NSObject {
     
-//    public static var push: PushApi {
-//        get {
-//
-//        }
-//    }
-//
-//    public static var messageInbox: InboxApi {
-//        get {
-//
-//        }
-//    }
-//
-//    public static var inApp: InAppApi {
-//        get {
-//
-//        }
-//    }
-//
-//    public static var geofence: GeofenceApi {
-//        get {
-//
-//        }
-//    }
-//
-//    public static var predict: PredictApi {
-//        get {
-//
-//        }
-//    }
+    public static var push: PushApi {
+        get async {
+            return try! await DependencyInjection.push()
+        }
+    }
+
+    public static var inbox: InboxApi {
+        get async {
+            return try! await DependencyInjection.inbox()
+        }
+    }
+
+    public static var inApp: InAppApi {
+        get async {
+            return try! await DependencyInjection.inApp()
+        }
+    }
+
+    public static var geofence: GeofenceApi {
+        get async {
+            return try! await DependencyInjection.geofence()
+        }
+    }
+
+    public static var predict: PredictApi {
+        get async {
+            return try! await DependencyInjection.predict()
+        }
+    }
+
+    public static var onEventAction: OnEventActionApi {
+        get async {
+            return try! await DependencyInjection.onEventAction()
+        }
+    }
 
     public static var config: ConfigApi {
         get async {
             return try! await DependencyInjection.config()
         }
     }
-//
-//    public static var onEventAction: OnEventActionApi {
-//        get {
-//
-//        }
-//    }
 
     @objc public static func setup(_ config: Config) async throws {
         if let applicationCode = config.applicationCode, !applicationCode.isEmpty {
