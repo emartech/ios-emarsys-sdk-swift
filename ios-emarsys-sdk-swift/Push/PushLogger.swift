@@ -40,7 +40,7 @@ class PushLogger: PushApi {
         }
     }
 
-    @objc override func setPushToken(_ pushToken: Data) async throws {
+    override func setPushToken(_ pushToken: Data) async throws {
         return try await withUnsafeThrowingContinuation { continuation in
             emsLoggingPush.setPushToken(pushToken: pushToken) { error in
                 if let error = error {
@@ -52,7 +52,7 @@ class PushLogger: PushApi {
         }
     }
 
-    @objc override func clearPushToken() async throws {
+    override func clearPushToken() async throws {
         return try await withUnsafeThrowingContinuation { continuation in
             emsLoggingPush.clearPushToken { error in
                 if let error = error {
@@ -64,7 +64,7 @@ class PushLogger: PushApi {
         }
     }
 
-    @objc override func trackMessageOpen(_ userInfo: [String: Any]) async throws {
+    override func trackMessageOpen(_ userInfo: [String: Any]) async throws {
         return try await withUnsafeThrowingContinuation { continuation in
             emsLoggingPush.trackMessageOpen(userInfo: userInfo) { error in
                 if let error = error {
@@ -76,7 +76,7 @@ class PushLogger: PushApi {
         }
     }
 
-    @objc override func handleMessage(_ userInfo: [String: Any]) async {
+    override func handleMessage(_ userInfo: [String: Any]) async {
         emsLoggingPush.handleMessage(userInfo: userInfo)
     }
 }

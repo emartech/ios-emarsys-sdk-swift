@@ -5,7 +5,7 @@
 import Foundation
 import EmarsysSDKExposed
 
-@objc public class Emarsys: NSObject {
+@objc public class SwiftEmarsys: NSObject {
     
 //    public static var push: PushApi {
 //        get {
@@ -36,12 +36,12 @@ import EmarsysSDKExposed
 //
 //        }
 //    }
-//
-//    public static var config: ConfigApi {
-//        get {
-//
-//        }
-//    }
+
+    public static var config: ConfigApi {
+        get async {
+            return try! await DependencyInjection.config()
+        }
+    }
 //
 //    public static var onEventAction: OnEventActionApi {
 //        get {
@@ -57,6 +57,7 @@ import EmarsysSDKExposed
         if let merchantId = config.merchantId, !merchantId.isEmpty {
             MEExperimental.enable(EMSInnerFeature.predict)
         }
+        await DependencyInjection.setup(EmarsysContainer(config))
     }
     
     @objc public static func setAuthenticatedContact(_ contactFieldId: Int, _ openIdToken: String) async throws {

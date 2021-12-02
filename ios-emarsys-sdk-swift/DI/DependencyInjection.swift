@@ -22,6 +22,11 @@ class DependencyInjection {
     static func dependencyContainer() async throws -> EmarsysDependency {
         try await getNilSafeDependencyContainer()
     }
+    
+    static func config() async throws -> ConfigApi {
+        var dependencyContainer = try await getNilSafeDependencyContainer()
+        return await dependencyContainer.config
+    }
 
     static func mobileEngage() async throws -> MobileEngageApi {
         var dependencyContainer = try await getNilSafeDependencyContainer()

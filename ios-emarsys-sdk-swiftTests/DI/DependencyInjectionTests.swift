@@ -105,8 +105,23 @@ class DependencyInjectionTests: XCTestCase {
         }
     }
     
+    func testConfig_shouldReturnInternal() async throws {
+        try await SwiftEmarsys.setup(mobileEngageConfig)
+        await DependencyInjection.setup(EmarsysContainer(mobileEngageConfig))
+        
+        var result: ConfigApi? = nil
+        do {
+            result = try await DependencyInjection.config()
+        }
+        catch {
+        }
+        
+        XCTAssertNotNil(result)
+        XCTAssertTrue(result is ConfigInternal)
+    }
+    
     func testMobileEngage_shouldReturnInternalInstanceWhenFeatureIsEnabled() async throws {
-        try await Emarsys.setup(mobileEngageConfig)
+        try await SwiftEmarsys.setup(mobileEngageConfig)
         await DependencyInjection.setup(EmarsysContainer(mobileEngageConfig))
         
         var result: MobileEngageApi? = nil
@@ -122,7 +137,7 @@ class DependencyInjectionTests: XCTestCase {
     
     func testMobileEngage_shouldReturnLoggingInstanceWhenFeatureIsNotEnabled() async throws {
         let config = Config(applicationCode: "", experimentalFeatures: nil, enabledConsoleLogLevels: nil, merchantId: nil, sharedKeychainAccessGroup: nil)
-        try await Emarsys.setup(config)
+        try await SwiftEmarsys.setup(config)
         await DependencyInjection.setup(EmarsysContainer(config))
         
         var result: MobileEngageApi? = nil
@@ -137,7 +152,7 @@ class DependencyInjectionTests: XCTestCase {
     }
     
     func testPush_shouldReturnInternalInstanceWhenFeatureIsEnabled() async throws {
-        try await Emarsys.setup(mobileEngageConfig)
+        try await SwiftEmarsys.setup(mobileEngageConfig)
         await DependencyInjection.setup(EmarsysContainer(mobileEngageConfig))
         
         var result: PushApi? = nil
@@ -153,7 +168,7 @@ class DependencyInjectionTests: XCTestCase {
     
     func testPush_shouldReturnLoggingInstanceWhenFeatureIsNotEnabled() async throws {
         let config = Config(applicationCode: "", experimentalFeatures: nil, enabledConsoleLogLevels: nil, merchantId: nil, sharedKeychainAccessGroup: nil)
-        try await Emarsys.setup(config)
+        try await SwiftEmarsys.setup(config)
         await DependencyInjection.setup(EmarsysContainer(config))
         
         var result: PushApi? = nil
@@ -168,7 +183,7 @@ class DependencyInjectionTests: XCTestCase {
     }
     
     func testDeepLink_shouldReturnInternalInstanceWhenFeatureIsEnabled() async throws {
-        try await Emarsys.setup(mobileEngageConfig)
+        try await SwiftEmarsys.setup(mobileEngageConfig)
         await DependencyInjection.setup(EmarsysContainer(mobileEngageConfig))
         
         var result: DeepLinkApi? = nil
@@ -184,7 +199,7 @@ class DependencyInjectionTests: XCTestCase {
     
     func testDeepLink_shouldReturnLoggingInstanceWhenFeatureIsNotEnabled() async throws {
         let config = Config(applicationCode: "", experimentalFeatures: nil, enabledConsoleLogLevels: nil, merchantId: nil, sharedKeychainAccessGroup: nil)
-        try await Emarsys.setup(config)
+        try await SwiftEmarsys.setup(config)
         await DependencyInjection.setup(EmarsysContainer(config))
         
         var result: DeepLinkApi? = nil
@@ -199,7 +214,7 @@ class DependencyInjectionTests: XCTestCase {
     }
     
     func testInApp_shouldReturnInternalInstanceWhenFeatureIsEnabled() async throws {
-        try await Emarsys.setup(mobileEngageConfig)
+        try await SwiftEmarsys.setup(mobileEngageConfig)
         await DependencyInjection.setup(EmarsysContainer(mobileEngageConfig))
         
         var result: InAppApi? = nil
@@ -215,7 +230,7 @@ class DependencyInjectionTests: XCTestCase {
     
     func testInApp_shouldReturnLoggingInstanceWhenFeatureIsNotEnabled() async throws {
         let config = Config(applicationCode: "", experimentalFeatures: nil, enabledConsoleLogLevels: nil, merchantId: nil, sharedKeychainAccessGroup: nil)
-        try await Emarsys.setup(config)
+        try await SwiftEmarsys.setup(config)
         await DependencyInjection.setup(EmarsysContainer(config))
         
         var result: InAppApi? = nil
@@ -230,7 +245,7 @@ class DependencyInjectionTests: XCTestCase {
     }
     
     func testGeofence_shouldReturnInternalInstanceWhenFeatureIsEnabled() async throws {
-        try await Emarsys.setup(mobileEngageConfig)
+        try await SwiftEmarsys.setup(mobileEngageConfig)
         await DependencyInjection.setup(EmarsysContainer(mobileEngageConfig))
         
         var result: GeofenceApi? = nil
@@ -246,7 +261,7 @@ class DependencyInjectionTests: XCTestCase {
     
     func testGeofence_shouldReturnLoggingInstanceWhenFeatureIsNotEnabled() async throws {
         let config = Config(applicationCode: "", experimentalFeatures: nil, enabledConsoleLogLevels: nil, merchantId: nil, sharedKeychainAccessGroup: nil)
-        try await Emarsys.setup(config)
+        try await SwiftEmarsys.setup(config)
         await DependencyInjection.setup(EmarsysContainer(config))
         
         var result: GeofenceApi? = nil
@@ -261,7 +276,7 @@ class DependencyInjectionTests: XCTestCase {
     }
     
     func testInBox_shouldReturnInternalInstanceWhenFeatureIsEnabled() async throws {
-        try await Emarsys.setup(mobileEngageConfig)
+        try await SwiftEmarsys.setup(mobileEngageConfig)
         await DependencyInjection.setup(EmarsysContainer(mobileEngageConfig))
         
         var result: InboxApi? = nil
@@ -277,7 +292,7 @@ class DependencyInjectionTests: XCTestCase {
     
     func testInbox_shouldReturnLoggingInstanceWhenFeatureIsNotEnabled() async throws {
         let config = Config(applicationCode: "", experimentalFeatures: nil, enabledConsoleLogLevels: nil, merchantId: nil, sharedKeychainAccessGroup: nil)
-        try await Emarsys.setup(config)
+        try await SwiftEmarsys.setup(config)
         await DependencyInjection.setup(EmarsysContainer(config))
         
         var result: InboxApi? = nil
@@ -292,7 +307,7 @@ class DependencyInjectionTests: XCTestCase {
     }
     
     func testOnEventAction_shouldReturnInternalInstanceWhenFeatureIsEnabled() async throws {
-        try await Emarsys.setup(mobileEngageConfig)
+        try await SwiftEmarsys.setup(mobileEngageConfig)
         await DependencyInjection.setup(EmarsysContainer(mobileEngageConfig))
         
         var result: OnEventActionApi? = nil
@@ -308,7 +323,7 @@ class DependencyInjectionTests: XCTestCase {
     
     func testOnEventAction_shouldReturnLoggingInstanceWhenFeatureIsNotEnabled() async throws {
         let config = Config(applicationCode: "", experimentalFeatures: nil, enabledConsoleLogLevels: nil, merchantId: nil, sharedKeychainAccessGroup: nil)
-        try await Emarsys.setup(config)
+        try await SwiftEmarsys.setup(config)
         await DependencyInjection.setup(EmarsysContainer(config))
         
         var result: OnEventActionApi? = nil
@@ -323,7 +338,7 @@ class DependencyInjectionTests: XCTestCase {
     }
     
     func testPredict_shouldReturnInternalInstanceWhenFeatureIsEnabled() async throws {
-        try await Emarsys.setup(predictConfig)
+        try await SwiftEmarsys.setup(predictConfig)
         await DependencyInjection.setup(EmarsysContainer(predictConfig))
         
         var result: PredictApi? = nil
@@ -339,7 +354,7 @@ class DependencyInjectionTests: XCTestCase {
     
     func testPredict_shouldReturnLoggingInstanceWhenFeatureIsNotEnabled() async throws {
         let config = Config(applicationCode: "", experimentalFeatures: nil, enabledConsoleLogLevels: nil, merchantId: nil, sharedKeychainAccessGroup: nil)
-        try await Emarsys.setup(config)
+        try await SwiftEmarsys.setup(config)
         await DependencyInjection.setup(EmarsysContainer(config))
         
         var result: PredictApi? = nil

@@ -11,7 +11,7 @@ class GeofenceInternal: GeofenceApi {
     let emsGeofence: EMSGeofenceProtocol
     let geofenceMapper: GeofenceMapper
 
-    @objc override var initialEnterTriggerEnabled: Bool {
+    override var initialEnterTriggerEnabled: Bool {
         get {
             emsGeofence.initialEnterTriggerEnabled
         }
@@ -20,7 +20,7 @@ class GeofenceInternal: GeofenceApi {
         }
     }
 
-    @objc override var isEnabled: Bool {
+    override var isEnabled: Bool {
         get {
             emsGeofence.isEnabled()
         }
@@ -38,15 +38,15 @@ class GeofenceInternal: GeofenceApi {
         }
     }
 
-    @objc override func requestAlwaysAuthorization() async {
+    override func requestAlwaysAuthorization() async {
         emsGeofence.requestAlwaysAuthorization()
     }
 
-    @objc override func registeredGeofences() async -> [Geofence] {
+    override func registeredGeofences() async -> [Geofence] {
         geofenceMapper.map(emsGeofence.registeredGeofences())
     }
 
-    @objc override func enable() async throws {
+    override func enable() async throws {
         return try await withUnsafeThrowingContinuation { continuation in
             emsGeofence.enable { error in
                 if let error = error {

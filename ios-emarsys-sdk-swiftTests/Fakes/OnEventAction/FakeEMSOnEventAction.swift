@@ -5,7 +5,7 @@
 import Foundation
 import EmarsysSDKExposed
 
-@objc public class FakeEMSOnEventAction: NSObject, EMSOnEventActionProtocol {
+public class FakeEMSOnEventAction: NSObject, EMSOnEventActionProtocol {
 
     public var eventHandler: EMSEventHandlerBlock?
 

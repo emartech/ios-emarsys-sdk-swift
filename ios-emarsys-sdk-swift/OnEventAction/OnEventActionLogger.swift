@@ -9,7 +9,7 @@ import Combine
 class OnEventActionLogger: OnEventActionApi {
     var emsLoggingOnEventAction: EMSOnEventActionProtocol
 
-    @objc var emsEventHandler: EMSEventHandlerBlock? {
+    override var eventHandler: EMSEventHandlerBlock? {
         get {
             self.emsLoggingOnEventAction.eventHandler
         }

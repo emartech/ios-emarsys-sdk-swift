@@ -39,13 +39,13 @@ class PushInternal: PushApi {
         }
     }
 
-    @objc override var delegate: UNUserNotificationCenterDelegate? {
+    override var delegate: UNUserNotificationCenterDelegate? {
         didSet {
             self.emsPush.delegate = delegate
         }
     }
 
-    @objc override func setPushToken(_ pushToken: Data) async throws {
+    override func setPushToken(_ pushToken: Data) async throws {
         return try await withUnsafeThrowingContinuation { continuation in
             emsPush.setPushToken(pushToken: pushToken) { error in
                 if let error = error {
@@ -57,7 +57,7 @@ class PushInternal: PushApi {
         }
     }
 
-    @objc public override func clearPushToken() async throws {
+    public override func clearPushToken() async throws {
         return try await withUnsafeThrowingContinuation { continuation in
             emsPush.clearPushToken { error in
                 if let error = error {
@@ -69,7 +69,7 @@ class PushInternal: PushApi {
         }
     }
 
-    @objc public override func trackMessageOpen(_ userInfo: [String: Any]) async throws {
+    public override func trackMessageOpen(_ userInfo: [String: Any]) async throws {
         return try await withUnsafeThrowingContinuation { continuation in
             emsPush.trackMessageOpen(userInfo: userInfo) { error in
                 if let error = error {
@@ -81,7 +81,7 @@ class PushInternal: PushApi {
         }
     }
 
-    @objc public override func handleMessage(_ userInfo: [String: Any]) async {
+    public override func handleMessage(_ userInfo: [String: Any]) async {
         emsPush.handleMessage(userInfo: userInfo)
     }
 }

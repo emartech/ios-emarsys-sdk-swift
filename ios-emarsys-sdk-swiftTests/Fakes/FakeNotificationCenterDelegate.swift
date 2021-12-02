@@ -5,6 +5,6 @@
 import Foundation
 import UserNotifications
 
-@objc public class FakeNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate {
+public class FakeNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate {
  
 }

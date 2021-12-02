@@ -25,19 +25,19 @@ public class PushApi: NSObject, UNUserNotificationCenterDelegate {
     public let notificationInformationStream: PassthroughSubject<NotificationInformation, Error>
 
     @objc public func setPushToken(_ pushToken: Data) async throws {
-
+        fatalError("Subclasses needs to implement the `setPushToken` method.")
     }
 
     @objc public func clearPushToken() async throws {
-
+        fatalError("Subclasses needs to implement the `clearPushToken` method.")
     }
 
     @objc public func trackMessageOpen(_ userInfo: [String: Any]) async throws {
-
+        fatalError("Subclasses needs to implement the `trackMessageOpen` method.")
     }
 
     @objc public func handleMessage(_ userInfo: [String: Any]) async {
-
+        fatalError("Subclasses needs to implement the `handleMessage` method.")
     }
 
     public init(

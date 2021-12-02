@@ -14,33 +14,33 @@ public class GeofenceApi: NSObject {
 
     @objc public var initialEnterTriggerEnabled: Bool {
         get {
-            self.initialEnterTriggerEnabled
+            fatalError("Subclasses needs to override the `initialEnterTriggerEnabled`.")
         }
         set {
-            self.initialEnterTriggerEnabled = newValue
+            fatalError("Subclasses needs to override the `initialEnterTriggerEnabled`.")
         }
     }
 
     @objc public var isEnabled: Bool {
         get {
-            self.isEnabled
+            fatalError("Subclasses needs to override the `isEnabled`.")
         }
     }
 
     @objc public func requestAlwaysAuthorization() async {
-
+        fatalError("Subclasses needs to implement the `requestAlwaysAuthorization` method.")
     }
 
     @objc public func registeredGeofences() async -> [Geofence] {
-        []
+        fatalError("Subclasses needs to implement the `registeredGeofences` method.")
     }
 
     @objc public func enable() async throws {
-
+        fatalError("Subclasses needs to implement the `enable` method.")
     }
 
     @objc public func disable() async {
-
+        fatalError("Subclasses needs to implement the `disable` method.")
     }
 
     public init(eventStream: PassthroughSubject<Event, Error>) {

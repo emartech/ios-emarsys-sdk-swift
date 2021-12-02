@@ -14,16 +14,16 @@ public class InAppApi: NSObject {
 
     @objc public var isPaused: Bool {
         get {
-            self.isPaused
+            fatalError("Subclasses needs to override the `isPaused`.")
         }
     }
 
     @objc public func pause() async {
-
+        fatalError("Subclasses needs to implement the `pause` method.")
     }
 
     @objc public func resume() async {
-
+        fatalError("Subclasses needs to implement the `resume` method.")
     }
 
     public init(eventStream: PassthroughSubject<Event, Error>) {

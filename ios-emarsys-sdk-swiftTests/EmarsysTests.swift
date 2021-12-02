@@ -34,20 +34,20 @@ class EmarsysTests: XCTestCase {
     }
     
     func testSetup_shouldEnableMobileEngageAndEventServiceV4_whenApplicationCodeIsAvailableInConfig() async throws {
-        try await Emarsys.setup(mobileEngageConfig)
+        try await SwiftEmarsys.setup(mobileEngageConfig)
         
         XCTAssertTrue(MEExperimental.isFeatureEnabled(EMSInnerFeature.mobileEngage))
         XCTAssertTrue(MEExperimental.isFeatureEnabled(EMSInnerFeature.eventServiceV4))
     }
     
     func testSetup_shouldPredict_whenMerchantIdIsAvailableInConfig() async throws {
-        try await Emarsys.setup(predictConfig)
+        try await SwiftEmarsys.setup(predictConfig)
         
         XCTAssertTrue(MEExperimental.isFeatureEnabled(EMSInnerFeature.predict))
     }
     
     func testSetup_mobileEngageAndEventServiceV4FeatureShouldNotBeEnabled_whenConfigDoesNotContainsNeededData() async throws {
-        try await Emarsys.setup(Config(applicationCode: "",
+        try await SwiftEmarsys.setup(Config(applicationCode: "",
                                        experimentalFeatures: nil,
                                        enabledConsoleLogLevels: nil,
                                        merchantId: "testMerchantId",
@@ -58,8 +58,20 @@ class EmarsysTests: XCTestCase {
     }
     
     func testSetup_PredictFeatureShouldNotBeEnabled_whenConfigDoesNotContainsNeededData() async throws {
-        try await Emarsys.setup(mobileEngageConfig)
+        try await SwiftEmarsys.setup(mobileEngageConfig)
         
         XCTAssertFalse(MEExperimental.isFeatureEnabled(EMSInnerFeature.predict))
+    }
+    
+    func testSetup_shouldSetupDependencyContainer() async throws {
+        try await SwiftEmarsys.setup(mobileEngageConfig)
+        var result: EmarsysDependency? = nil
+        
+        do {
+            try await SwiftEmarsys.setup(mobileEngageConfig)
+            result = try await DependencyInjection.dependencyContainer()
+        }
+        
+        XCTAssertNotNil(result)
     }
 }
