@@ -5,12 +5,20 @@
 import Foundation
 import EmarsysSDKExposed
 
-class PredictInternal: PredictApi {
+class PredictInternal: PredictApi, ExposedPredict {
 
     let emsPredict: EMSPredictProtocol
 
     init(emsPredict: EMSPredictProtocol) {
         self.emsPredict = emsPredict
+    }
+    
+    func setContact(contactFieldId: NSNumber?, contactFieldValue: String?) async throws {
+        (emsPredict as! EMSPredictInternalProtocol).setContactWithContactFieldId(contactFieldId, contactFieldValue: contactFieldValue)
+    }
+    
+    func clearContact() async throws {
+        (emsPredict as! EMSPredictInternalProtocol).clearContact()
     }
 
     func trackCart(_ items: [CartItem]) async {

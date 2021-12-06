@@ -5,7 +5,7 @@
 import Foundation
 import EmarsysSDKExposed
 
-class PredictLogger: PredictApi {
+class PredictLogger: PredictApi, ExposedPredict {
 
     let emsLoggingPredict: EMSPredictProtocol
 
@@ -13,6 +13,14 @@ class PredictLogger: PredictApi {
         self.emsLoggingPredict = emsLoggingPredict
     }
 
+    func setContact(contactFieldId: NSNumber?, contactFieldValue: String?) async throws {
+        (self.emsLoggingPredict as! EMSPredictInternalProtocol).setContactWithContactFieldId(contactFieldId, contactFieldValue: contactFieldValue)
+    }
+    
+    func clearContact() async throws {
+        (self.emsLoggingPredict as! EMSPredictInternalProtocol).clearContact()
+    }
+    
     func trackCart(_ items: [CartItem]) async {
         emsLoggingPredict.trackCart(items: items)
     }

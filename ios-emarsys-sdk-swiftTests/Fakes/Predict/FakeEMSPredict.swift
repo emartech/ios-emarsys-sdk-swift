@@ -4,12 +4,22 @@
 
 import Foundation
 import EmarsysSDKExposed
+import ios_emarsys_sdk_swift
 
 
-@objc public class FakeEMSPredict : NSObject, EMSPredictProtocol {
+@objc public class FakeEMSPredict : NSObject, EMSPredictProtocol, EMSPredictInternalProtocol {
+    
     var error: NSError? = nil
     var callHandler: CallHandler!
     var testProduct: EMSProductProtocol = FakeEMSProduct()
+    
+    public func setContactWithContactFieldId(_ contactFieldId: NSNumber!, contactFieldValue: String!) {
+        self.callHandler(contactFieldId, contactFieldValue)
+    }
+    
+    public func clearContact() {
+        self.callHandler()
+    }
     
     public func trackCart(items: [EMSCartItemProtocol]) {
         self.callHandler(items)

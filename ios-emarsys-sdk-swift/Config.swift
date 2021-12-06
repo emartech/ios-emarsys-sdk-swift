@@ -16,11 +16,11 @@ import Foundation
 
     @objc public let sharedKeychainAccessGroup: String?
 
-    @objc public init(applicationCode: String?,
-                experimentalFeatures: [FlipperFeature]?,
-                enabledConsoleLogLevels: [LogLevelProtocol]?,
-                merchantId: String?,
-                sharedKeychainAccessGroup: String?) {
+    @objc public init(applicationCode: String? = nil,
+                experimentalFeatures: [FlipperFeature]? = nil,
+                enabledConsoleLogLevels: [LogLevelProtocol]? = nil,
+                merchantId: String? = nil,
+                sharedKeychainAccessGroup: String? = nil) {
         self.applicationCode = applicationCode
         self.experimentalFeatures = experimentalFeatures
         self.enabledConsoleLogLevels = enabledConsoleLogLevels

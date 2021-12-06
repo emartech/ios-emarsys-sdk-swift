@@ -11,6 +11,7 @@
 		1DD5A0DADD9ECF759D923E34 /* Pods_ios_emarsys_sdk_swiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5ACA8F2C1ED1C570FE5B85D /* Pods_ios_emarsys_sdk_swiftTests.framework */; };
 		2A1BE93D27479E9400FFB79A /* ServiceUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A3557B764D7172A243E3A /* ServiceUrls.swift */; };
 		2A2585B42727F92100A7E810 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2A2585B32727F92100A7E810 /* Podfile */; };
+		2A309151275E5327009AB798 /* FakeDeepLinkApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A309150275E5327009AB798 /* FakeDeepLinkApi.swift */; };
 		2A4748B42757893D005E4F9B /* EmarsysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4748B32757893D005E4F9B /* EmarsysTests.swift */; };
 		2A4C94CF273AB4170016985C /* ConfigInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C94CE273AB4170016985C /* ConfigInternal.swift */; };
 		2A4C94D2273AB47A0016985C /* InAppInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C94D0273AB47A0016985C /* InAppInternal.swift */; };
@@ -31,6 +32,11 @@
 		2AAE103227284A1400064246 /* GeofenceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE1019272840D200064246 /* GeofenceApi.swift */; };
 		2AAE103327284A1900064246 /* PredictApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE101B272840D200064246 /* PredictApi.swift */; };
 		2AAE103427284A1E00064246 /* ConfigApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE101D272840D300064246 /* ConfigApi.swift */; };
+		2ABAA4BD2758D36900851BB2 /* FakeDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABAA4BC2758D36900851BB2 /* FakeDependencyContainer.swift */; };
+		2ABAA4BF2758F77C00851BB2 /* Fakable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABAA4BE2758F77C00851BB2 /* Fakable.swift */; };
+		2ABAA4C12758FFC600851BB2 /* FakeMobileEngageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABAA4C02758FFC600851BB2 /* FakeMobileEngageApi.swift */; };
+		2ABAA4C32759141C00851BB2 /* FakePredictApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABAA4C22759141C00851BB2 /* FakePredictApi.swift */; };
+		2ABAA4C5275915FF00851BB2 /* ExposedPredict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABAA4C4275915FF00851BB2 /* ExposedPredict.swift */; };
 		2ACFC458275675C4007DA5FE /* EmarsysError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFC457275675C4007DA5FE /* EmarsysError.swift */; };
 		2ACFC45B27567635007DA5FE /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFC45A27567635007DA5FE /* TestExtensions.swift */; };
 		5714DB602743A73A006290BC /* PushInternalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DB5F2743A73A006290BC /* PushInternalTests.swift */; };
@@ -117,6 +123,7 @@
 /* Begin PBXFileReference section */
 		18BD62C7980CB83965C8CC74 /* Pods-ios-emarsys-sdk-swiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swiftTests.release.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swiftTests/Pods-ios-emarsys-sdk-swiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		2A2585B32727F92100A7E810 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2A309150275E5327009AB798 /* FakeDeepLinkApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDeepLinkApi.swift; sourceTree = "<group>"; };
 		2A4748B32757893D005E4F9B /* EmarsysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmarsysTests.swift; sourceTree = "<group>"; };
 		2A4C94CE273AB4170016985C /* ConfigInternal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigInternal.swift; sourceTree = "<group>"; };
 		2A4C94D0273AB47A0016985C /* InAppInternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppInternal.swift; sourceTree = "<group>"; };
@@ -137,6 +144,11 @@
 		2AAE101B272840D200064246 /* PredictApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictApi.swift; sourceTree = "<group>"; };
 		2AAE101D272840D300064246 /* ConfigApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigApi.swift; sourceTree = "<group>"; };
 		2AAE1021272840D300064246 /* PushApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushApi.swift; sourceTree = "<group>"; };
+		2ABAA4BC2758D36900851BB2 /* FakeDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDependencyContainer.swift; sourceTree = "<group>"; };
+		2ABAA4BE2758F77C00851BB2 /* Fakable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fakable.swift; sourceTree = "<group>"; };
+		2ABAA4C02758FFC600851BB2 /* FakeMobileEngageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeMobileEngageApi.swift; sourceTree = "<group>"; };
+		2ABAA4C22759141C00851BB2 /* FakePredictApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakePredictApi.swift; sourceTree = "<group>"; };
+		2ABAA4C4275915FF00851BB2 /* ExposedPredict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposedPredict.swift; sourceTree = "<group>"; };
 		2ACFC457275675C4007DA5FE /* EmarsysError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmarsysError.swift; sourceTree = "<group>"; };
 		2ACFC45A27567635007DA5FE /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
 		5714DB5F2743A73A006290BC /* PushInternalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushInternalTests.swift; sourceTree = "<group>"; };
@@ -296,6 +308,7 @@
 				FB8A34B535BF7849E90F9CA8 /* PredictInternal.swift */,
 				FB8A3D8F756BA9984865F01F /* PredictLogger.swift */,
 				FB8A3EA0C02ED2E363491899 /* PredictInternalProtocol.swift */,
+				2ABAA4C4275915FF00851BB2 /* ExposedPredict.swift */,
 			);
 			path = Predict;
 			sourceTree = "<group>";
@@ -485,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				57F5B7F127467771002BA84C /* MobileEngageInternalTests.swift */,
+				2ABAA4C02758FFC600851BB2 /* FakeMobileEngageApi.swift */,
 			);
 			path = MobileEngage;
 			sourceTree = "<group>";
@@ -511,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				57F5B7FE27469656002BA84C /* DeepLinkInternalTests.swift */,
+				2A309150275E5327009AB798 /* FakeDeepLinkApi.swift */,
 			);
 			path = DeepLink;
 			sourceTree = "<group>";
@@ -594,6 +609,7 @@
 				57F5B7E7274646D4002BA84C /* CallHandler.swift */,
 				FB8A33FEE0EEF0148254BDA2 /* DI */,
 				2A4748B32757893D005E4F9B /* EmarsysTests.swift */,
+				2ABAA4BE2758F77C00851BB2 /* Fakable.swift */,
 			);
 			path = "ios-emarsys-sdk-swiftTests";
 			sourceTree = "<group>";
@@ -651,6 +667,7 @@
 			isa = PBXGroup;
 			children = (
 				FB8A322E555E1C57427D89AD /* DependencyInjectionTests.swift */,
+				2ABAA4BC2758D36900851BB2 /* FakeDependencyContainer.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -661,6 +678,7 @@
 				FB8AA036B512C36FF0DCC8F2 /* LogicTests.swift */,
 				FB8AAC2E05DA3847BCFB47B8 /* RecommendationFilterTests.swift */,
 				57F5B7DE27450ECC002BA84C /* PredictInternalTests.swift */,
+				2ABAA4C22759141C00851BB2 /* FakePredictApi.swift */,
 			);
 			path = Predict;
 			sourceTree = "<group>";
@@ -929,6 +947,7 @@
 				2A7E1D87273D610B0003F33E /* EmarsysDependency.swift in Sources */,
 				2A7E1D7C273BF8D00003F33E /* InboxLogger.swift in Sources */,
 				57F5B7F827468CAE002BA84C /* DeepLinkApi.swift in Sources */,
+				2ABAA4C5275915FF00851BB2 /* ExposedPredict.swift in Sources */,
 				FB8A358BFE5EE80FAD29120B /* OnEventActionInternal.swift in Sources */,
 				FB8A3476E57417A115E9A418 /* OnEventActionLogger.swift in Sources */,
 				FB8A3A23E7B6AEDD9CCD0BF2 /* GeofenceMapper.swift in Sources */,
@@ -954,11 +973,14 @@
 				57C2DE52273D62ED00302EB1 /* FakeEMSInbox.swift in Sources */,
 				57C2DE56273D63BB00302EB1 /* InboxInternalTests.swift in Sources */,
 				5714DB692743B6ED006290BC /* InAppInternalTests.swift in Sources */,
+				2ABAA4BF2758F77C00851BB2 /* Fakable.swift in Sources */,
 				57F5B7E427452C6D002BA84C /* FakeEMSProduct.swift in Sources */,
 				57F5B7DF27450ECC002BA84C /* PredictInternalTests.swift in Sources */,
 				0DC5752327356DAA00825A7C /* LogicTests.swift in Sources */,
 				57F5B7F5274677A2002BA84C /* FakeEMSMobileEngage.swift in Sources */,
 				57F5B7E227450F21002BA84C /* FakeEMSPredict.swift in Sources */,
+				2ABAA4C32759141C00851BB2 /* FakePredictApi.swift in Sources */,
+				2A309151275E5327009AB798 /* FakeDeepLinkApi.swift in Sources */,
 				5D2945F327215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift in Sources */,
 				5714DB752743E2AA006290BC /* FakeEMSGeofence.swift in Sources */,
 				57F5B7FF27469656002BA84C /* DeepLinkInternalTests.swift in Sources */,
@@ -971,6 +993,8 @@
 				5714DB6F2743BCBC006290BC /* FakeEMSConfig.swift in Sources */,
 				5714DB662743B6BE006290BC /* FakeEMSInApp.swift in Sources */,
 				577715902756270C0005F800 /* OnEventActionTests.swift in Sources */,
+				2ABAA4C12758FFC600851BB2 /* FakeMobileEngageApi.swift in Sources */,
+				2ABAA4BD2758D36900851BB2 /* FakeDependencyContainer.swift in Sources */,
 				FB8A3256880B61349203E432 /* GeofenceMapperTests.swift in Sources */,
 				57F5B7E8274646D4002BA84C /* CallHandler.swift in Sources */,
 				2A4748B42757893D005E4F9B /* EmarsysTests.swift in Sources */,

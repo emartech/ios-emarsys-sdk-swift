@@ -43,6 +43,33 @@ class PredictInternalTests: XCTestCase {
         testZone = "testZone"
     }
     
+    func testSetAuthenticatedContact() async throws {
+        var contactFieldId: NSNumber? = nil
+        var contactFieldValue: String? = nil
+        
+        fakeEMSPredict.callHandler = { (_ params: Any?...) in
+            contactFieldId = params[0] as? NSNumber
+            contactFieldValue = params[1] as? String
+        }
+        
+        try await self.predictInternal.setContact(contactFieldId: 2575, contactFieldValue: "testContactFieldValue")
+        
+        XCTAssertEqual(contactFieldId, 2575)
+        XCTAssertEqual(contactFieldValue, "testContactFieldValue")
+    }
+        
+    func testClearContact() async throws {
+        var wasCalled = false
+        
+        fakeEMSPredict.callHandler = { (_ params: Any?...) in
+            wasCalled = true
+        }
+        
+        try await self.predictInternal.clearContact()
+        
+        XCTAssertTrue(wasCalled)
+    }
+    
     func testTrackCart() async {
         var cartItems: [PredictCartItem]? = nil
         
