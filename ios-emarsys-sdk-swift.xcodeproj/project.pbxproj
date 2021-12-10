@@ -12,6 +12,8 @@
 		2A1BE93D27479E9400FFB79A /* ServiceUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A3557B764D7172A243E3A /* ServiceUrls.swift */; };
 		2A2585B42727F92100A7E810 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2A2585B32727F92100A7E810 /* Podfile */; };
 		2A309151275E5327009AB798 /* FakeDeepLinkApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A309150275E5327009AB798 /* FakeDeepLinkApi.swift */; };
+		2A336580276227920099B0D4 /* RequestContextKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33657F276227920099B0D4 /* RequestContextKeys.swift */; };
+		2A33658427634A100099B0D4 /* FakeMeRequestContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33658327634A100099B0D4 /* FakeMeRequestContext.swift */; };
 		2A4748B42757893D005E4F9B /* EmarsysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4748B32757893D005E4F9B /* EmarsysTests.swift */; };
 		2A4C94CF273AB4170016985C /* ConfigInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C94CE273AB4170016985C /* ConfigInternal.swift */; };
 		2A4C94D2273AB47A0016985C /* InAppInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C94D0273AB47A0016985C /* InAppInternal.swift */; };
@@ -39,6 +41,7 @@
 		2ABAA4C5275915FF00851BB2 /* ExposedPredict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABAA4C4275915FF00851BB2 /* ExposedPredict.swift */; };
 		2ACFC458275675C4007DA5FE /* EmarsysError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFC457275675C4007DA5FE /* EmarsysError.swift */; };
 		2ACFC45B27567635007DA5FE /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFC45A27567635007DA5FE /* TestExtensions.swift */; };
+		2AD68B172760F2EF009955CF /* FakeDeviceInfoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD68B162760F2EF009955CF /* FakeDeviceInfoClient.swift */; };
 		5714DB602743A73A006290BC /* PushInternalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DB5F2743A73A006290BC /* PushInternalTests.swift */; };
 		5714DB622743A81E006290BC /* FakeEMSPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DB612743A81E006290BC /* FakeEMSPush.swift */; };
 		5714DB662743B6BE006290BC /* FakeEMSInApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DB652743B6BE006290BC /* FakeEMSInApp.swift */; };
@@ -87,6 +90,7 @@
 		FB89B5149F16003DAAEAF6AB /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89BDFDEEECA711FE2D7A5B /* Action.swift */; };
 		FB89B5CBD2BE87DF419304B9 /* Geofence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89BEA28EEF852EDF2E97AB /* Geofence.swift */; };
 		FB89B742122B85D552F3CD02 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89BA9005BD847B0DF5D3EF /* Product.swift */; };
+		FB8A31D95E52CEFB0FEEF7F1 /* RequestContextKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A33657F276227920099B0D4 /* RequestContextKeys.swift */; };
 		FB8A3256880B61349203E432 /* GeofenceMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A38186C6EF2E3EEE0F7D7 /* GeofenceMapperTests.swift */; };
 		FB8A33450029B183C6F58B03 /* PushLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A3DF7FF9234E9E88D723D /* PushLogger.swift */; };
 		FB8A344F9985C0F7B45615F0 /* InAppInternalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8A3F4E0ECE46D1072D09FF /* InAppInternalProtocol.swift */; };
@@ -124,6 +128,8 @@
 		18BD62C7980CB83965C8CC74 /* Pods-ios-emarsys-sdk-swiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-emarsys-sdk-swiftTests.release.xcconfig"; path = "Target Support Files/Pods-ios-emarsys-sdk-swiftTests/Pods-ios-emarsys-sdk-swiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		2A2585B32727F92100A7E810 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2A309150275E5327009AB798 /* FakeDeepLinkApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDeepLinkApi.swift; sourceTree = "<group>"; };
+		2A33657F276227920099B0D4 /* RequestContextKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestContextKeys.swift; sourceTree = "<group>"; };
+		2A33658327634A100099B0D4 /* FakeMeRequestContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeMeRequestContext.swift; sourceTree = "<group>"; };
 		2A4748B32757893D005E4F9B /* EmarsysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmarsysTests.swift; sourceTree = "<group>"; };
 		2A4C94CE273AB4170016985C /* ConfigInternal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigInternal.swift; sourceTree = "<group>"; };
 		2A4C94D0273AB47A0016985C /* InAppInternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppInternal.swift; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 		2ABAA4C4275915FF00851BB2 /* ExposedPredict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposedPredict.swift; sourceTree = "<group>"; };
 		2ACFC457275675C4007DA5FE /* EmarsysError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmarsysError.swift; sourceTree = "<group>"; };
 		2ACFC45A27567635007DA5FE /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
+		2AD68B162760F2EF009955CF /* FakeDeviceInfoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDeviceInfoClient.swift; sourceTree = "<group>"; };
 		5714DB5F2743A73A006290BC /* PushInternalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushInternalTests.swift; sourceTree = "<group>"; };
 		5714DB612743A81E006290BC /* FakeEMSPush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEMSPush.swift; sourceTree = "<group>"; };
 		5714DB652743B6BE006290BC /* FakeEMSInApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEMSInApp.swift; sourceTree = "<group>"; };
@@ -478,6 +485,7 @@
 		57F5B7E027450F01002BA84C /* Predict */ = {
 			isa = PBXGroup;
 			children = (
+				2ABAA4C22759141C00851BB2 /* FakePredictApi.swift */,
 				57F5B7E127450F21002BA84C /* FakeEMSPredict.swift */,
 				57F5B7E327452C6D002BA84C /* FakeEMSProduct.swift */,
 			);
@@ -498,7 +506,6 @@
 			isa = PBXGroup;
 			children = (
 				57F5B7F127467771002BA84C /* MobileEngageInternalTests.swift */,
-				2ABAA4C02758FFC600851BB2 /* FakeMobileEngageApi.swift */,
 			);
 			path = MobileEngage;
 			sourceTree = "<group>";
@@ -506,7 +513,10 @@
 		57F5B7F32746777E002BA84C /* MobileEngage */ = {
 			isa = PBXGroup;
 			children = (
+				2ABAA4C02758FFC600851BB2 /* FakeMobileEngageApi.swift */,
 				57F5B7F4274677A2002BA84C /* FakeEMSMobileEngage.swift */,
+				2AD68B162760F2EF009955CF /* FakeDeviceInfoClient.swift */,
+				2A33658327634A100099B0D4 /* FakeMeRequestContext.swift */,
 			);
 			path = MobileEngage;
 			sourceTree = "<group>";
@@ -659,6 +669,7 @@
 				FB8A31912CF4D0851A541CCF /* Constants.swift */,
 				FB8A33AD2347BDE8AFCED627 /* SchemaContract.swift */,
 				FB8A3557B764D7172A243E3A /* ServiceUrls.swift */,
+				2A33657F276227920099B0D4 /* RequestContextKeys.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -678,7 +689,6 @@
 				FB8AA036B512C36FF0DCC8F2 /* LogicTests.swift */,
 				FB8AAC2E05DA3847BCFB47B8 /* RecommendationFilterTests.swift */,
 				57F5B7DE27450ECC002BA84C /* PredictInternalTests.swift */,
-				2ABAA4C22759141C00851BB2 /* FakePredictApi.swift */,
 			);
 			path = Predict;
 			sourceTree = "<group>";
@@ -939,6 +949,7 @@
 				2A7E1D7A273BF8D00003F33E /* InboxMessage.swift in Sources */,
 				2A4C94D2273AB47A0016985C /* InAppInternal.swift in Sources */,
 				2A4C94CF273AB4170016985C /* ConfigInternal.swift in Sources */,
+				2A336580276227920099B0D4 /* RequestContextKeys.swift in Sources */,
 				FB8AA0C138F990876F5C33B0 /* ComparisonType.swift in Sources */,
 				2A4C94D3273AB47A0016985C /* InAppLogger.swift in Sources */,
 				FB8AAA94F8ED81AB7239DBEB /* Trigger.swift in Sources */,
@@ -988,6 +999,7 @@
 				5714DB602743A73A006290BC /* PushInternalTests.swift in Sources */,
 				57F5B7E627464642002BA84C /* FakeInboxResult.swift in Sources */,
 				2ACFC45B27567635007DA5FE /* TestExtensions.swift in Sources */,
+				2A33658427634A100099B0D4 /* FakeMeRequestContext.swift in Sources */,
 				57771593275627A30005F800 /* FakeEMSOnEventAction.swift in Sources */,
 				57F5B80227469681002BA84C /* FakeEMSDeepLink.swift in Sources */,
 				5714DB6F2743BCBC006290BC /* FakeEMSConfig.swift in Sources */,
@@ -997,10 +1009,12 @@
 				2ABAA4BD2758D36900851BB2 /* FakeDependencyContainer.swift in Sources */,
 				FB8A3256880B61349203E432 /* GeofenceMapperTests.swift in Sources */,
 				57F5B7E8274646D4002BA84C /* CallHandler.swift in Sources */,
+				2AD68B172760F2EF009955CF /* FakeDeviceInfoClient.swift in Sources */,
 				2A4748B42757893D005E4F9B /* EmarsysTests.swift in Sources */,
 				5714DB6C2743BC95006290BC /* ConfigInternalTests.swift in Sources */,
 				5714DB722743E273006290BC /* GeofenceInternalTests.swift in Sources */,
 				FB8A3BDE7658E570DEC03D18 /* DependencyInjectionTests.swift in Sources */,
+				FB8A31D95E52CEFB0FEEF7F1 /* RequestContextKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

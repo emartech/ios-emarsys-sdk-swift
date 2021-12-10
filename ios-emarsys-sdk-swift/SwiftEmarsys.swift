@@ -5,6 +5,7 @@
 import Foundation
 import EmarsysSDKExposed
 
+@SdkActor
 @objc public class SwiftEmarsys: NSObject {
     
     public static var push: PushApi {
@@ -57,7 +58,14 @@ import EmarsysSDKExposed
         if let merchantId = config.merchantId, !merchantId.isEmpty {
             MEExperimental.enable(EMSInnerFeature.predict)
         }
-        await DependencyInjection.setup(EmarsysContainer(config))
+        DependencyInjection.setup(EmarsysContainer(config))
+        
+        var container = try await DependencyInjection.dependencyContainer()
+
+        if (container.meRequestContext.contactToken == nil && !container.meRequestContext.hasContactIdentification()) {
+            try await container.deviceInfoClient.trackDeviceInfo()
+            try await container.mobileEngage.setContact(contactFieldId: nil, contactFieldValue: nil)
+        }
     }
     
     @objc public static func setAuthenticatedContact(_ contactFieldId: NSNumber, _ openIdToken: String) async throws {

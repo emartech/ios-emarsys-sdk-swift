@@ -42,7 +42,8 @@ struct EmarsysContainer: EmarsysDependency {
     lazy var meRequestContext: MERequestContext = MERequestContext(applicationCode: emarsysConfig.applicationCode,
                                                                    uuidProvider: self.uuidProvider,
                                                                    timestampProvider: self.timeStampProvider,
-                                                                   deviceInfo: self.deviceInfo, storage: self.storage)
+                                                                   deviceInfo: self.deviceInfo,
+                                                                   storage: self.storage)
     lazy var predictRequestContext: PRERequestContext = PRERequestContext(timestampProvider: self.timeStampProvider,
                                                                           uuidProvider: self.uuidProvider,
                                                                           merchantId: emarsysConfig.merchantId,
@@ -85,7 +86,9 @@ struct EmarsysContainer: EmarsysDependency {
                                                        timestampProvider: self.timeStampProvider,
                                                        additionalHeaders: MEDefaultHeaders.additionalHeaders() as? [String: String],
                                                        requestModelMappers: [
-                                                        EMSContactTokenMapper(requestContext: self.meRequestContext, endpoint: self.endpoint)
+                                                        EMSContactTokenMapper(requestContext: self.meRequestContext, endpoint: self.endpoint),
+                                                        EMSMobileEngageMapper(requestContext: self.meRequestContext, endpoint: self.endpoint),
+                                                        EMSOpenIdTokenMapper(requestContext: self.meRequestContext, endpoint: self.endpoint)
                                                        ],
                                                        responseHandlers: [],
                                                        mobileEngageBodyParser: EMSMobileEngageNullSafeBodyParser(endpoint: self.endpoint))
@@ -147,31 +150,35 @@ struct EmarsysContainer: EmarsysDependency {
                                                                             requestManager: self.requestManager,
                                                                             persistent: true,
                                                                             connectionWatchdog: self.connectionWatchdog)
-    lazy var responseHandlers: [EMSAbstractResponseHandler] = [
-        MEIAMResponseHandler(inApp: self.meIAM),
-        MEIAMCleanupResponseHandlerV3(buttonClickRepository: self.buttonClickRepository,
-                                      display: self.displayedIamRepository,
-                                      endpoint: self.endpoint),
-        MEIAMCleanupResponseHandlerV4(buttonClickRepository: self.buttonClickRepository,
-                                      display: self.displayedIamRepository,
-                                      endpoint: self.endpoint),
-        EMSDeviceEventStateResponseHandler(storage: self.storage,
+    lazy var responseHandlers: [EMSAbstractResponseHandler] = {
+        let handlers: [EMSAbstractResponseHandler] = [
+            MEIAMResponseHandler(inApp: self.meIAM),
+            MEIAMCleanupResponseHandlerV3(buttonClickRepository: self.buttonClickRepository,
+                                          display: self.displayedIamRepository,
+                                          endpoint: self.endpoint),
+            MEIAMCleanupResponseHandlerV4(buttonClickRepository: self.buttonClickRepository,
+                                          display: self.displayedIamRepository,
+                                          endpoint: self.endpoint),
+            EMSDeviceEventStateResponseHandler(storage: self.storage,
+                                               endpoint: self.endpoint),
+            EMSVisitorIdResponseHandler(requestContext: self.predictRequestContext,
+                                        endpoint: self.endpoint),
+            EMSXPResponseHandler(requestContext: self.predictRequestContext,
+                                 endpoint: self.endpoint),
+            EMSClientStateResponseHandler(requestContext: self.meRequestContext,
+                                          endpoint: self.endpoint),
+            EMSRefreshTokenResponseHandler(requestContext: self.meRequestContext,
                                            endpoint: self.endpoint),
-        EMSVisitorIdResponseHandler(requestContext: self.predictRequestContext,
-                                    endpoint: self.endpoint),
-        EMSXPResponseHandler(requestContext: self.predictRequestContext,
-                             endpoint: self.endpoint),
-        EMSClientStateResponseHandler(requestContext: self.meRequestContext,
-                                      endpoint: self.endpoint),
-        EMSRefreshTokenResponseHandler(requestContext: self.meRequestContext,
-                                       endpoint: self.endpoint),
-        self.contactTokenResponseHandler,
-        EMSOnEventResponseHandler(requestManager: self.requestManager,
-                                  requestFactory: self.requestFactory,
-                                  displayedIAMRepository: self.displayedIamRepository,
-                                  actionFactory: self.onEventActionFactory,
-                                  timestampProvider: self.timeStampProvider)
-    ]
+            self.contactTokenResponseHandler,
+            EMSOnEventResponseHandler(requestManager: self.requestManager,
+                                      requestFactory: self.requestFactory,
+                                      displayedIAMRepository: self.displayedIamRepository,
+                                      actionFactory: self.onEventActionFactory,
+                                      timestampProvider: self.timeStampProvider)
+        ]
+        self.restClient.responseHandlers = handlers
+        return handlers
+    }()
     lazy var appStartBlockProvider: EMSAppStartBlockProvider = EMSAppStartBlockProvider(requestManager: self.requestManager,
                                                                                         requestFactory: self.requestFactory,
                                                                                         requestContext: self.meRequestContext,
@@ -316,5 +323,10 @@ struct EmarsysContainer: EmarsysDependency {
                 builder.setSharedKeychainAccessGroup(sharedKeychainAccessGroup)
             }
         }
+        self.initializeResponseHandlers()
+    }
+    
+    private mutating func initializeResponseHandlers() {
+        _ = self.responseHandlers
     }
 }

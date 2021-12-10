@@ -32,9 +32,18 @@ extension XCTestCase {
         EMSDependencyInjection.dependencyContainer?.notificationCenterManager().removeHandlers()
         EMSDependencyInjection.tearDown()
         DependencyInjection.teardown()
+        deleteRequestContextData()
 
         MEExperimental.disableFeature(EMSInnerFeature.mobileEngage)
         MEExperimental.disableFeature(EMSInnerFeature.eventServiceV4)
         MEExperimental.disableFeature(EMSInnerFeature.predict)
+    }
+
+    private func deleteRequestContextData() {
+        let userDefaults = UserDefaults(suiteName: Constants.mobileEngageSuiteName)
+        userDefaults!.removeObject(forKey: RequestContextKeys.MobileEngage.contactToken)
+        userDefaults?.removeObject(forKey: RequestContextKeys.MobileEngage.clientState)
+        userDefaults?.removeObject(forKey: RequestContextKeys.MobileEngage.contactFieldValue)
+        userDefaults?.removeObject(forKey: RequestContextKeys.MobileEngage.refreshToken)
     }
 }

@@ -12,14 +12,18 @@ class EmarsysTests: XCTestCase {
     var mobileEngageConfig: Config!
     var predictConfig: Config!
     var emptyConfig: Config!
+    var allFeatureConfig: Config!
+    var configWithEmptyStrings: Config!
     let contactFieldId = NSNumber(integerLiteral: 2575)
     let contactFieldValue = "testContactFieldValue"
     let openIdToken = "testOpenIdToken"
     
     var fakeMobileEngageApi = FakeMobileEngageApi()
     var fakeLoggingME = FakeMobileEngageApi()
+    var fakeDeepLinkApi = FakeDeepLinkApi()
     var fakePredict = FakePredictApi()
     var fakeLoggingPredict = FakePredictApi()
+    var fakeDeviceInfoClient = FakeDeviceInfoClient()
     
     var resultContactFieldId: NSNumber? = nil
     var resultContactFieldValue: String? = nil
@@ -32,11 +36,15 @@ class EmarsysTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        self.mobileEngageConfig = Config(applicationCode: "testAppCode")
+        self.mobileEngageConfig = Config(applicationCode: "EMS11-C3FD3")
         
         self.predictConfig = Config(merchantId: "testMerchantId")
         
         self.emptyConfig = Config()
+        
+        self.configWithEmptyStrings = Config(applicationCode: "", merchantId: "")
+        
+        self.allFeatureConfig = Config(applicationCode: "EMS11-C3FD3", merchantId: "testMerchantId")
         
         self.resultContactFieldId = nil
         self.resultContactFieldValue = nil
@@ -53,38 +61,53 @@ class EmarsysTests: XCTestCase {
     }
     
     func testSetup_shouldEnableMobileEngageAndEventServiceV4_whenApplicationCodeIsAvailableInConfig() async throws {
-        try await SwiftEmarsys.setup(self.mobileEngageConfig)
+        
+        do {
+            try await SwiftEmarsys.setup(self.mobileEngageConfig)
+        } catch {
+        }
         
         XCTAssertTrue(MEExperimental.isFeatureEnabled(EMSInnerFeature.mobileEngage))
         XCTAssertTrue(MEExperimental.isFeatureEnabled(EMSInnerFeature.eventServiceV4))
     }
     
     func testSetup_shouldPredict_whenMerchantIdIsAvailableInConfig() async throws {
-        try await SwiftEmarsys.setup(self.predictConfig)
+        
+        do {
+            try await SwiftEmarsys.setup(self.predictConfig)
+        } catch {
+        }
         
         XCTAssertTrue(MEExperimental.isFeatureEnabled(EMSInnerFeature.predict))
     }
     
     func testSetup_mobileEngageAndEventServiceV4FeatureShouldNotBeEnabled_whenConfigDoesNotContainsNeededData() async throws {
-        try await SwiftEmarsys.setup(Config(merchantId: "testMerchantId"))
+        
+        do {
+            try await SwiftEmarsys.setup(self.predictConfig)
+        } catch {
+        }
         
         XCTAssertFalse(MEExperimental.isFeatureEnabled(EMSInnerFeature.mobileEngage))
         XCTAssertFalse(MEExperimental.isFeatureEnabled(EMSInnerFeature.eventServiceV4))
     }
     
     func testSetup_PredictFeatureShouldNotBeEnabled_whenConfigDoesNotContainsNeededData() async throws {
-        try await SwiftEmarsys.setup(self.mobileEngageConfig)
+        do {
+            try await SwiftEmarsys.setup(self.mobileEngageConfig)
+        } catch {
+        }
         
         XCTAssertFalse(MEExperimental.isFeatureEnabled(EMSInnerFeature.predict))
     }
     
     func testSetup_shouldSetupDependencyContainer() async throws {
-        try await SwiftEmarsys.setup(self.mobileEngageConfig)
         var result: EmarsysDependency? = nil
         
         do {
             try await SwiftEmarsys.setup(self.mobileEngageConfig)
             result = try await DependencyInjection.dependencyContainer()
+        } catch {
         }
         
         XCTAssertNotNil(result)
@@ -202,6 +225,13 @@ class EmarsysTests: XCTestCase {
     }
     
     func testPush_shouldReturnPredictInternal() async throws {
+        let container = await EmarsysContainer(self.predictConfig)
+        await DependencyInjection.setup(FakeDependencyContainer(container: container,
+                                                                deviceInfoClient: self.fakeDeviceInfoClient,
+                                                                mobileEngage: self.fakeMobileEngageApi,
+                                                                loggingMobileEngage: self.fakeLoggingME,
+                                                                deepLink:fakeDeepLinkApi))
+        
         var result: PredictApi? = nil
         
         do {
@@ -215,6 +245,12 @@ class EmarsysTests: XCTestCase {
     
     
     func testPush_shouldReturnPredictLogger() async throws {
+        let container = await EmarsysContainer(self.mobileEngageConfig)
+        await DependencyInjection.setup(FakeDependencyContainer(container: container,
+                                                                deviceInfoClient: self.fakeDeviceInfoClient,
+                                                                mobileEngage: self.fakeMobileEngageApi,
+                                                                loggingMobileEngage: self.fakeLoggingME,
+                                                                deepLink:fakeDeepLinkApi))
         var result: PredictApi? = nil
         
         do {
@@ -251,8 +287,68 @@ class EmarsysTests: XCTestCase {
         XCTAssertTrue(result is OnEventActionLogger)
     }
     
+    func testSetup_shouldEnableMobileEngageAndEventService_whenConfigHasApplicationCode() async throws {
+        try await SwiftEmarsys.setup(self.mobileEngageConfig)
+        
+        XCTAssertTrue(MEExperimental.isFeatureEnabled(EMSInnerFeature.mobileEngage))
+        XCTAssertTrue(MEExperimental.isFeatureEnabled(EMSInnerFeature.eventServiceV4))
+    }
+    
+    func testSetup_shouldNotEnableMobileEngageAndEventService_whenConfigHasEmptyApplicationCode() async throws {
+        try await SwiftEmarsys.setup(configWithEmptyStrings)
+        
+        XCTAssertFalse(MEExperimental.isFeatureEnabled(EMSInnerFeature.mobileEngage))
+        XCTAssertFalse(MEExperimental.isFeatureEnabled(EMSInnerFeature.eventServiceV4))
+    }
+    
+    func testSetup_shouldEnablePredict_whenConfigHasMerchantId() async throws {
+        try await SwiftEmarsys.setup(predictConfig)
+        
+        XCTAssertTrue(MEExperimental.isFeatureEnabled(EMSInnerFeature.predict))
+    }
+    
+    func testSetup_shouldNotEnablePredict_whenConfigHasEmptyMerchantId() async throws {
+        try await SwiftEmarsys.setup(configWithEmptyStrings)
+        
+        XCTAssertFalse(MEExperimental.isFeatureEnabled(EMSInnerFeature.predict))
+    }
+    
+    func testSetup_shouldTrackDeviceInfoAndSetAnonymContact_whenThereIsNoContactTokenAndNoAuthorizationInRequestContext() async throws {
+        var trackDeviceInfoWasCalled = false
+        var meSetContactWasCalled = false
+        var contactFieldId: NSNumber? = nil
+        var contactFieldValue: String? = nil
+        
+        self.fakeDeviceInfoClient.callHandler = { (_ params: Any?...) in
+            trackDeviceInfoWasCalled = true
+        }
+        self.fakeMobileEngageApi.callHandler = { (_ params: Any?...) in
+            contactFieldId = params[0] as? NSNumber
+            contactFieldValue = params[1] as? String
+            meSetContactWasCalled = true
+        }
+        
+        let container = await EmarsysContainer(self.mobileEngageConfig)
+                  await DependencyInjection.setup(FakeDependencyContainer(container: container,
+                                                                          meRequestContext: FakeMeRequestContext(),
+                                                                          deviceInfoClient: self.fakeDeviceInfoClient,
+                                                                          mobileEngage: self.fakeMobileEngageApi,
+                                                                          loggingMobileEngage: self.fakeLoggingME,
+                                                                          deepLink:fakeDeepLinkApi,
+                                                                          predict: self.fakePredict,
+                                                                          loggingPredict: self.fakeLoggingPredict))
+        
+        try await SwiftEmarsys.setup(self.mobileEngageConfig)
+        
+        
+        XCTAssertNil(contactFieldId)
+        XCTAssertNil(contactFieldValue)
+        XCTAssertTrue(meSetContactWasCalled)
+        XCTAssertTrue(trackDeviceInfoWasCalled)
+    }
+    
     func testSetAuthenticatedContact_shouldDelegateCallToInternalInstanceAndDisablePredict() async throws {
-        let allFeatureConfig = Config(applicationCode: "testAppCode",
+        let allFeatureConfig = Config(applicationCode: "EMS11-C3FD3",
                                       merchantId: "testMerchantId")
         
         let container = await EmarsysContainer(allFeatureConfig)
@@ -308,6 +404,12 @@ class EmarsysTests: XCTestCase {
     
     func testSetContact_shouldDelegateCallToPredictInstanceButNotMobileEngage() async throws {
         let container = await EmarsysContainer(self.predictConfig)
+        await DependencyInjection.setup(FakeDependencyContainer(container: container,
+                                                                deviceInfoClient: self.fakeDeviceInfoClient,
+                                                                mobileEngage: self.fakeMobileEngageApi,
+                                                                loggingMobileEngage: self.fakeLoggingME,
+                                                                deepLink:fakeDeepLinkApi,
+                                                                predict: self.fakePredict))
         
         fakeMobileEngageApi.callHandler = { [unowned self] (_ params: Any?...) in
             self.meWasCalled = true
@@ -396,6 +498,7 @@ class EmarsysTests: XCTestCase {
         }
         
         let fakeContainer = await FakeDependencyContainer(container: container,
+                                                          deviceInfoClient: self.fakeDeviceInfoClient,
                                                           mobileEngage: self.fakeMobileEngageApi,
                                                           loggingMobileEngage: self.fakeLoggingME,
                                                           predict: self.fakePredict)
@@ -427,6 +530,7 @@ class EmarsysTests: XCTestCase {
         }
         
         let fakeContainer = await FakeDependencyContainer(container: container,
+                                                          deviceInfoClient: self.fakeDeviceInfoClient,
                                                           mobileEngage: self.fakeMobileEngageApi,
                                                           loggingMobileEngage: self.fakeLoggingME,
                                                           loggingPredict: self.fakeLoggingPredict)
@@ -471,18 +575,17 @@ class EmarsysTests: XCTestCase {
     
     func testDeepLink_shouldDelegateCallToDeepLinkInstance() async throws {
         let container = await EmarsysContainer(self.mobileEngageConfig)
-        var fakeDeepLink = FakeDeepLinkApi()
         
         let userActivity = NSUserActivity(activityType: "testType")
         var resultUserActivty: NSUserActivity? = nil
         var deepLinkWasCalled = false
         
-        fakeDeepLink.callHandler = { (_ params: Any?...) in
+        self.fakeDeepLinkApi.callHandler = { (_ params: Any?...) in
             resultUserActivty = params[0] as? NSUserActivity
             deepLinkWasCalled = true
         }
         
-        let fakeContainer = await FakeDependencyContainer(container: container, deepLink: fakeDeepLink)
+        let fakeContainer = await FakeDependencyContainer(container: container, deepLink: fakeDeepLinkApi)
         
         DependencyInjection.setup(fakeContainer)
         
