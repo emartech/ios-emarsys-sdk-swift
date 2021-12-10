@@ -92,6 +92,4 @@ iOSInjectionProject/
 /.idea/*
 /Pods/
 /Podfile.lock
-/ios-emarsys-sdk-swift.xcworkspace/xcshareddata/
-/ios-emarsys-sdk-swift.xcworkspace/contents.xcworkspacedata
 .DS_Store

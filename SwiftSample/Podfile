@@ -1,0 +1,13 @@
+platform :ios, '15.0'
+use_frameworks!
+
+source 'https://github.com/emartech/pod-private.git'
+
+target "SwiftSample" do
+  if ENV["DEV"] then
+    pod 'EmarsysSDKSwift', :path => '~/work/ios/ios-emarsys-sdk-swift/'
+    pod 'EmarsysSDKExposed', :path => '~/work/ios/ios-emarsys-sdk/'
+  else
+    pod 'EmarsysSDKSwift', :git => 'https://github.com/emartech/ios-emarsys-sdk-swift.git', :branch => 'main'
+  end
+end
