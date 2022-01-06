@@ -42,6 +42,7 @@
 		2ACFC458275675C4007DA5FE /* EmarsysError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFC457275675C4007DA5FE /* EmarsysError.swift */; };
 		2ACFC45B27567635007DA5FE /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFC45A27567635007DA5FE /* TestExtensions.swift */; };
 		2AD68B172760F2EF009955CF /* FakeDeviceInfoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD68B162760F2EF009955CF /* FakeDeviceInfoClient.swift */; };
+		2AE1DC6E278728EF0098C051 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE1DC6D278728EF0098C051 /* SceneDelegate.swift */; };
 		5714DB602743A73A006290BC /* PushInternalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DB5F2743A73A006290BC /* PushInternalTests.swift */; };
 		5714DB622743A81E006290BC /* FakeEMSPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DB612743A81E006290BC /* FakeEMSPush.swift */; };
 		5714DB662743B6BE006290BC /* FakeEMSInApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5714DB652743B6BE006290BC /* FakeEMSInApp.swift */; };
@@ -74,7 +75,7 @@
 		5D2945EE27215C45007FC73F /* ios_emarsys_sdk_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2945E327215C45007FC73F /* ios_emarsys_sdk_swift.framework */; };
 		5D2945F327215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2945F227215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift */; };
 		5D29460027216019007FC73F /* EmarsysSDKSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 5D2945FF27216019007FC73F /* EmarsysSDKSwift.podspec */; };
-		5D2F0D9D273A6C93004D35B0 /* SDKHostSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F0D9C273A6C93004D35B0 /* SDKHostSwiftApp.swift */; };
+		5D2F0D9D273A6C93004D35B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F0D9C273A6C93004D35B0 /* AppDelegate.swift */; };
 		5D2F0D9F273A6C93004D35B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F0D9E273A6C93004D35B0 /* ContentView.swift */; };
 		5D2F0DA1273A6C94004D35B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F0DA0273A6C94004D35B0 /* Assets.xcassets */; };
 		5D2F0DA4273A6C94004D35B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F0DA3273A6C94004D35B0 /* Preview Assets.xcassets */; };
@@ -158,6 +159,8 @@
 		2ACFC457275675C4007DA5FE /* EmarsysError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmarsysError.swift; sourceTree = "<group>"; };
 		2ACFC45A27567635007DA5FE /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
 		2AD68B162760F2EF009955CF /* FakeDeviceInfoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDeviceInfoClient.swift; sourceTree = "<group>"; };
+		2AE1DC6D278728EF0098C051 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2AE1DC6F2787294B0098C051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5714DB5F2743A73A006290BC /* PushInternalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushInternalTests.swift; sourceTree = "<group>"; };
 		5714DB612743A81E006290BC /* FakeEMSPush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEMSPush.swift; sourceTree = "<group>"; };
 		5714DB652743B6BE006290BC /* FakeEMSInApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEMSInApp.swift; sourceTree = "<group>"; };
@@ -192,7 +195,7 @@
 		5D2945F227215C45007FC73F /* ios_emarsys_sdk_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_emarsys_sdk_swiftTests.swift; sourceTree = "<group>"; };
 		5D2945FF27216019007FC73F /* EmarsysSDKSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmarsysSDKSwift.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5D2F0D9A273A6C93004D35B0 /* SDKHostSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDKHostSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D2F0D9C273A6C93004D35B0 /* SDKHostSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKHostSwiftApp.swift; sourceTree = "<group>"; };
+		5D2F0D9C273A6C93004D35B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D2F0D9E273A6C93004D35B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5D2F0DA0273A6C94004D35B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D2F0DA3273A6C94004D35B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -627,10 +630,12 @@
 		5D2F0D9B273A6C93004D35B0 /* SDKHostSwift */ = {
 			isa = PBXGroup;
 			children = (
-				5D2F0D9C273A6C93004D35B0 /* SDKHostSwiftApp.swift */,
+				2AE1DC6F2787294B0098C051 /* Info.plist */,
+				5D2F0D9C273A6C93004D35B0 /* AppDelegate.swift */,
 				5D2F0D9E273A6C93004D35B0 /* ContentView.swift */,
 				5D2F0DA0273A6C94004D35B0 /* Assets.xcassets */,
 				5D2F0DA2273A6C94004D35B0 /* Preview Content */,
+				2AE1DC6D278728EF0098C051 /* SceneDelegate.swift */,
 			);
 			path = SDKHostSwift;
 			sourceTree = "<group>";
@@ -1023,7 +1028,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D2F0D9F273A6C93004D35B0 /* ContentView.swift in Sources */,
-				5D2F0D9D273A6C93004D35B0 /* SDKHostSwiftApp.swift in Sources */,
+				5D2F0D9D273A6C93004D35B0 /* AppDelegate.swift in Sources */,
+				2AE1DC6E278728EF0098C051 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1281,7 +1287,7 @@
 				DEVELOPMENT_TEAM = 7ZFXXDJH82;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = SDKHostSwift/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1310,7 +1316,7 @@
 				DEVELOPMENT_TEAM = 7ZFXXDJH82;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = SDKHostSwift/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
