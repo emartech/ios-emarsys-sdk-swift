@@ -15,7 +15,6 @@ struct DashboardView: View {
     @State var messageColor: UIColor = .green
     @State var showLoginMessage: Bool = false
     
-    @State var deviceToken : Data?
     @State var changeEnv: Bool = false
     
     var body: some View {
@@ -35,16 +34,6 @@ struct DashboardView: View {
                     
                     HStack {
                         Spacer()
-                        
-                        Button(action: {
-                            changeEnv.toggle()
-                        }) {
-                            Image(systemName: changeEnv ? "checkmark.square" : "square")
-                        }
-                        Text("change env")
-                        
-                        Spacer()
-                        
                         Button(action: self.changeConfig) {
                             Text("Change")
                         }
@@ -56,9 +45,6 @@ struct DashboardView: View {
                 VStack(spacing: 15) {
                     Text("Push token")
                         .bold()
-                        .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("DidReceivePushToken"))) { object in
-                            self.deviceToken = object.userInfo?["push_token"] as! Data
-                        }
                     
                     HStack {
                         Spacer()
@@ -133,7 +119,6 @@ struct DashboardView: View {
                                 .frame(width: 100)
                             
                             FloatingTextField(title: "ContactFieldValue", text: $loginData.contactFieldValue).accessibility(identifier: "customFieldValue")
-                            
                         }
                     }
                     
@@ -192,7 +177,27 @@ struct DashboardView: View {
     }
     
     func changeConfig() {
-
+        Task {
+            if !self.loginData.applicationCode.isEmpty {
+                do {
+                   try await SwiftEmarsys.config.changeApplicationCode(self.loginData.applicationCode)
+                    self.showMessage(successful: true)
+                } catch {
+                    self.messageText = "There was an error while changing ApplicationCode"
+                    self.showMessage(successful: false)
+                }
+            }
+            if !self.loginData.merchantId.isEmpty {
+                do {
+                    try await SwiftEmarsys.config.changeMerchantId(self.loginData.merchantId)
+                    self.showMessage(successful: true)
+                } catch {
+                    self.messageText = "There was an error while changing MerchantId"
+                    self.showMessage(successful: false)
+                }
+            }
+            self.showSetupChangeMessage = true
+        }
     }
     
     func getContactFieldId() -> NSNumber? {
@@ -234,7 +239,7 @@ struct DashboardView: View {
     }
     
     func setPushTokenButtonClicked() {
-        if let deviceToken = self.deviceToken {
+        if let deviceToken = self.loginData.pushToken {
             Task {
                 do {
                     try await SwiftEmarsys.push.setPushToken(deviceToken)
@@ -246,16 +251,12 @@ struct DashboardView: View {
     }
     
     func copyPushTokenButtonClicked() {
-        if (self.deviceToken != nil) {
-            let pushToken = self.deviceToken!.map {
-                String(format: "%02.2hhx", $0)
-            }.joined()
-            UIPasteboard.general.string = pushToken
+        if (self.loginData.pushToken != nil) {
+            UIPasteboard.general.string = self.loginData.pushToken!.deviceTokenString()
         }
     }
     
     func requestLocationPermission() {
-        print("requestLocationPermission clicked")
         Task {
             await SwiftEmarsys.geofence.requestAlwaysAuthorization()
         }

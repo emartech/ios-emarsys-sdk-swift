@@ -6,6 +6,7 @@ import Foundation
 import UIKit
 import EmarsysSDKSwift
 
+@UIApplicationMain
 class AppDelegate: NSObject, UIApplicationDelegate {
     
     var loginData: LoginData!
@@ -18,6 +19,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         loginData = LoginData(applicationCode: applicationCode,
                               merchantId: merchantId)
         
+        UIApplication.shared.registerForRemoteNotifications()
+        
         Task {
             do {
                 try await SwiftEmarsys.setup(config)
@@ -28,7 +31,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                 loginData.hwid = await SwiftEmarsys.config.hardwareId
                 loginData.languageCode = await SwiftEmarsys.config.languageCode
                 loginData.pushSettings = [:]
-                loginData.pushToken = ""
                 loginData.sdkVersion = await SwiftEmarsys.config.sdkVersion
             } catch {
                 print(error.localizedDescription)
@@ -42,6 +44,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         Task {
             do {
                 try await SwiftEmarsys.push.setPushToken(deviceToken)
+                self.loginData.pushToken = deviceToken
             } catch {
                 print(error.localizedDescription)
             }

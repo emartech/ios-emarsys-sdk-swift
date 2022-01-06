@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F9D02E994E575593FD78890 /* Pods_SwiftSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB1FA9536063A22830D1D1F /* Pods_SwiftSample.framework */; };
-		2A2A6343275F909F00265077 /* SwiftSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A6342275F909F00265077 /* SwiftSampleApp.swift */; };
 		2A2A6345275F909F00265077 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A6344275F909F00265077 /* ContentView.swift */; };
 		2A2A6347275F90A000265077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A2A6346275F90A000265077 /* Assets.xcassets */; };
 		2A2A634A275F90A000265077 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A2A6349275F90A000265077 /* Preview Assets.xcassets */; };
@@ -17,11 +15,13 @@
 		2AD68B0F275FA367009955CF /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD68B0E275FA367009955CF /* FloatingTextField.swift */; };
 		2AD68B12275FA3B3009955CF /* UIApplication+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD68B11275FA3B3009955CF /* UIApplication+Keyboard.swift */; };
 		2AD68B15275FA3E8009955CF /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD68B14275FA3E8009955CF /* LoginData.swift */; };
+		2AE1DC6A2785E54A0098C051 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE1DC692785E54A0098C051 /* SceneDelegate.swift */; };
+		2AE1DC6C2786F2380098C051 /* Data+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE1DC6B2786F2380098C051 /* Data+String.swift */; };
+		B05F31FBCC12CB9D4B383140 /* Pods_SwiftSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEE2069D54100AB91391C75 /* Pods_SwiftSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A2A633F275F909F00265077 /* SwiftSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A2A6342275F909F00265077 /* SwiftSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSampleApp.swift; sourceTree = "<group>"; };
 		2A2A6344275F909F00265077 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2A2A6346275F90A000265077 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A2A6349275F90A000265077 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -32,9 +32,11 @@
 		2AD68B0E275FA367009955CF /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		2AD68B11275FA3B3009955CF /* UIApplication+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Keyboard.swift"; sourceTree = "<group>"; };
 		2AD68B14275FA3E8009955CF /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
-		3FB1FA9536063A22830D1D1F /* Pods_SwiftSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA9EAD29D27701C47644CBC3 /* Pods-SwiftSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSample.release.xcconfig"; path = "Target Support Files/Pods-SwiftSample/Pods-SwiftSample.release.xcconfig"; sourceTree = "<group>"; };
-		DFAB8A8D47FAB61941654105 /* Pods-SwiftSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSample.debug.xcconfig"; path = "Target Support Files/Pods-SwiftSample/Pods-SwiftSample.debug.xcconfig"; sourceTree = "<group>"; };
+		2AE1DC692785E54A0098C051 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2AE1DC6B2786F2380098C051 /* Data+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+String.swift"; sourceTree = "<group>"; };
+		4F174CF521D12143AECC11DA /* Pods-SwiftSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSample.release.xcconfig"; path = "Target Support Files/Pods-SwiftSample/Pods-SwiftSample.release.xcconfig"; sourceTree = "<group>"; };
+		6BEE2069D54100AB91391C75 /* Pods_SwiftSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6EC070B07AF47DD92B19273 /* Pods-SwiftSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSample.debug.xcconfig"; path = "Target Support Files/Pods-SwiftSample/Pods-SwiftSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F9D02E994E575593FD78890 /* Pods_SwiftSample.framework in Frameworks */,
+				B05F31FBCC12CB9D4B383140 /* Pods_SwiftSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +57,7 @@
 				2A2A6341275F909F00265077 /* SwiftSample */,
 				2A2A6340275F909F00265077 /* Products */,
 				71341BD33C23203F80A6E7D1 /* Pods */,
-				D38E02198F467ADC967BF8EA /* Frameworks */,
+				C82417A473C0D187750D1E05 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,11 +78,11 @@
 				2AD68B0A275FA2F1009955CF /* Views */,
 				2AD68B09275F9F04009955CF /* Info.plist */,
 				2AD68B08275F9EF8009955CF /* SwiftSample.entitlements */,
-				2A2A6342275F909F00265077 /* SwiftSampleApp.swift */,
 				2A2A6344275F909F00265077 /* ContentView.swift */,
 				2A2A6346275F90A000265077 /* Assets.xcassets */,
 				2A2A6348275F90A000265077 /* Preview Content */,
 				2AD68B06275F9BDC009955CF /* AppDelegate.swift */,
+				2AE1DC692785E54A0098C051 /* SceneDelegate.swift */,
 			);
 			path = SwiftSample;
 			sourceTree = "<group>";
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				2AD68B11275FA3B3009955CF /* UIApplication+Keyboard.swift */,
+				2AE1DC6B2786F2380098C051 /* Data+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -128,16 +131,16 @@
 		71341BD33C23203F80A6E7D1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DFAB8A8D47FAB61941654105 /* Pods-SwiftSample.debug.xcconfig */,
-				BA9EAD29D27701C47644CBC3 /* Pods-SwiftSample.release.xcconfig */,
+				B6EC070B07AF47DD92B19273 /* Pods-SwiftSample.debug.xcconfig */,
+				4F174CF521D12143AECC11DA /* Pods-SwiftSample.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		D38E02198F467ADC967BF8EA /* Frameworks */ = {
+		C82417A473C0D187750D1E05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3FB1FA9536063A22830D1D1F /* Pods_SwiftSample.framework */,
+				6BEE2069D54100AB91391C75 /* Pods_SwiftSample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -149,11 +152,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A2A634D275F90A000265077 /* Build configuration list for PBXNativeTarget "SwiftSample" */;
 			buildPhases = (
-				C7955EE5130760C869609C54 /* [CP] Check Pods Manifest.lock */,
+				A4708EC2F4552D74AB9B310F /* [CP] Check Pods Manifest.lock */,
 				2A2A633B275F909F00265077 /* Sources */,
 				2A2A633C275F909F00265077 /* Frameworks */,
 				2A2A633D275F909F00265077 /* Resources */,
-				2F8B94B83996BD3770D55A70 /* [CP] Embed Pods Frameworks */,
+				7B2FC730EBD5B379C5E59331 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,7 +213,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2F8B94B83996BD3770D55A70 /* [CP] Embed Pods Frameworks */ = {
+		7B2FC730EBD5B379C5E59331 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -227,7 +230,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftSample/Pods-SwiftSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C7955EE5130760C869609C54 /* [CP] Check Pods Manifest.lock */ = {
+		A4708EC2F4552D74AB9B310F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,13 +259,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AE1DC6C2786F2380098C051 /* Data+String.swift in Sources */,
 				2AD68B07275F9BDC009955CF /* AppDelegate.swift in Sources */,
 				2AD68B0C275FA304009955CF /* DashboardView.swift in Sources */,
 				2AD68B15275FA3E8009955CF /* LoginData.swift in Sources */,
+				2AE1DC6A2785E54A0098C051 /* SceneDelegate.swift in Sources */,
 				2A2A6345275F909F00265077 /* ContentView.swift in Sources */,
 				2AD68B12275FA3B3009955CF /* UIApplication+Keyboard.swift in Sources */,
 				2AD68B0F275FA367009955CF /* FloatingTextField.swift in Sources */,
-				2A2A6343275F909F00265077 /* SwiftSampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +324,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -375,7 +379,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -387,7 +391,7 @@
 		};
 		2A2A634E275F90A000265077 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DFAB8A8D47FAB61941654105 /* Pods-SwiftSample.debug.xcconfig */;
+			baseConfigurationReference = B6EC070B07AF47DD92B19273 /* Pods-SwiftSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -399,7 +403,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftSample/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Needed for geofence";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Needed for geofence";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Needed for geofence";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -413,13 +419,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		2A2A634F275F90A000265077 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA9EAD29D27701C47644CBC3 /* Pods-SwiftSample.release.xcconfig */;
+			baseConfigurationReference = 4F174CF521D12143AECC11DA /* Pods-SwiftSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -431,7 +437,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftSample/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Needed for geofence";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Needed for geofence";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Needed for geofence";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -445,7 +453,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

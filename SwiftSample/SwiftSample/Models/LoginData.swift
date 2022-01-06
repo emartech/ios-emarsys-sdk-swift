@@ -16,7 +16,7 @@ class LoginData: ObservableObject {
     @Published var pushSettings: Dictionary<String, String> = ["notificationEnabled": "true",
                                                                "authorizationStatus": "authorized",
                                                                "soundSettings": "soundsetting"]
-    @Published var pushToken: String
+    @Published var pushToken: Data?
     @Published var sdkVersion: String
     
     init(isLoggedIn: Bool = false,
@@ -27,7 +27,7 @@ class LoginData: ObservableObject {
          hwId: String = "",
          languageCode: String = "",
          pushSettings: Dictionary<String, String> = [:],
-         pushToken: String = "",
+         pushToken: Data? = nil,
          sdkVersion: String = "") {
         self.isLoggedIn = isLoggedIn
         self.contactFieldValue = contactFieldValue ?? ""
